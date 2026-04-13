@@ -1,0 +1,89 @@
+# =========================
+# Archivos temporales
+# =========================
+*.log
+*.jou
+*.str
+*.wlf
+*.vcd
+*.vpd
+*.fsdb
+*.out
+*.tmp
+
+# =========================
+# Archivos de compilación
+# =========================
+*.o
+*.obj
+*.exe
+*.so
+*.a
+
+# =========================
+# ModelSim / QuestaSim
+# =========================
+work/
+transcript
+vsim.wlf
+modelsim.ini
+
+# =========================
+# Synopsys VCS
+# =========================
+csrc/
+simv*
+*.daidir/
+ucli.key
+
+# =========================
+# Cadence (Xcelium / Incisive)
+# =========================
+INCA_libs/
+*.history
+xcelium.d/
+
+# =========================
+# Vivado (Xilinx)
+# =========================
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+*.xpr
+*.log
+*.jou
+*.str
+
+# =========================
+# Quartus (Intel/Altera)
+# =========================
+db/
+incremental_db/
+output_files/
+*.qws
+*.qpf
+*.qsf.bak
+
+# =========================
+# Archivos generados por testbench
+# =========================
+dump.vcd
+coverage/
+*.ucdb
+
+# =========================
+# Editores / IDEs
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
