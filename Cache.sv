@@ -3,53 +3,40 @@ module Cache(
     input logic clk,
     input logic reset,
     input logic we,
-    input logic [31:0] address,
+    input logic [4:0] address,
     input logic [31:0] data_in,
-    output logic [31:0] data_out,
-    output logic hit
-    
+    output logic [31:0] data_out
 );
 
-
 // Dirección
+logic offset;
+logic [1:0] index;
+logic [1:0] tag;
 
-logic [1:0] offset;
-logic [9:0] index;   
-logic [19:0] tag;    
+assign offset = address[0];
+assign index  = address[2:1];
+assign tag    = address[4:3];
 
-assign offset = address[1:0];
-assign index  = address[11:2];
-assign tag    = address[31:12];
+// Cache: [tag(2)][bloque1(32)][bloque0(32)][state(2)]
+logic [67:0] cache [0:3];
 
+logic [67:0] cache_line;
+logic [1:0] stored_tag;
+logic [1:0] state;
+logic hit;
 
-// Cache
-// [state(2)][tag(20)][bloque2(32)][bloque1(32)][bloque0(32)]
-// total = 118 bits
-logic [117:0] cache [0:1023];
-
-// Señales internas
-logic [117:0] cache_line;
-logic [19:0] index_tag;   
-logic [1:0] block_state;
-
-// leer línea de cache
 assign cache_line = cache[index];
 
-// extraer campos
-assign index_tag   = cache_line[115:96];
-assign block_state = cache_line[1:0];
+assign stored_tag = cache_line[67:66];
+assign state      = cache_line[1:0];
 
-// HIT
-assign hit = (index_tag == tag) && (block_state != 2'b00);
+assign hit = (stored_tag == tag) && (state != 2'b00);
 
-// Lectura
 always_comb begin
     if (hit) begin
         case(offset)
-            2'b00: data_out = cache_line[33:2];     // bloque 0
-            2'b01: data_out = cache_line[65:34];    // bloque 1
-            2'b10: data_out = cache_line[97:66];    // bloque 2
-            default: data_out = 32'b0;              // offset inválido
+            1'b0: data_out = cache_line[33:2];
+            1'b1: data_out = cache_line[65:34];
         endcase
     end else begin
         data_out = 32'b0;
