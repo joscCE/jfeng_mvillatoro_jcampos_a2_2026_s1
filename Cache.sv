@@ -43,4 +43,14 @@ always_comb begin
     end
 end
 
+always_ff @(posedge clk or posedge reset) begin
+    if (we && hit) begin
+        case(offset)
+            1'b0: cache[index][33:2]  <= data_in;  // bloque 0
+            1'b1: cache[index][65:34] <= data_in;  // bloque 1
+        endcase
+        end
+    end
+
+
 endmodule
