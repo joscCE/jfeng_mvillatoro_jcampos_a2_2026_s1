@@ -1,0 +1,96 @@
+module: Interconnect
+description: >
+  Bus snooping centralizado. Arbitra peticiones de 4 cachés,
+  emite señales de coherencia en broadcast, y gestiona
+  accesos a memoria compartida. Soporta MSI y Firefly
+  seleccionables por hardware.
+
+parameters:
+  SNOOP_WAIT_CYCLES: 4  # ciclos fijos de espera post-snoop, ajustable
+
+inputs:
+  clk:
+    width: 1
+    description: Reloj del sistema
+
+  reset:
+    width: 1
+    description: Reset sincrónico activo alto
+
+  protocol_sel:
+    width: 1
+    description: 0=MSI (write-invalidate), 1=Firefly (write-update)
+
+  help:
+    width: 4
+    description: >
+      help[i]=1 indica que la caché i tiene una petición pendiente
+      para el IC. Solo se levanta en miss o cuando se necesita
+      coherencia. En hit local permanece en 0.
+
+  request_packet:
+    width: 65
+    count: 4
+    encoding: "{type(1), address(32), data(32)}"
+    description: >
+      Paquete de petición de cada caché.
+      type=1 lectura, type=0 escritura.
+      request_packet[i] corresponde a la caché i.
+
+  mem_data_out:
+    width: 96
+    description: Línea completa leída de Ram (3 bloques x 32 bits)
+
+  mem_ready:
+    width: 1
+    description: Ram indica que la operación de lectura o escritura terminó
+
+outputs:
+  ic_bus_rd:
+    width: 1
+    description: >
+      Broadcast a todas las cachés. Una caché remota con la línea
+      en estado M debe transicionar a S y su writeback queda en Ram.
+
+  ic_bus_inv:
+    width: 1
+    description: >
+      Broadcast a todas las cachés. Toda caché remota con la línea
+      en S o M debe transicionar a I. Activo en escrituras MSI.
+      En Firefly se usa ic_bus_rd en su lugar.
+
+  ic_ready:
+    width: 1
+    description: >
+      Broadcast. La caché que levantó help lo interpreta como
+      confirmación de que su operación está completa.
+      Las demás lo ignoran.
+
+  ic_tag:
+    width: 20
+    description: Tag de la línea que el IC responde (address[31:12])
+
+  ic_cache_line:
+    width: 96
+    description: Línea completa respondida (3 bloques x 32 bits)
+
+  ic_mem_we:
+    width: 1
+    description: Write enable hacia Ram. 1=escritura, 0=lectura.
+
+  ic_mem_address:
+    width: 32
+    description: Dirección completa hacia Ram, extraída del request_packet
+
+  ic_mem_data_in:
+    width: 96
+    description: Línea completa a escribir en Ram
+
+fsm_states:
+  - IDLE:       Monitorea help[3:0] cada ciclo
+  - ARBITRATE:  Round-robin cuando 2+ cachés levantan help simultáneamente
+  - DECODE:     Extrae type, address, data del request_packet del ganador
+  - SNOOP_ISSUE: Activa ic_bus_rd o ic_bus_inv según type y protocol_sel
+  - WAIT_SNOOP: Espera SNOOP_WAIT_CYCLES ciclos fijos
+  - MEM_ACCESS: Emite operación a Ram, espera mem_ready
+  - RESPOND:    Activa ic_ready, ic_tag, ic_cache_line hacia cachés

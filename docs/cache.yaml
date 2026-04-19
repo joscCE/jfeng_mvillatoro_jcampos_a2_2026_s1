@@ -1,0 +1,85 @@
+module: Cache
+description: >
+  Caché L1 privada por PE. Mapeo directo, 1024 entradas,
+  3 bloques de 32 bits por línea. Maneja estados MSI
+  internamente reaccionando a señales del IC en broadcast.
+
+inputs:
+  clk:
+    width: 1
+
+  reset:
+    width: 1
+
+  # PE → Cache
+  req_type:
+    width: 1
+    description: Tipo de operación del PE. 1=lectura, 0=escritura
+
+  req_valid:
+    width: 1
+    description: La operación del PE es válida este ciclo
+
+  addr:
+    width: 32
+    description: >
+      Dirección de memoria de la operación.
+      addr[31:12] = tag, addr[11:2] = index, addr[1:0] = offset
+
+  # IC → Cache (broadcast)
+  bus_rd:
+    width: 1
+    description: >
+      IC indica lectura en curso. Si esta caché tiene la línea
+      en M transiciona a S.
+
+  bus_inv:
+    width: 1
+    description: >
+      IC indica escritura en curso. Si esta caché tiene la línea
+      en S o M transiciona a I.
+
+  ic_ready:
+    width: 1
+    description: >
+      IC indica que la operación solicitada está completa.
+      Solo la caché que levantó help captura ic_tag e ic_cache_line.
+
+  tag_in:
+    width: 20
+    description: Tag de la línea que el IC responde
+
+  cache_line_in:
+    width: 96
+    description: Línea completa respondida por el IC
+
+outputs:
+  # Cache → PE
+  done:
+    width: 1
+    description: La operación del PE está completa este ciclo
+
+  # Cache → IC
+  help:
+    width: 1
+    description: Esta caché necesita intervención del IC
+
+  request_packet:
+    width: 65
+    encoding: "{type(1), address(32), data(32)}"
+    description: Petición codificada hacia el IC
+
+msi_states:
+  "00": Invalid   # línea no presente
+  "01": Shared    # copia limpia, puede haber otras copias
+  "11": Modified  # única copia válida, memoria desactualizada
+
+address_breakdown:
+  tag:    "addr[31:12]  20 bits"
+  index:  "addr[11:2]   10 bits"
+  offset: "addr[1:0]     2 bits"
+
+cache_structure:
+  entries: 1024
+  line_width: 118 bits
+  encoding: "{state(2), tag(20), bloque2(32), bloque1(32), bloque0(32)}"
