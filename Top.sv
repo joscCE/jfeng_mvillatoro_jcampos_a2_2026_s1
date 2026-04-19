@@ -24,13 +24,14 @@ module Top (
 	logic [95:0] mem_data_out;
 	logic			 mem_ready;
 	
-	// Aca va la comunicacion entre PEs y cache, voy a poner algo placeholder 
-	// de mas o menos como se que funcionan los PEs y el cache en general
-	logic [3:0]  pe_we;
-	logic [31:0] pe_address [3:0];
-	logic [31:0] pe_data_in [3:0];
-	logic [31:0] pe_data_out [3:0];
-	logic [3:0]  pe_hit;
+	// Aca va la comunicacion entre PEs y cache, creo que asi es segun lo que lei en el Lucid
+	// PE a cache
+	logic [3:0]  pe_req_type;
+	logic [3:0]  pe_req_valid;
+	logic [31:0] pe_addr [3:0];
+	
+	// Cache a PE
+	logic [3:0] cache_done;
 	
 	// Instancias de los 4 caches, igual hay que ver cuando se cambie lo de arriba
 	genvar i;
@@ -39,11 +40,10 @@ module Top (
 			Cache cache_inst (
 				.clk					(clk),
 				.reset				(reset),
-				.we					(pe_we[i]),
-				.address				(pe_address[i]),
-				.data_in				(pe_data_in[i]),
-				.data_out			(pe_data_out[i]);
-				.hit					(pe_hit[i]),
+				.req_type			(pe_req_type[i]),
+				.req_valid			(pe_req_valid[i]),
+				.addr					(pe_addr[i]),
+				.done					(cache_done[i]),
 				.bus_rd				(ic_bus_rd),
 				.bus_inv				(ic_bus_inv),
 				.tag_in				(ic_tag),
