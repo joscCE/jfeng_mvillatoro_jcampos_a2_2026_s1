@@ -1,0 +1,59 @@
+# do Top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:00:09 on Apr 19,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv 
+# -- Compiling module Cache
+# 
+# Top level modules:
+# 	Cache
+# End time: 15:00:09 on Apr 19,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:00:10 on Apr 19,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv 
+# -- Compiling module Cache_tb
+# 
+# Top level modules:
+# 	Cache_tb
+# End time: 15:00:10 on Apr 19,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Cache_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Cache_tb 
+# Start time: 15:00:10 on Apr 19,2026
+# Loading sv_std.std
+# Loading work.Cache_tb
+# Loading work.Cache
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# --- Inicio de Testbench MSI ---
+# [T=25ns] Stall detectado: Read Miss en direccion 0x04
+# [T=45ns] Dato cargado. Estado actual: 01 (Debe ser SHARED=01)
+# [T=55ns] Write Hit ejecutado. Estado actual: 10 (Debe ser MODIFIED=10)
+# [T=75ns] Invalidez recibida del Bus. Estado actual: 00 (Debe ser INVALID=00)
+# [T=105ns] Write Miss completado. Estado actual: 10 (Debe ser MODIFIED=10)
+# --- Testbench Finalizado ---
+# ** Note: $finish    : /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv(102)
+#    Time: 115 ns  Iteration: 0  Instance: /Cache_tb
+# 1
+# Break in Module Cache_tb at /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv line 102
+# End time: 15:01:42 on Apr 19,2026, Elapsed time: 0:01:32
+# Errors: 0, Warnings: 0
