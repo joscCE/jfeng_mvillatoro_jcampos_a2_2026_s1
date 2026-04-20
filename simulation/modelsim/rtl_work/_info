@@ -11,12 +11,12 @@ cModel Technology
 Z0 d/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim
 vCache
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1776632409
+Z2 !s110 1776637402
 !i10b 1
 !s100 ^MGdeY:9_oE:[Y9n8UG_R2
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IK^Ph<B?2WMm8SWKmJEjm<3
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
 w1776574099
@@ -24,42 +24,42 @@ w1776574099
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv
 !i122 0
 L0 1 103
-Z4 OV;L;2020.1;71
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1776632409.000000
+Z6 !s108 1776637402.000000
 !s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv|
 !i113 1
-Z5 o-sv -work work
-Z6 !s92 -sv -work work {+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1}
-Z7 tCvgOpt 0
+Z7 o-sv -work work
+Z8 !s92 -sv -work work {+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1}
+Z9 tCvgOpt 0
 n@cache
 vCache_tb
 R1
-!s110 1776632410
+R2
 !i10b 1
 !s100 f@QLkl?dLWe>8Qmb9GU6;2
-R2
-IYfNN?YG_jSP1]9jFBZAXX2
 R3
+IYfNN?YG_jSP1]9jFBZAXX2
+R4
 S1
 R0
-w1776575178
+w1776637248
 8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv
 !i122 1
 L0 3 103
-R4
+R5
 r1
 !s85 0
 31
-!s108 1776632410.000000
+R6
 !s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv|
 !i113 1
-R5
-R6
 R7
+R8
+R9
 n@cache_tb
