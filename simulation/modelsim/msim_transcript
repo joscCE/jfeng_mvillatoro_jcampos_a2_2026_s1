@@ -1,0 +1,79 @@
+# Reading pref.tcl
+# do proyecto2_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:39:36 on Apr 20,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1" C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv 
+# -- Compiling module PE
+# 
+# Top level modules:
+# 	PE
+# End time: 20:39:36 on Apr 20,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:39:36 on Apr 20,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1" C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv 
+# -- Compiling module tb_pe
+# 
+# Top level modules:
+# 	tb_pe
+# End time: 20:39:37 on Apr 20,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_pe
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_pe 
+# Start time: 20:39:37 on Apr 20,2026
+# Loading sv_std.std
+# Loading work.tb_pe
+# Loading work.PE
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'trace_rom'.  Expected 23, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pe/uut/trace_rom File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 40
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ---- Iniciando Testbench ----
+# [               65000] PE solicita -> type=1 addr=5 data=12345678
+# [              125000] PE solicita -> type=0 addr=3 data=abcdef01
+# [              185000] PE solicita -> type=1 addr=1 data=cafebabe
+# [              235000] PE terminó ejecución (FIN detectado)
+# ** Note: $finish    : C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv(81)
+#    Time: 255 ns  Iteration: 0  Instance: /tb_pe
+# End time: 20:39:48 on Apr 20,2026, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 18

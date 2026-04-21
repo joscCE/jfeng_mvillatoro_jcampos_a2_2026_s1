@@ -1,6 +1,6 @@
 Fitter report for proyecto2
-Mon Apr 20 19:31:37 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Mon Apr 20 20:38:46 2026
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -44,47 +44,47 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Fitter Summary                                                                    ;
-+---------------------------------+-------------------------------------------------+
-; Fitter Status                   ; Successful - Mon Apr 20 19:31:37 2026           ;
-; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                   ; proyecto2                                       ;
-; Top-level Entity Name           ; PE                                              ;
-; Family                          ; Cyclone V                                       ;
-; Device                          ; 5CGXFC7C7F23C8                                  ;
-; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 53 / 56,480 ( < 1 % )                           ;
-; Total registers                 ; 92                                              ;
-; Total pins                      ; 43 / 268 ( 16 % )                               ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 9,728 / 7,024,640 ( < 1 % )                     ;
-; Total RAM Blocks                ; 1 / 686 ( < 1 % )                               ;
-; Total DSP Blocks                ; 0 / 156 ( 0 % )                                 ;
-; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                                   ;
-; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                                   ;
-; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                                   ;
-; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                                   ;
-; Total PLLs                      ; 0 / 13 ( 0 % )                                  ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Fitter Summary                                                                ;
++---------------------------------+---------------------------------------------+
+; Fitter Status                   ; Successful - Mon Apr 20 20:38:46 2026       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; proyecto2                                   ;
+; Top-level Entity Name           ; PE                                          ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CGXFC7C7F23C8                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 53 / 56,480 ( < 1 % )                       ;
+; Total registers                 ; 93                                          ;
+; Total pins                      ; 43 / 268 ( 16 % )                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 9,728 / 7,024,640 ( < 1 % )                 ;
+; Total RAM Blocks                ; 1 / 686 ( < 1 % )                           ;
+; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
+; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 13 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,13 +170,14 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                   ;
-+------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
-; Node             ; Action  ; Operation ; Reason                     ; Node Port ; Node Port Name ; Destination Node ; Destination Port ; Destination Port Name ;
-+------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
-; clk~inputCLKENA0 ; Created ; Placement ; Fitter Periphery Placement ;           ;                ;                  ;                  ;                       ;
-+------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                   ;
++------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------+------------------+-----------------------+
+; Node             ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node      ; Destination Port ; Destination Port Name ;
++------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------+------------------+-----------------------+
+; clk~inputCLKENA0 ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                       ;                  ;                       ;
+; state.START      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; state.START~DUPLICATE ;                  ;                       ;
++------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------+------------------+-----------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -227,12 +228,12 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 53 / 56,480        ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 53                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 56 / 56,480        ; < 1 % ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 54 / 56,480        ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 46                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 10                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 8                  ;       ;
 ;         [c] ALMs used for registers                         ; 0                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 56,480         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 1 / 56,480         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 56,480         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -253,13 +254,13 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ;     -- <=3 input functions                                  ; 57                 ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 92                 ;       ;
+; Dedicated logic registers                                   ; 93                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
 ;         -- Primary logic registers                          ; 92 / 112,960       ; < 1 % ;
-;         -- Secondary logic registers                        ; 0 / 112,960        ; 0 %   ;
+;         -- Secondary logic registers                        ; 1 / 112,960        ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 92                 ;       ;
-;         -- Routing optimization registers                   ; 0                  ;       ;
+;         -- Routing optimization registers                   ; 1                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 43 / 268           ; 16 %  ;
@@ -294,10 +295,10 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 1.8% / 1.8% / 1.7% ;       ;
-; Maximum fan-out                                             ; 93                 ;       ;
-; Highest non-global fan-out                                  ; 92                 ;       ;
-; Total fan-out                                               ; 776                ;       ;
+; Peak interconnect usage (total/H/V)                         ; 1.1% / 1.2% / 0.6% ;       ;
+; Maximum fan-out                                             ; 94                 ;       ;
+; Highest non-global fan-out                                  ; 93                 ;       ;
+; Total fan-out                                               ; 779                ;       ;
 ; Average fan-out                                             ; 2.76               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
@@ -309,12 +310,12 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 53 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 53                    ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 56 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 54 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
 ;         [a] ALMs used for LUT logic and registers           ; 46                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 10                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 8                     ; 0                              ;
 ;         [c] ALMs used for registers                         ; 0                     ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 56480 ( < 1 % )   ; 0 / 56480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 1 / 56480 ( < 1 % )   ; 0 / 56480 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 56480 ( 0 % )     ; 0 / 56480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
@@ -341,10 +342,10 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
 ;         -- Primary logic registers                          ; 92 / 112960 ( < 1 % ) ; 0 / 112960 ( 0 % )             ;
-;         -- Secondary logic registers                        ; 0 / 112960 ( 0 % )    ; 0 / 112960 ( 0 % )             ;
+;         -- Secondary logic registers                        ; 1 / 112960 ( < 1 % )  ; 0 / 112960 ( 0 % )             ;
 ;     -- By function:                                         ;                       ;                                ;
 ;         -- Design implementation registers                  ; 92                    ; 0                              ;
-;         -- Routing optimization registers                   ; 0                     ; 0                              ;
+;         -- Routing optimization registers                   ; 1                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -362,8 +363,8 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 802                   ; 0                              ;
-;     -- Registered Connections                               ; 418                   ; 0                              ;
+;     -- Total Connections                                    ; 805                   ; 0                              ;
+;     -- Registered Connections                               ; 348                   ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -395,9 +396,9 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; clk  ; M16   ; 5B       ; 89           ; 35           ; 60           ; 93                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; done ; U15   ; 4A       ; 60           ; 0            ; 0            ; 3                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; rst  ; R14   ; 4A       ; 68           ; 0            ; 0            ; 92                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; clk  ; M16   ; 5B       ; 89           ; 35           ; 60           ; 94                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; done ; AB20  ; 4A       ; 58           ; 0            ; 91           ; 3                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; rst  ; AA22  ; 4A       ; 64           ; 0            ; 34           ; 93                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -406,46 +407,46 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 +-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; addr[0]   ; U17   ; 4A       ; 72           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; addr[1]   ; AB17  ; 4A       ; 56           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; addr[2]   ; W21   ; 4A       ; 68           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; addr[3]   ; AA19  ; 4A       ; 62           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; addr[4]   ; AA18  ; 4A       ; 60           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[0]   ; U16   ; 4A       ; 72           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[10]  ; V18   ; 4A       ; 70           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[11]  ; AA20  ; 4A       ; 62           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[12]  ; T18   ; 5A       ; 89           ; 4            ; 43           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[13]  ; AA15  ; 4A       ; 54           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[14]  ; T14   ; 4A       ; 60           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[15]  ; T19   ; 5A       ; 89           ; 4            ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[16]  ; Y16   ; 4A       ; 58           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[17]  ; W19   ; 4A       ; 62           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[18]  ; AA22  ; 4A       ; 64           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[19]  ; T13   ; 4A       ; 52           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[1]   ; Y22   ; 4A       ; 66           ; 0            ; 91           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[20]  ; Y14   ; 4A       ; 54           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[21]  ; AB18  ; 4A       ; 56           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[22]  ; AB20  ; 4A       ; 58           ; 0            ; 91           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[23]  ; Y21   ; 4A       ; 68           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[24]  ; V16   ; 4A       ; 64           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[25]  ; AA17  ; 4A       ; 60           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[26]  ; Y20   ; 4A       ; 66           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[27]  ; Y17   ; 4A       ; 58           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[28]  ; V14   ; 4A       ; 56           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; addr[0]   ; T20   ; 5A       ; 89           ; 4            ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; addr[1]   ; T19   ; 5A       ; 89           ; 4            ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; addr[2]   ; R14   ; 4A       ; 68           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; addr[3]   ; T18   ; 5A       ; 89           ; 4            ; 43           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; addr[4]   ; P14   ; 4A       ; 68           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[0]   ; V20   ; 4A       ; 62           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[10]  ; W19   ; 4A       ; 62           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[11]  ; V18   ; 4A       ; 70           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[12]  ; V21   ; 4A       ; 70           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[13]  ; U22   ; 4A       ; 70           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[14]  ; U17   ; 4A       ; 72           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[15]  ; Y19   ; 4A       ; 66           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[16]  ; AA20  ; 4A       ; 62           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[17]  ; AA17  ; 4A       ; 60           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[18]  ; AB22  ; 4A       ; 64           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[19]  ; AA15  ; 4A       ; 54           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[1]   ; Y14   ; 4A       ; 54           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[20]  ; U20   ; 4A       ; 72           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[21]  ; AB17  ; 4A       ; 56           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[22]  ; Y20   ; 4A       ; 66           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[23]  ; W16   ; 4A       ; 64           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[24]  ; W22   ; 4A       ; 66           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[25]  ; AA18  ; 4A       ; 60           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[26]  ; Y22   ; 4A       ; 66           ; 0            ; 91           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[27]  ; T14   ; 4A       ; 60           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[28]  ; U15   ; 4A       ; 60           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 ; data[29]  ; U21   ; 4A       ; 72           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[2]   ; V19   ; 4A       ; 70           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[2]   ; Y21   ; 4A       ; 68           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 ; data[30]  ; V15   ; 4A       ; 56           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[31]  ; AB21  ; 4A       ; 58           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[3]   ; V21   ; 4A       ; 70           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[4]   ; U22   ; 4A       ; 70           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[5]   ; V20   ; 4A       ; 62           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[6]   ; Y19   ; 4A       ; 66           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[7]   ; P14   ; 4A       ; 68           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[8]   ; W16   ; 4A       ; 64           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; data[9]   ; AB22  ; 4A       ; 64           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; finished  ; U20   ; 4A       ; 72           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; req_type  ; Y15   ; 4A       ; 54           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; req_valid ; W22   ; 4A       ; 66           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[31]  ; Y17   ; 4A       ; 58           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[3]   ; AB21  ; 4A       ; 58           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[4]   ; Y16   ; 4A       ; 58           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[5]   ; T17   ; 5A       ; 89           ; 4            ; 60           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[6]   ; W21   ; 4A       ; 68           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[7]   ; U16   ; 4A       ; 72           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[8]   ; AA19  ; 4A       ; 62           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; data[9]   ; V19   ; 4A       ; 70           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; finished  ; V14   ; 4A       ; 56           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; req_type  ; V16   ; 4A       ; 64           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; req_valid ; AB18  ; 4A       ; 56           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -459,8 +460,8 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; B0L      ; 0 / 14 ( 0 % )   ; --            ; --           ; --            ;
 ; 3A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 3B       ; 0 / 32 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
-; 4A       ; 40 / 48 ( 83 % ) ; 2.5V          ; --           ; 2.5V          ;
-; 5A       ; 2 / 16 ( 13 % )  ; 2.5V          ; --           ; 2.5V          ;
+; 4A       ; 38 / 48 ( 79 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 5A       ; 4 / 16 ( 25 % )  ; 2.5V          ; --           ; 2.5V          ;
 ; 5B       ; 1 / 16 ( 6 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 7A       ; 0 / 80 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 8A       ; 0 / 32 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
@@ -508,14 +509,14 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; AA12     ; 131        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA13     ; 139        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA14     ; 137        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; AA15     ; 142        ; 4A       ; data[13]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA15     ; 142        ; 4A       ; data[19]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AA16     ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AA17     ; 153        ; 4A       ; data[25]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA18     ; 155        ; 4A       ; addr[4]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA19     ; 156        ; 4A       ; addr[3]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA20     ; 158        ; 4A       ; data[11]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA17     ; 153        ; 4A       ; data[17]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA18     ; 155        ; 4A       ; data[25]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA19     ; 156        ; 4A       ; data[8]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA20     ; 158        ; 4A       ; data[16]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AA21     ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; AA22     ; 163        ; 4A       ; data[18]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA22     ; 163        ; 4A       ; rst                             ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AB1      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AB2      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AB3      ; 49         ; 3A       ; ^AS_DATA1, DATA1                ;        ;              ;                     ; Weak Pull Up ;                 ; --       ; On           ;
@@ -532,12 +533,12 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; AB14     ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AB15     ; 140        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AB16     ;            ; 4A       ; VREFB4AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; AB17     ; 145        ; 4A       ; addr[1]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AB18     ; 147        ; 4A       ; data[21]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB17     ; 145        ; 4A       ; data[21]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB18     ; 147        ; 4A       ; req_valid                       ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AB19     ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AB20     ; 148        ; 4A       ; data[22]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AB21     ; 150        ; 4A       ; data[31]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AB22     ; 161        ; 4A       ; data[9]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB20     ; 148        ; 4A       ; done                            ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB21     ; 150        ; 4A       ; data[3]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB22     ; 161        ; 4A       ; data[18]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; B1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B3       ;            ;          ; DNU                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -815,7 +816,7 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; P11      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; P12      ; 123        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; P13      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
-; P14      ; 168        ; 4A       ; data[7]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; P14      ; 168        ; 4A       ; addr[4]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; P15      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; P16      ; 225        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; P17      ; 227        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
@@ -837,7 +838,7 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; R11      ; 127        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R12      ; 121        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R13      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; R14      ; 170        ; 4A       ; rst                             ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; R14      ; 170        ; 4A       ; addr[2]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; R15      ; 219        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; R16      ; 221        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; R17      ; 223        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
@@ -858,14 +859,14 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; T10      ; 117        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; T11      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; T12      ; 136        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; T13      ; 138        ; 4A       ; data[19]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; T14      ; 152        ; 4A       ; data[14]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; T13      ; 138        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; T14      ; 152        ; 4A       ; data[27]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; T15      ; 217        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; T16      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; T17      ; 215        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; T18      ; 213        ; 5A       ; data[12]                        ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; T19      ; 212        ; 5A       ; data[15]                        ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; T20      ; 214        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; T17      ; 215        ; 5A       ; data[5]                         ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; T18      ; 213        ; 5A       ; addr[3]                         ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; T19      ; 212        ; 5A       ; addr[1]                         ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; T20      ; 214        ; 5A       ; addr[0]                         ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; T21      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; T22      ; 216        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; U1       ; 32         ; B0L      ; GXB_NC                          ;        ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -882,14 +883,14 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; U12      ; 122        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U13      ; 135        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U14      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; U15      ; 154        ; 4A       ; done                            ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; U16      ; 176        ; 4A       ; data[0]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; U17      ; 178        ; 4A       ; addr[0]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U15      ; 154        ; 4A       ; data[28]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U16      ; 176        ; 4A       ; data[7]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U17      ; 178        ; 4A       ; data[14]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; U18      ;            ; --       ; VCCA_FPLL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; U19      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; U20      ; 179        ; 4A       ; finished                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U20      ; 179        ; 4A       ; data[20]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; U21      ; 177        ; 4A       ; data[29]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; U22      ; 172        ; 4A       ; data[4]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U22      ; 172        ; 4A       ; data[13]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; V1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V3       ; 50         ; 3A       ; ^DCLK                           ;        ;              ;                     ; Weak Pull Up ;                 ; --       ; On           ;
@@ -903,14 +904,14 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; V11      ;            ;          ; DNU                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V12      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V13      ; 133        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; V14      ; 144        ; 4A       ; data[28]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V14      ; 144        ; 4A       ; finished                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; V15      ; 146        ; 4A       ; data[30]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; V16      ; 160        ; 4A       ; data[24]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V16      ; 160        ; 4A       ; req_type                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; V17      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; V18      ; 175        ; 4A       ; data[10]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; V19      ; 173        ; 4A       ; data[2]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; V20      ; 157        ; 4A       ; data[5]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; V21      ; 174        ; 4A       ; data[3]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V18      ; 175        ; 4A       ; data[11]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V19      ; 173        ; 4A       ; data[9]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V20      ; 157        ; 4A       ; data[0]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V21      ; 174        ; 4A       ; data[12]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; V22      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; W1       ; 35         ; B0L      ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; W2       ; 34         ; B0L      ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -927,13 +928,13 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; W13      ;            ; --       ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W14      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W15      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; W16      ; 162        ; 4A       ; data[8]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; W16      ; 162        ; 4A       ; data[23]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; W17      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W18      ;            ; --       ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; W19      ; 159        ; 4A       ; data[17]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; W19      ; 159        ; 4A       ; data[10]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; W20      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; W21      ; 171        ; 4A       ; addr[2]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; W22      ; 166        ; 4A       ; req_valid                       ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; W21      ; 171        ; 4A       ; data[6]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; W22      ; 166        ; 4A       ; data[24]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; Y1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y3       ; 36         ; B0L      ; GXB_NC                          ;        ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -947,15 +948,15 @@ The pin-out file can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_
 ; Y11      ; 129        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y12      ;            ; 3B       ; VREFB3BN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y13      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; Y14      ; 141        ; 4A       ; data[20]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; Y15      ; 143        ; 4A       ; req_type                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; Y16      ; 149        ; 4A       ; data[16]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; Y17      ; 151        ; 4A       ; data[27]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y14      ; 141        ; 4A       ; data[1]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y15      ; 143        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; Y16      ; 149        ; 4A       ; data[4]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y17      ; 151        ; 4A       ; data[31]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; Y18      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; Y19      ; 167        ; 4A       ; data[6]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; Y20      ; 165        ; 4A       ; data[26]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; Y21      ; 169        ; 4A       ; data[23]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; Y22      ; 164        ; 4A       ; data[1]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y19      ; 167        ; 4A       ; data[15]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y20      ; 165        ; 4A       ; data[22]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y21      ; 169        ; 4A       ; data[2]                         ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y22      ; 164        ; 4A       ; data[26]                        ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 +----------+------------+----------+---------------------------------+--------+--------------+---------------------+--------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
@@ -1059,9 +1060,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node             ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name     ; Library Name ;
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
-; |PE                                    ; 53.0 (53.0)          ; 55.5 (55.5)                      ; 2.5 (2.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 101 (101)           ; 92 (92)                   ; 0 (0)         ; 9728              ; 1     ; 0          ; 43   ; 0            ; |PE                                                     ; PE              ; work         ;
+; |PE                                    ; 53.0 (53.0)          ; 53.5 (53.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 101 (101)           ; 93 (93)                   ; 0 (0)         ; 9728              ; 1     ; 0          ; 43   ; 0            ; |PE                                                     ; PE              ; work         ;
 ;    |altsyncram:trace_rom|              ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 9728              ; 1     ; 0          ; 0    ; 0            ; |PE|altsyncram:trace_rom                                ; altsyncram      ; work         ;
-;       |altsyncram_hm11:auto_generated| ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 9728              ; 1     ; 0          ; 0    ; 0            ; |PE|altsyncram:trace_rom|altsyncram_hm11:auto_generated ; altsyncram_hm11 ; work         ;
+;       |altsyncram_6d21:auto_generated| ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 9728              ; 1     ; 0          ; 0    ; 0            ; |PE|altsyncram:trace_rom|altsyncram_6d21:auto_generated ; altsyncram_6d21 ; work         ;
 +----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1113,127 +1114,128 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; finished  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; clk       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; rst       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; done      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; done      ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +-----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
-+--------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                         ;
-+--------------------------+-------------------+---------+
-; Source Pin / Fanout      ; Pad To Core Index ; Setting ;
-+--------------------------+-------------------+---------+
-; clk                      ;                   ;         ;
-; rst                      ;                   ;         ;
-;      - finished~reg0     ; 1                 ; 0       ;
-;      - data[0]~reg0      ; 1                 ; 0       ;
-;      - data[1]~reg0      ; 1                 ; 0       ;
-;      - data[2]~reg0      ; 1                 ; 0       ;
-;      - data[3]~reg0      ; 1                 ; 0       ;
-;      - data[4]~reg0      ; 1                 ; 0       ;
-;      - data[5]~reg0      ; 1                 ; 0       ;
-;      - data[6]~reg0      ; 1                 ; 0       ;
-;      - data[7]~reg0      ; 1                 ; 0       ;
-;      - data[8]~reg0      ; 1                 ; 0       ;
-;      - data[9]~reg0      ; 1                 ; 0       ;
-;      - data[10]~reg0     ; 1                 ; 0       ;
-;      - data[11]~reg0     ; 1                 ; 0       ;
-;      - data[12]~reg0     ; 1                 ; 0       ;
-;      - data[13]~reg0     ; 1                 ; 0       ;
-;      - data[14]~reg0     ; 1                 ; 0       ;
-;      - data[15]~reg0     ; 1                 ; 0       ;
-;      - data[16]~reg0     ; 1                 ; 0       ;
-;      - data[17]~reg0     ; 1                 ; 0       ;
-;      - data[18]~reg0     ; 1                 ; 0       ;
-;      - data[19]~reg0     ; 1                 ; 0       ;
-;      - data[20]~reg0     ; 1                 ; 0       ;
-;      - data[21]~reg0     ; 1                 ; 0       ;
-;      - data[22]~reg0     ; 1                 ; 0       ;
-;      - data[23]~reg0     ; 1                 ; 0       ;
-;      - data[24]~reg0     ; 1                 ; 0       ;
-;      - data[25]~reg0     ; 1                 ; 0       ;
-;      - data[26]~reg0     ; 1                 ; 0       ;
-;      - data[27]~reg0     ; 1                 ; 0       ;
-;      - data[28]~reg0     ; 1                 ; 0       ;
-;      - data[29]~reg0     ; 1                 ; 0       ;
-;      - data[30]~reg0     ; 1                 ; 0       ;
-;      - data[31]~reg0     ; 1                 ; 0       ;
-;      - addr[0]~reg0      ; 1                 ; 0       ;
-;      - addr[1]~reg0      ; 1                 ; 0       ;
-;      - addr[2]~reg0      ; 1                 ; 0       ;
-;      - addr[3]~reg0      ; 1                 ; 0       ;
-;      - addr[4]~reg0      ; 1                 ; 0       ;
-;      - req_type~reg0     ; 1                 ; 0       ;
-;      - req_valid~reg0    ; 1                 ; 0       ;
-;      - state.FETCH_WAIT  ; 1                 ; 0       ;
-;      - state.SEND_REQ    ; 1                 ; 0       ;
-;      - pc[0]             ; 1                 ; 0       ;
-;      - pc[1]             ; 1                 ; 0       ;
-;      - pc[2]             ; 1                 ; 0       ;
-;      - pc[3]             ; 1                 ; 0       ;
-;      - pc[4]             ; 1                 ; 0       ;
-;      - pc[5]             ; 1                 ; 0       ;
-;      - pc[6]             ; 1                 ; 0       ;
-;      - pc[7]             ; 1                 ; 0       ;
-;      - instr[37]         ; 1                 ; 0       ;
-;      - state.FETCH_INSTR ; 1                 ; 0       ;
-;      - state.WAIT_DONE   ; 1                 ; 0       ;
-;      - instr[32]         ; 1                 ; 0       ;
-;      - instr[33]         ; 1                 ; 0       ;
-;      - instr[34]         ; 1                 ; 0       ;
-;      - instr[35]         ; 1                 ; 0       ;
-;      - instr[36]         ; 1                 ; 0       ;
-;      - instr[0]          ; 1                 ; 0       ;
-;      - instr[1]          ; 1                 ; 0       ;
-;      - instr[2]          ; 1                 ; 0       ;
-;      - instr[3]          ; 1                 ; 0       ;
-;      - instr[4]          ; 1                 ; 0       ;
-;      - instr[5]          ; 1                 ; 0       ;
-;      - instr[6]          ; 1                 ; 0       ;
-;      - instr[7]          ; 1                 ; 0       ;
-;      - instr[8]          ; 1                 ; 0       ;
-;      - instr[9]          ; 1                 ; 0       ;
-;      - instr[10]         ; 1                 ; 0       ;
-;      - instr[11]         ; 1                 ; 0       ;
-;      - instr[12]         ; 1                 ; 0       ;
-;      - instr[13]         ; 1                 ; 0       ;
-;      - instr[14]         ; 1                 ; 0       ;
-;      - instr[15]         ; 1                 ; 0       ;
-;      - instr[16]         ; 1                 ; 0       ;
-;      - instr[17]         ; 1                 ; 0       ;
-;      - instr[18]         ; 1                 ; 0       ;
-;      - instr[19]         ; 1                 ; 0       ;
-;      - instr[20]         ; 1                 ; 0       ;
-;      - instr[21]         ; 1                 ; 0       ;
-;      - instr[22]         ; 1                 ; 0       ;
-;      - instr[23]         ; 1                 ; 0       ;
-;      - instr[24]         ; 1                 ; 0       ;
-;      - instr[25]         ; 1                 ; 0       ;
-;      - instr[26]         ; 1                 ; 0       ;
-;      - instr[27]         ; 1                 ; 0       ;
-;      - instr[28]         ; 1                 ; 0       ;
-;      - instr[29]         ; 1                 ; 0       ;
-;      - instr[30]         ; 1                 ; 0       ;
-;      - instr[31]         ; 1                 ; 0       ;
-;      - state.START       ; 1                 ; 0       ;
-;      - state.END_STATE   ; 1                 ; 0       ;
-; done                     ;                   ;         ;
-;      - Selector86~0      ; 0                 ; 0       ;
-;      - Selector89~0      ; 0                 ; 0       ;
-;      - Selector0~0       ; 0                 ; 0       ;
-+--------------------------+-------------------+---------+
++------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                             ;
++------------------------------+-------------------+---------+
+; Source Pin / Fanout          ; Pad To Core Index ; Setting ;
++------------------------------+-------------------+---------+
+; clk                          ;                   ;         ;
+; rst                          ;                   ;         ;
+;      - finished~reg0         ; 1                 ; 0       ;
+;      - data[0]~reg0          ; 1                 ; 0       ;
+;      - data[1]~reg0          ; 1                 ; 0       ;
+;      - data[2]~reg0          ; 1                 ; 0       ;
+;      - data[3]~reg0          ; 1                 ; 0       ;
+;      - data[4]~reg0          ; 1                 ; 0       ;
+;      - data[5]~reg0          ; 1                 ; 0       ;
+;      - data[6]~reg0          ; 1                 ; 0       ;
+;      - data[7]~reg0          ; 1                 ; 0       ;
+;      - data[8]~reg0          ; 1                 ; 0       ;
+;      - data[9]~reg0          ; 1                 ; 0       ;
+;      - data[10]~reg0         ; 1                 ; 0       ;
+;      - data[11]~reg0         ; 1                 ; 0       ;
+;      - data[12]~reg0         ; 1                 ; 0       ;
+;      - data[13]~reg0         ; 1                 ; 0       ;
+;      - data[14]~reg0         ; 1                 ; 0       ;
+;      - data[15]~reg0         ; 1                 ; 0       ;
+;      - data[16]~reg0         ; 1                 ; 0       ;
+;      - data[17]~reg0         ; 1                 ; 0       ;
+;      - data[18]~reg0         ; 1                 ; 0       ;
+;      - data[19]~reg0         ; 1                 ; 0       ;
+;      - data[20]~reg0         ; 1                 ; 0       ;
+;      - data[21]~reg0         ; 1                 ; 0       ;
+;      - data[22]~reg0         ; 1                 ; 0       ;
+;      - data[23]~reg0         ; 1                 ; 0       ;
+;      - data[24]~reg0         ; 1                 ; 0       ;
+;      - data[25]~reg0         ; 1                 ; 0       ;
+;      - data[26]~reg0         ; 1                 ; 0       ;
+;      - data[27]~reg0         ; 1                 ; 0       ;
+;      - data[28]~reg0         ; 1                 ; 0       ;
+;      - data[29]~reg0         ; 1                 ; 0       ;
+;      - data[30]~reg0         ; 1                 ; 0       ;
+;      - data[31]~reg0         ; 1                 ; 0       ;
+;      - addr[0]~reg0          ; 1                 ; 0       ;
+;      - addr[1]~reg0          ; 1                 ; 0       ;
+;      - addr[2]~reg0          ; 1                 ; 0       ;
+;      - addr[3]~reg0          ; 1                 ; 0       ;
+;      - addr[4]~reg0          ; 1                 ; 0       ;
+;      - req_type~reg0         ; 1                 ; 0       ;
+;      - req_valid~reg0        ; 1                 ; 0       ;
+;      - state.FETCH_WAIT      ; 1                 ; 0       ;
+;      - state.SEND_REQ        ; 1                 ; 0       ;
+;      - pc[0]                 ; 1                 ; 0       ;
+;      - pc[1]                 ; 1                 ; 0       ;
+;      - pc[2]                 ; 1                 ; 0       ;
+;      - pc[3]                 ; 1                 ; 0       ;
+;      - pc[4]                 ; 1                 ; 0       ;
+;      - pc[5]                 ; 1                 ; 0       ;
+;      - pc[6]                 ; 1                 ; 0       ;
+;      - pc[7]                 ; 1                 ; 0       ;
+;      - instr[37]             ; 1                 ; 0       ;
+;      - state.FETCH_INSTR     ; 1                 ; 0       ;
+;      - state.WAIT_DONE       ; 1                 ; 0       ;
+;      - instr[32]             ; 1                 ; 0       ;
+;      - instr[33]             ; 1                 ; 0       ;
+;      - instr[34]             ; 1                 ; 0       ;
+;      - instr[35]             ; 1                 ; 0       ;
+;      - instr[36]             ; 1                 ; 0       ;
+;      - instr[0]              ; 1                 ; 0       ;
+;      - instr[1]              ; 1                 ; 0       ;
+;      - instr[2]              ; 1                 ; 0       ;
+;      - instr[3]              ; 1                 ; 0       ;
+;      - instr[4]              ; 1                 ; 0       ;
+;      - instr[5]              ; 1                 ; 0       ;
+;      - instr[6]              ; 1                 ; 0       ;
+;      - instr[7]              ; 1                 ; 0       ;
+;      - instr[8]              ; 1                 ; 0       ;
+;      - instr[9]              ; 1                 ; 0       ;
+;      - instr[10]             ; 1                 ; 0       ;
+;      - instr[11]             ; 1                 ; 0       ;
+;      - instr[12]             ; 1                 ; 0       ;
+;      - instr[13]             ; 1                 ; 0       ;
+;      - instr[14]             ; 1                 ; 0       ;
+;      - instr[15]             ; 1                 ; 0       ;
+;      - instr[16]             ; 1                 ; 0       ;
+;      - instr[17]             ; 1                 ; 0       ;
+;      - instr[18]             ; 1                 ; 0       ;
+;      - instr[19]             ; 1                 ; 0       ;
+;      - instr[20]             ; 1                 ; 0       ;
+;      - instr[21]             ; 1                 ; 0       ;
+;      - instr[22]             ; 1                 ; 0       ;
+;      - instr[23]             ; 1                 ; 0       ;
+;      - instr[24]             ; 1                 ; 0       ;
+;      - instr[25]             ; 1                 ; 0       ;
+;      - instr[26]             ; 1                 ; 0       ;
+;      - instr[27]             ; 1                 ; 0       ;
+;      - instr[28]             ; 1                 ; 0       ;
+;      - instr[29]             ; 1                 ; 0       ;
+;      - instr[30]             ; 1                 ; 0       ;
+;      - instr[31]             ; 1                 ; 0       ;
+;      - state.START           ; 1                 ; 0       ;
+;      - state.END_STATE       ; 1                 ; 0       ;
+;      - state.START~DUPLICATE ; 1                 ; 0       ;
+; done                         ;                   ;         ;
+;      - Selector86~0          ; 1                 ; 0       ;
+;      - Selector89~0          ; 1                 ; 0       ;
+;      - Selector0~0           ; 1                 ; 0       ;
++------------------------------+-------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                              ;
-+-----------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name            ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Selector0~0     ; LABCELL_X70_Y2_N54 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Selector8~1     ; LABCELL_X70_Y3_N9  ; 38      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; clk             ; PIN_M16            ; 93      ; Clock        ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; rst             ; PIN_R14            ; 92      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; state.WAIT_DONE ; FF_X70_Y2_N47      ; 49      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-+-----------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                               ;
++-----------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name            ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Selector0~0     ; MLABCELL_X65_Y3_N42 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Selector8~1     ; MLABCELL_X65_Y3_N0  ; 38      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; clk             ; PIN_M16             ; 94      ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; rst             ; PIN_AA22            ; 93      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; state.WAIT_DONE ; FF_X65_Y3_N14       ; 49      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
++-----------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -1241,7 +1243,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_M16  ; 93      ; Global Clock         ; GCLK9            ; --                        ;
+; clk  ; PIN_M16  ; 94      ; Global Clock         ; GCLK10           ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1250,7 +1252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+-------+-----------+----------------+----------------------+-----------------+-----------------+----------+------------------------+------------------------+
 ; Name                                                           ; Type ; Mode ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M10K blocks ; MLABs ; MIF       ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs          ;
 +----------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+-------+-----------+----------------+----------------------+-----------------+-----------------+----------+------------------------+------------------------+
-; altsyncram:trace_rom|altsyncram_hm11:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; Single Clock ; 256          ; 38           ; --           ; --           ; yes                    ; yes                     ; --                     ; --                      ; 9728 ; 256                         ; 38                          ; --                          ; --                          ; 9728                ; 1           ; 0     ; trace.mif ; M10K_X69_Y4_N0 ; Don't care           ; New data        ; New data        ; Off      ; No                     ; No - Unsupported Depth ;
+; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; Single Clock ; 256          ; 38           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 9728 ; 256                         ; 38                          ; --                          ; --                          ; 9728                ; 1           ; 0     ; trace.mif ; M10K_X69_Y3_N0 ; Don't care           ; New data        ; New data        ; Off      ; No                     ; No - Unsupported Depth ;
 +----------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+-------------+-------+-----------+----------------+----------------------+-----------------+-----------------+----------+------------------------+------------------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -1260,23 +1262,23 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +------------------------------+-------------------------+
 ; Routing Resource Type        ; Usage                   ;
 +------------------------------+-------------------------+
-; Block interconnects          ; 184 / 374,484 ( < 1 % ) ;
+; Block interconnects          ; 183 / 374,484 ( < 1 % ) ;
 ; C12 interconnects            ; 0 / 16,664 ( 0 % )      ;
-; C2 interconnects             ; 85 / 155,012 ( < 1 % )  ;
-; C4 interconnects             ; 40 / 72,600 ( < 1 % )   ;
+; C2 interconnects             ; 36 / 155,012 ( < 1 % )  ;
+; C4 interconnects             ; 27 / 72,600 ( < 1 % )   ;
 ; DQS bus muxes                ; 0 / 30 ( 0 % )          ;
 ; DQS-18 I/O buses             ; 0 / 30 ( 0 % )          ;
 ; DQS-9 I/O buses              ; 0 / 30 ( 0 % )          ;
-; Direct links                 ; 12 / 374,484 ( < 1 % )  ;
+; Direct links                 ; 14 / 374,484 ( < 1 % )  ;
 ; Global clocks                ; 1 / 16 ( 6 % )          ;
 ; Horizontal periphery clocks  ; 0 / 72 ( 0 % )          ;
-; Local interconnects          ; 21 / 112,960 ( < 1 % )  ;
+; Local interconnects          ; 13 / 112,960 ( < 1 % )  ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )          ;
-; R14 interconnects            ; 15 / 15,868 ( < 1 % )   ;
-; R14/C12 interconnect drivers ; 15 / 27,256 ( < 1 % )   ;
-; R3 interconnects             ; 120 / 169,296 ( < 1 % ) ;
+; R14 interconnects            ; 13 / 15,868 ( < 1 % )   ;
+; R14/C12 interconnect drivers ; 13 / 27,256 ( < 1 % )   ;
+; R3 interconnects             ; 99 / 169,296 ( < 1 % )  ;
 ; R6 interconnects             ; 84 / 330,800 ( < 1 % )  ;
-; Spine clocks                 ; 1 / 480 ( < 1 % )       ;
+; Spine clocks                 ; 2 / 480 ( < 1 % )       ;
 ; Wire stub REs                ; 0 / 20,834 ( 0 % )      ;
 +------------------------------+-------------------------+
 
@@ -1434,50 +1436,59 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clk             ; clk                  ; 8.8               ;
+; clk             ; clk                  ; 9.4               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                ;
-+-------------------+--------------------------------------------------------------------------------------+-------------------+
-; Source Register   ; Destination Register                                                                 ; Delay Added in ns ;
-+-------------------+--------------------------------------------------------------------------------------+-------------------+
-; instr[37]         ; req_type~reg0                                                                        ; 0.388             ;
-; state.FETCH_WAIT  ; instr[31]                                                                            ; 0.374             ;
-; state.WAIT_DONE   ; state.FETCH_INSTR                                                                    ; 0.365             ;
-; instr[29]         ; data[29]~reg0                                                                        ; 0.099             ;
-; instr[10]         ; data[10]~reg0                                                                        ; 0.099             ;
-; instr[36]         ; addr[4]~reg0                                                                         ; 0.099             ;
-; instr[35]         ; addr[3]~reg0                                                                         ; 0.099             ;
-; instr[22]         ; data[22]~reg0                                                                        ; 0.097             ;
-; instr[15]         ; data[15]~reg0                                                                        ; 0.097             ;
-; instr[13]         ; data[13]~reg0                                                                        ; 0.097             ;
-; instr[8]          ; data[8]~reg0                                                                         ; 0.097             ;
-; instr[7]          ; data[7]~reg0                                                                         ; 0.097             ;
-; instr[3]          ; data[3]~reg0                                                                         ; 0.097             ;
-; instr[34]         ; addr[2]~reg0                                                                         ; 0.097             ;
-; instr[32]         ; addr[0]~reg0                                                                         ; 0.097             ;
-; instr[17]         ; data[17]~reg0                                                                        ; 0.085             ;
-; instr[16]         ; data[16]~reg0                                                                        ; 0.085             ;
-; instr[4]          ; data[4]~reg0                                                                         ; 0.085             ;
-; instr[33]         ; addr[1]~reg0                                                                         ; 0.085             ;
-; instr[27]         ; data[27]~reg0                                                                        ; 0.082             ;
-; instr[24]         ; data[24]~reg0                                                                        ; 0.082             ;
-; instr[23]         ; data[23]~reg0                                                                        ; 0.082             ;
-; instr[20]         ; data[20]~reg0                                                                        ; 0.082             ;
-; instr[12]         ; data[12]~reg0                                                                        ; 0.082             ;
-; instr[2]          ; data[2]~reg0                                                                         ; 0.082             ;
-; pc[3]             ; altsyncram:trace_rom|altsyncram_hm11:auto_generated|ram_block1a11~porta_address_reg0 ; 0.052             ;
-; pc[2]             ; altsyncram:trace_rom|altsyncram_hm11:auto_generated|ram_block1a11~porta_address_reg0 ; 0.052             ;
-; state.FETCH_INSTR ; data[29]~reg0                                                                        ; 0.028             ;
-; pc[5]             ; altsyncram:trace_rom|altsyncram_hm11:auto_generated|ram_block1a11~porta_address_reg0 ; 0.026             ;
-; pc[6]             ; altsyncram:trace_rom|altsyncram_hm11:auto_generated|ram_block1a11~porta_address_reg0 ; 0.026             ;
-; pc[7]             ; altsyncram:trace_rom|altsyncram_hm11:auto_generated|ram_block1a30~porta_address_reg0 ; 0.021             ;
-+-------------------+--------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 31 path(s) that have the largest delay added for hold.
++-----------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                               ;
++------------------+--------------------------------------------------------------------------------------+-------------------+
+; Source Register  ; Destination Register                                                                 ; Delay Added in ns ;
++------------------+--------------------------------------------------------------------------------------+-------------------+
+; state.FETCH_WAIT ; instr[31]                                                                            ; 0.405             ;
+; state.WAIT_DONE  ; state.FETCH_INSTR                                                                    ; 0.388             ;
+; state.START      ; finished~reg0                                                                        ; 0.381             ;
+; pc[4]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a11~porta_address_reg0 ; 0.314             ;
+; pc[6]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a11~porta_address_reg0 ; 0.290             ;
+; pc[5]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a11~porta_address_reg0 ; 0.277             ;
+; instr[37]        ; req_type~reg0                                                                        ; 0.267             ;
+; pc[7]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a30~porta_address_reg0 ; 0.262             ;
+; pc[3]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a11~porta_address_reg0 ; 0.235             ;
+; pc[2]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a11~porta_address_reg0 ; 0.232             ;
+; pc[0]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a11~porta_address_reg0 ; 0.224             ;
+; pc[1]            ; altsyncram:trace_rom|altsyncram_6d21:auto_generated|ram_block1a11~porta_address_reg0 ; 0.217             ;
+; instr[23]        ; data[23]~reg0                                                                        ; 0.137             ;
+; instr[7]         ; data[7]~reg0                                                                         ; 0.137             ;
+; instr[5]         ; data[5]~reg0                                                                         ; 0.137             ;
+; instr[34]        ; addr[2]~reg0                                                                         ; 0.137             ;
+; instr[33]        ; addr[1]~reg0                                                                         ; 0.137             ;
+; instr[13]        ; data[13]~reg0                                                                        ; 0.135             ;
+; instr[36]        ; addr[4]~reg0                                                                         ; 0.135             ;
+; instr[24]        ; data[24]~reg0                                                                        ; 0.133             ;
+; instr[15]        ; data[15]~reg0                                                                        ; 0.133             ;
+; instr[31]        ; data[31]~reg0                                                                        ; 0.131             ;
+; instr[26]        ; data[26]~reg0                                                                        ; 0.131             ;
+; instr[25]        ; data[25]~reg0                                                                        ; 0.131             ;
+; instr[3]         ; data[3]~reg0                                                                         ; 0.131             ;
+; instr[0]         ; data[0]~reg0                                                                         ; 0.131             ;
+; instr[18]        ; data[18]~reg0                                                                        ; 0.123             ;
+; instr[12]        ; data[12]~reg0                                                                        ; 0.123             ;
+; instr[6]         ; data[6]~reg0                                                                         ; 0.123             ;
+; instr[2]         ; data[2]~reg0                                                                         ; 0.123             ;
+; instr[32]        ; addr[0]~reg0                                                                         ; 0.123             ;
+; instr[20]        ; data[20]~reg0                                                                        ; 0.120             ;
+; instr[14]        ; data[14]~reg0                                                                        ; 0.120             ;
+; instr[35]        ; addr[3]~reg0                                                                         ; 0.120             ;
+; instr[21]        ; data[21]~reg0                                                                        ; 0.119             ;
+; instr[19]        ; data[19]~reg0                                                                        ; 0.119             ;
+; instr[4]         ; data[4]~reg0                                                                         ; 0.119             ;
+; instr[1]         ; data[1]~reg0                                                                         ; 0.119             ;
+; instr[27]        ; data[27]~reg0                                                                        ; 0.116             ;
+; instr[16]        ; data[16]~reg0                                                                        ; 0.116             ;
++------------------+--------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 40 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1495,7 +1506,7 @@ Info (176045): Design uses memory blocks. Violating setup or hold times of memor
 Critical Warning (169085): No exact pin location assignment(s) for 43 pins of 43 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
-    Info (11162): clk~inputCLKENA0 with 130 fanout uses global clock CLKCTRL_G9
+    Info (11162): clk~inputCLKENA0 with 130 fanout uses global clock CLKCTRL_G10
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Info (176233): Starting register packing
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'proyecto2.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1505,31 +1516,31 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:07
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:06
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:17
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:09
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X67_Y0 to location X77_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X56_Y0 to location X66_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.58 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.44 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Info (144001): Generated suppressed messages file C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/proyecto2.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 7467 megabytes
-    Info: Processing ended: Mon Apr 20 19:31:37 2026
-    Info: Elapsed time: 00:00:50
-    Info: Total CPU time (on all processors): 00:03:15
+    Info: Peak virtual memory: 7334 megabytes
+    Info: Processing ended: Mon Apr 20 20:38:47 2026
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:02:25
 
 
 +----------------------------+

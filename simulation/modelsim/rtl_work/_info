@@ -1,0 +1,64 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim
+vPE
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1776739176
+!i10b 1
+!s100 NE13PlbHoNzgILFGM5D:R0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IiUY1Z];]H`l_]R3;[]P>J3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1776739082
+8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
+FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
+!i122 0
+L0 1 129
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1776739176.000000
+!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1
+Z8 tCvgOpt 0
+n@p@e
+vtb_pe
+R1
+!s110 1776739177
+!i10b 1
+!s100 ZEAg71k7`Q^iEZ[?iPF[J3
+R2
+I6>FEBoJc@G?En[fXbi^Kd3
+R3
+S1
+R0
+w1776738714
+8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv
+FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv
+!i122 1
+L0 3 82
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv|
+!i113 1
+R6
+R7
+R8

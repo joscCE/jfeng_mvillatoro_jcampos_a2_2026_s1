@@ -1,5 +1,5 @@
 module PE #(
-	parameter string TRACE_MIF = "trace.mif"
+	parameter TRACE_MIF = "trace.mif"
 )(
 	input logic clk, rst,
 	input logic done,
@@ -34,7 +34,7 @@ module PE #(
 		.width_a(38),
 		.widthad_a(8),
 		.numwords_a(256),
-		.outdata_reg_a("CLOCK0"),
+		.outdata_reg_a("UNREGISTERED"),
 		.init_file(TRACE_MIF),
 		.intended_device_family("Cyclone V")
 	) trace_rom (

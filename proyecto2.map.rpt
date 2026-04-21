@@ -1,77 +1,179 @@
-Analysis & Synthesis report for proyecto2
-Mon Apr 20 19:30:46 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Analysis & Elaboration report for proyecto2
+Mon Apr 20 20:39:25 2026
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. State Machine - |PE|state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Source assignments for altsyncram:trace_rom|altsyncram_hm11:auto_generated
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |PE
- 14. Parameter Settings for User Entity Instance: altsyncram:trace_rom
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Source assignments for altsyncram:trace_rom|altsyncram_6d21:auto_generated
+  5. Parameter Settings for User Entity Instance: Top-level Entity: |PE
+  6. Parameter Settings for User Entity Instance: altsyncram:trace_rom
+  7. altsyncram Parameter Settings by Entity Instance
+  8. Analysis & Elaboration Settings
+  9. Analysis & Elaboration Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2025  Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera IP License Agreement, or other applicable license
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
-Altera and sold by Altera or its authorized distributors.  Please
-refer to the Altera Software License Subscription Agreements 
-on the Quartus Prime software download page.
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 20 19:30:46 2026           ;
-; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                   ; proyecto2                                       ;
-; Top-level Entity Name           ; PE                                              ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 92                                              ;
-; Total pins                      ; 43                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 9,728                                           ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Mon Apr 20 20:39:25 2026       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; proyecto2                                   ;
+; Top-level Entity Name         ; PE                                          ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 10          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Source assignments for altsyncram:trace_rom|altsyncram_6d21:auto_generated ;
++---------------------------------+--------------------+------+--------------+
+; Assignment                      ; Value              ; From ; To           ;
++---------------------------------+--------------------+------+--------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -            ;
++---------------------------------+--------------------+------+--------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |PE ;
++----------------+-----------+---------------------------------------+
+; Parameter Name ; Value     ; Type                                  ;
++----------------+-----------+---------------------------------------+
+; TRACE_MIF      ; trace.mif ; String                                ;
++----------------+-----------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: altsyncram:trace_rom          ;
++------------------------------------+----------------------+----------------+
+; Parameter Name                     ; Value                ; Type           ;
++------------------------------------+----------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped        ;
+; WIDTH_A                            ; 38                   ; Signed Integer ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WIDTH_B                            ; 1                    ; Untyped        ;
+; WIDTHAD_B                          ; 1                    ; Untyped        ;
+; NUMWORDS_B                         ; 1                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; INIT_FILE                          ; trace.mif            ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_6d21      ; Untyped        ;
++------------------------------------+----------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                 ;
++-------------------------------------------+----------------------+
+; Name                                      ; Value                ;
++-------------------------------------------+----------------------+
+; Number of entity instances                ; 1                    ;
+; Entity Instance                           ; altsyncram:trace_rom ;
+;     -- OPERATION_MODE                     ; ROM                  ;
+;     -- WIDTH_A                            ; 38                   ;
+;     -- NUMWORDS_A                         ; 256                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED         ;
+;     -- WIDTH_B                            ; 1                    ;
+;     -- NUMWORDS_B                         ; 1                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ;
++-------------------------------------------+----------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -157,308 +259,38 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 10          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 10          ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                             ;
-+----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------+---------+
-; PE.sv                            ; yes             ; User SystemVerilog HDL File      ; C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv                  ;         ;
-; trace.mif                        ; yes             ; User Memory Initialization File  ; C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/trace.mif              ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf            ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc     ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc               ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc            ;         ;
-; aglobal251.inc                   ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc            ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc             ;         ;
-; altrom.inc                       ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                ;         ;
-; altram.inc                       ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                     ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc              ;         ;
-; db/altsyncram_hm11.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_hm11.tdf ;         ;
-+----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 72        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 99        ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 44        ;
-;     -- 5 input functions                    ; 0         ;
-;     -- 4 input functions                    ; 0         ;
-;     -- <=3 input functions                  ; 55        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 92        ;
-;                                             ;           ;
-; I/O pins                                    ; 43        ;
-; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 9728      ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 130       ;
-; Total fan-out                               ; 1133      ;
-; Average fan-out                             ; 3.60      ;
-+---------------------------------------------+-----------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name     ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
-; |PE                                    ; 99 (99)             ; 92 (92)                   ; 9728              ; 0          ; 43   ; 0            ; |PE                                                     ; PE              ; work         ;
-;    |altsyncram:trace_rom|              ; 0 (0)               ; 0 (0)                     ; 9728              ; 0          ; 0    ; 0            ; |PE|altsyncram:trace_rom                                ; altsyncram      ; work         ;
-;       |altsyncram_hm11:auto_generated| ; 0 (0)               ; 0 (0)                     ; 9728              ; 0          ; 0    ; 0            ; |PE|altsyncram:trace_rom|altsyncram_hm11:auto_generated ; altsyncram_hm11 ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                            ;
-+----------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------+
-; Name                                                           ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF       ;
-+----------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------+
-; altsyncram:trace_rom|altsyncram_hm11:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 38           ; --           ; --           ; 9728 ; trace.mif ;
-+----------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |PE|state                                                                                                   ;
-+-------------------+-----------------+-----------------+----------------+------------------+-------------------+-------------+
-; Name              ; state.END_STATE ; state.WAIT_DONE ; state.SEND_REQ ; state.FETCH_WAIT ; state.FETCH_INSTR ; state.START ;
-+-------------------+-----------------+-----------------+----------------+------------------+-------------------+-------------+
-; state.START       ; 0               ; 0               ; 0              ; 0                ; 0                 ; 0           ;
-; state.FETCH_INSTR ; 0               ; 0               ; 0              ; 0                ; 1                 ; 1           ;
-; state.FETCH_WAIT  ; 0               ; 0               ; 0              ; 1                ; 0                 ; 1           ;
-; state.SEND_REQ    ; 0               ; 0               ; 1              ; 0                ; 0                 ; 1           ;
-; state.WAIT_DONE   ; 0               ; 1               ; 0              ; 0                ; 0                 ; 1           ;
-; state.END_STATE   ; 1               ; 0               ; 0              ; 0                ; 0                 ; 1           ;
-+-------------------+-----------------+-----------------+----------------+------------------+-------------------+-------------+
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; state~10                              ; Lost fanout        ;
-; state~11                              ; Lost fanout        ;
-; state~12                              ; Lost fanout        ;
-; Total Number of Removed Registers = 3 ;                    ;
-+---------------------------------------+--------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 92    ;
-; Number of registers using Synchronous Clear  ; 8     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 92    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 46    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------+
-; Source assignments for altsyncram:trace_rom|altsyncram_hm11:auto_generated ;
-+---------------------------------+--------------------+------+--------------+
-; Assignment                      ; Value              ; From ; To           ;
-+---------------------------------+--------------------+------+--------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -            ;
-+---------------------------------+--------------------+------+--------------+
-
-
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |PE ;
-+----------------+-----------+---------------------------------------+
-; Parameter Name ; Value     ; Type                                  ;
-+----------------+-----------+---------------------------------------+
-; TRACE_MIF      ; trace.mif ; String                                ;
-+----------------+-----------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: altsyncram:trace_rom          ;
-+------------------------------------+----------------------+----------------+
-; Parameter Name                     ; Value                ; Type           ;
-+------------------------------------+----------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
-; OPERATION_MODE                     ; ROM                  ; Untyped        ;
-; WIDTH_A                            ; 38                   ; Signed Integer ;
-; WIDTHAD_A                          ; 8                    ; Signed Integer ;
-; NUMWORDS_A                         ; 256                  ; Signed Integer ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
-; WIDTH_B                            ; 1                    ; Untyped        ;
-; WIDTHAD_B                          ; 1                    ; Untyped        ;
-; NUMWORDS_B                         ; 1                    ; Untyped        ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
-; BYTE_SIZE                          ; 8                    ; Untyped        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
-; INIT_FILE                          ; trace.mif            ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_hm11      ; Untyped        ;
-+------------------------------------+----------------------+----------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                 ;
-+-------------------------------------------+----------------------+
-; Name                                      ; Value                ;
-+-------------------------------------------+----------------------+
-; Number of entity instances                ; 1                    ;
-; Entity Instance                           ; altsyncram:trace_rom ;
-;     -- OPERATION_MODE                     ; ROM                  ;
-;     -- WIDTH_A                            ; 38                   ;
-;     -- NUMWORDS_A                         ; 256                  ;
-;     -- OUTDATA_REG_A                      ; CLOCK0               ;
-;     -- WIDTH_B                            ; 1                    ;
-;     -- NUMWORDS_B                         ; 1                    ;
-;     -- ADDRESS_REG_B                      ; CLOCK1               ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED         ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                 ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ;
-+-------------------------------------------+----------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 92                          ;
-;     CLR               ; 46                          ;
-;     ENA CLR           ; 38                          ;
-;     ENA CLR SCLR      ; 8                           ;
-; arriav_lcell_comb     ; 99                          ;
-;     arith             ; 8                           ;
-;         1 data inputs ; 8                           ;
-;     normal            ; 91                          ;
-;         2 data inputs ; 41                          ;
-;         3 data inputs ; 6                           ;
-;         6 data inputs ; 44                          ;
-; boundary_port         ; 43                          ;
-; stratixv_ram_block    ; 38                          ;
-;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.38                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Mon Apr 20 19:30:39 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proyecto2 -c proyecto2
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Apr 20 20:39:19 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proyecto2 -c proyecto2 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file pe.sv
     Info (12023): Found entity 1: PE File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pe.sv
+    Info (12023): Found entity 1: tb_pe File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv Line: 3
 Info (12127): Elaborating entity "PE" for the top level hierarchy
-Info (12128): Elaborating entity "altsyncram" for hierarchy "altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 59
-Info (12130): Elaborated megafunction instantiation "altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 59
-Info (12133): Instantiated megafunction "altsyncram:trace_rom" with the following parameter: File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 59
+Info (12128): Elaborating entity "altsyncram" for hierarchy "altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 47
+Info (12130): Elaborated megafunction instantiation "altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 47
+Info (12133): Instantiated megafunction "altsyncram:trace_rom" with the following parameter: File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 47
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "width_a" = "38"
     Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "numwords_a" = "256"
-    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
     Info (12134): Parameter "init_file" = "trace.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hm11.tdf
-    Info (12023): Found entity 1: altsyncram_hm11 File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_hm11.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_hm11" for hierarchy "altsyncram:trace_rom|altsyncram_hm11:auto_generated" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113016): Width of data items in "trace.mif" is smaller than the memory width. Padding data items with 0 on MSB to fit in memory.  File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/trace.mif Line: 24
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 182 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 40 output pins
-    Info (21061): Implemented 101 logic cells
-    Info (21064): Implemented 38 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4898 megabytes
-    Info: Processing ended: Mon Apr 20 19:30:46 2026
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:17
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6d21.tdf
+    Info (12023): Found entity 1: altsyncram_6d21 File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_6d21.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_6d21" for hierarchy "altsyncram:trace_rom|altsyncram_6d21:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4796 megabytes
+    Info: Processing ended: Mon Apr 20 20:39:25 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:16
 
 

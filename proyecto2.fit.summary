@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Apr 20 19:31:37 2026
-Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Fitter Status : Successful - Mon Apr 20 20:38:46 2026
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : proyecto2
 Top-level Entity Name : PE
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
 Logic utilization (in ALMs) : 53 / 56,480 ( < 1 % )
-Total registers : 92
+Total registers : 93
 Total pins : 43 / 268 ( 16 % )
 Total virtual pins : 0
 Total block memory bits : 9,728 / 7,024,640 ( < 1 % )
