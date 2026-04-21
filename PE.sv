@@ -28,26 +28,36 @@ module PE #(
 	logic [37:0] instr;
 	
 	
-	// ROM de trazas
-	// 38 bits por palabra
-	// 256 palabras
-	altsyncram #(
-		.operation_mode      ("ROM"),
-		.width_a             (38),
-		.widthad_a           (8),
-		.numwords_a          (256),
-		.outdata_reg_a       ("UNREGISTERED"),
-		.init_file           (TRACE_MIF),
-		.intended_device_family ("Cyclone V")
-	) trace_rom (
-		.clock0     (clk),
-		.address_a  (pc),
-		.q_a        (rom_q),
+	`ifdef SIM
+	// ROM simmple para simulación
+		logic [37:0] rom [0:255];
 
-		.wren_a     (),
-		.data_a     (),
-		.rden_a     (1'b1)
-	);
+		initial begin
+		$display("Cargando ROM desde %s", TRACE_MIF);
+		$readmemh(TRACE_MIF, rom);
+		end
+
+		always_ff @(posedge clk)
+		rom_q <= rom[pc];
+	`else
+	// ROM para hardware (altsyncram)
+		altsyncram #(
+			.operation_mode("ROM"),
+			.width_a(38),
+			.widthad_a(8),
+			.numwords_a(256),
+			.outdata_reg_a("CLOCK0"),
+			.init_file(TRACE_MIF),
+			.intended_device_family("Cyclone V")
+		) trace_rom (
+			.clock0(clk),
+			.address_a(pc),
+			.q_a(rom_q),
+			.wren_a(),
+			.data_a(),
+			.rden_a(1'b1)
+		);
+	`endif
 	
 	// FSM
 	always_ff @(posedge clk or posedge rst) begin
