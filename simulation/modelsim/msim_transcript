@@ -1,4 +1,5 @@
-# do Top_run_msim_rtl_verilog.do
+# Reading pref.tcl
+# do proyecto2_run_msim_rtl_verilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -6,64 +7,73 @@
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work rtl_work 
-# Copying /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv}
+# vlog -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:23:22 on Apr 19,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv 
-# -- Compiling module Cache
+# Start time: 21:47:29 on Apr 20,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1" C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv 
+# -- Compiling module PE
 # 
 # Top level modules:
-# 	Cache
-# End time: 16:23:22 on Apr 19,2026, Elapsed time: 0:00:00
+# 	PE
+# End time: 21:47:29 on Apr 20,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:23:22 on Apr 19,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv 
-# -- Compiling module Cache_tb
+# Start time: 21:47:29 on Apr 20,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1" C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv 
+# -- Compiling module tb_pe
 # 
 # Top level modules:
-# 	Cache_tb
-# End time: 16:23:22 on Apr 19,2026, Elapsed time: 0:00:00
+# 	tb_pe
+# End time: 21:47:29 on Apr 20,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Cache_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Cache_tb 
-# Start time: 16:23:22 on Apr 19,2026
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_pe
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_pe 
+# Start time: 21:47:29 on Apr 20,2026
 # Loading sv_std.std
-# Loading work.Cache_tb
-# Loading work.Cache
+# Loading work.tb_pe
+# Loading work.PE
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'trace_rom'.  Expected 23, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pe/uut/trace_rom File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 42
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: (vsim-3722) C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(42): [TFMPC] - Missing connection for port 'eccstatus'.
 # 
 # add wave *
-# Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
-# Cannot lock WLF file: "vsim.wlf"
-#           errno 11: Resource temporarily unavailable.
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jecampos  Hostname: fedora  ProcessID: 364384
-#           Attempting to use alternate WLF file "./wlftlJAdjB".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftlJAdjB
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# --- Inicio de Testbench MSI ---
-# [T=25ns] Stall detectado: Read Miss en direccion 0x04
-# [T=45ns] Dato cargado. Estado actual: 01 (Debe ser SHARED=01)
-# [T=55ns] Write Hit ejecutado. Estado actual: 10 (Debe ser MODIFIED=10)
-# [T=75ns] Invalidez recibida del Bus. Estado actual: 00 (Debe ser INVALID=00)
-# [T=105ns] Write Miss completado. Estado actual: 10 (Debe ser MODIFIED=10)
-# --- Testbench Finalizado ---
-# ** Note: $finish    : /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv(102)
-#    Time: 115 ns  Iteration: 0  Instance: /Cache_tb
-# 1
-# Break in Module Cache_tb at /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_tb.sv line 102
-# End time: 16:23:43 on Apr 19,2026, Elapsed time: 0:00:21
-# Errors: 0, Warnings: 2
+# ---- Iniciando Testbench ----
+# [               65000] PE solicita -> type=1 addr=5 data=12345678
+# [              105000] PE solicita -> type=0 addr=3 data=abcdef01
+# [              145000] PE solicita -> type=1 addr=1 data=cafebabe
+# [              175000] PE termino ejecucion (FIN detectado)
+# ** Note: $finish    : C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv(90)
+#    Time: 195 ns  Iteration: 0  Instance: /tb_pe
+# End time: 21:47:39 on Apr 20,2026, Elapsed time: 0:00:10
+# Errors: 0, Warnings: 18

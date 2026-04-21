@@ -6,7 +6,7 @@ module dmem(input logic
 
     logic [31:0] ram[31:0];
 
-    logic [31:0] ram[63:0];
+    //logic [31:0] ram[63:0];
     assign rd = ram[a[31:2]]; // word aligned
 
     always_ff @(posedge clk)

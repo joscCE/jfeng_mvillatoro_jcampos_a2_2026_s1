@@ -108,20 +108,21 @@ module PE #(
 					end
 					else begin
 					// Cache acepta la operacion
-						req_valid <= 1'b0;
 						state     <= WAIT_DONE;
 					end
 				end
 				
 				// Esperar a dato del cache
 				WAIT_DONE: begin
+				
+					req_valid <= 1'b0;
+					
 					// Mientras haya stall, seguir esperando
 					if (stall_cache) begin
 						state <= WAIT_DONE;
 					end
 					else begin
 					// Operacion completada
-					req_valid <= 1'b0;
 						pc    <= pc + 8'd1;
 						state <= FETCH_INSTR;
 					end
