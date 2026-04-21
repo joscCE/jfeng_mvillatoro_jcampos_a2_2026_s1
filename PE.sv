@@ -2,7 +2,6 @@ module PE #(
 	parameter TRACE_MIF = "trace.mif"
 )(
 	input logic clk, rst,
-	input logic ready,
 	input logic stall_cache,
 	input logic [31:0] data_cache,
 	

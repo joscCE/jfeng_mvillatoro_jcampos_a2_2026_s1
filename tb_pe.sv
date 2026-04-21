@@ -9,7 +9,6 @@ module tb_pe;
     reg rst;
 
     // Nuevas señales hacia el PE
-    reg ready;
     reg stall_cache;
     reg [31:0] data_cache;
 
@@ -27,7 +26,6 @@ module tb_pe;
     ) uut (
         .clk(clk),
         .rst(rst),
-        .ready(ready),
         .stall_cache(stall_cache),
         .data_cache(data_cache),
         .req_valid(req_valid),
@@ -51,7 +49,6 @@ module tb_pe;
     initial begin
         // Inicialización
         rst         = 1;
-        ready       = 0;             // PE no lo usa
         stall_cache = 0;
         data_cache  = 32'h12345678;
 
