@@ -2,7 +2,9 @@ module PE #(
 	parameter TRACE_MIF = "trace.mif"
 )(
 	input logic clk, rst,
-	input logic done,
+	input logic ready,
+	input logic stall_cache,
+	input logic [31:0] data_cache,
 	
 	output logic req_valid,
 	output logic req_type,
@@ -99,14 +101,27 @@ module PE #(
 					req_type  <= instr[37];
 					addr      <= instr[36:32];
 					data      <= instr[31:0];
-					state     <= WAIT_DONE;
+					
+					// Quedarse en este estado si cache está  ocupado
+					if (stall_cache) begin
+						state <= SEND_REQ;
+					end
+					else begin
+					// Cache acepta la operacion
+						req_valid <= 1'b0;
+						state     <= WAIT_DONE;
+					end
 				end
 				
 				// Esperar a dato del cache
 				WAIT_DONE: begin
+					// Mientras haya stall, seguir esperando
+					if (stall_cache) begin
+						state <= WAIT_DONE;
+					end
+					else begin
+					// Operacion completada
 					req_valid <= 1'b0;
-
-					if (done) begin
 						pc    <= pc + 8'd1;
 						state <= FETCH_INSTR;
 					end
