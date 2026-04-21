@@ -4,7 +4,7 @@
 
 DEPTH = 256       # Número de palabras en tu ROM
 WIDTH = 38        # Bits por palabra (req_type+addr+data)
-FILL_VALUE = 0xDEADDDDD  # Valor para llenar espacios vacíos
+FILL_VALUE = 0x3F_DEADDDDD  # Valor para llenar espacios vacíos
 OUTPUT_FILE = "trace.mif"
 
 # ------------------------------------------------

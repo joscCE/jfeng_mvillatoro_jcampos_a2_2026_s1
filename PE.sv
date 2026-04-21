@@ -85,7 +85,7 @@ module PE #(
 				FETCH_WAIT: begin
 					instr <= rom_q;
 
-					if (rom_q[31:0] == 32'hDEADDDDD) begin
+					if (rom_q == 38'h3F_DEADDDDD) begin
 						state <= END_STATE;
 					end
 					else begin
