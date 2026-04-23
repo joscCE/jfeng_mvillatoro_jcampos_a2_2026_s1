@@ -12,29 +12,29 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:10:40 on Apr 23,2026
+# Start time: 11:45:03 on Apr 23,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1" C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv 
 # -- Compiling module PE
 # 
 # Top level modules:
 # 	PE
-# End time: 11:10:41 on Apr 23,2026, Elapsed time: 0:00:01
+# End time: 11:45:03 on Apr 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:10:41 on Apr 23,2026
+# Start time: 11:45:03 on Apr 23,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1" C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv 
 # -- Compiling module tb_pe
 # 
 # Top level modules:
 # 	tb_pe
-# End time: 11:10:41 on Apr 23,2026, Elapsed time: 0:00:00
+# End time: 11:45:03 on Apr 23,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_pe
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_pe 
-# Start time: 11:10:41 on Apr 23,2026
+# Start time: 11:45:04 on Apr 23,2026
 # Loading sv_std.std
 # Loading work.tb_pe
 # Loading work.PE
@@ -69,13 +69,16 @@
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # ---- Iniciando Testbench ----
-# [               65000] PE solicita -> WRITE addr=5 data=12345678
-# [              105000] PE solicita -> READ  addr=3 data=abcdef01
-# [              145000] PE solicita -> WRITE addr=1 data=cafebabe
-# [              175000] PE termino ejecucion (FIN detectado)
+# [               65000] PE solicita -> READ  addr=0 data=00000000
+# [              105000] PE solicita -> READ  addr=1 data=00000000
+# [              145000] PE solicita -> WRITE addr=2 data=00000001
+# [              185000] PE solicita -> READ  addr=2 data=00000000
+# [              225000] PE solicita -> WRITE addr=3 data=000003e8
+# [              265000] PE solicita -> READ  addr=3 data=00000000
+# [              295000] PE termino ejecucion (FIN detectado)
 # ** Note: $finish    : C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv(92)
-#    Time: 195 ns  Iteration: 0  Instance: /tb_pe
+#    Time: 315 ns  Iteration: 0  Instance: /tb_pe
 # 1
 # Break in Module tb_pe at C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv line 92
-# End time: 11:12:05 on Apr 23,2026, Elapsed time: 0:01:24
+# End time: 11:46:50 on Apr 23,2026, Elapsed time: 0:01:46
 # Errors: 0, Warnings: 18
