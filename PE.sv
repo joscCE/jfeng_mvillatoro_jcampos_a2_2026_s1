@@ -6,7 +6,8 @@ module PE #(
 	input logic [31:0] data_cache,
 	
 	output logic req_valid,
-	output logic req_type,
+	output logic rd, // Read Enable del procesador
+	output logic we, // Write Enable del procesador
 	output logic [4:0] addr,
 	output logic [31:0] data,
 	output logic finished
@@ -56,7 +57,8 @@ module PE #(
 			pc        <= 8'd0;
 			instr     <= 38'd0;
 			req_valid <= 1'b0;
-			req_type  <= 1'b0;
+			rd	      <= 1'b0;
+			we	      <= 1'b0;
 			addr      <= 5'd0;
 			data      <= 32'd0;
 			finished  <= 1'b0;
@@ -68,7 +70,8 @@ module PE #(
 					pc        <= 8'd0;
 					instr     <= 38'd0;
 					req_valid <= 1'b0;
-					req_type  <= 1'b0;
+					rd	      <= 1'b0;
+					we	      <= 1'b0;
 					addr      <= 5'd0;
 					data      <= 32'd0;
 					finished  <= 1'b0;
@@ -97,9 +100,17 @@ module PE #(
 				// Enviar a cache
 				SEND_REQ: begin
 					req_valid <= 1'b1;
-					req_type  <= instr[37];
 					addr      <= instr[36:32];
 					data      <= instr[31:0];
+
+					// Configurar señales de lectura/escritura
+					if (instr[37] == 1'b0) begin // Lectura si bit 37 es 0
+						rd <= 1'b1;
+						we <= 1'b0;
+					end else begin // Escritura si bit 37 es 1
+						rd <= 1'b0;
+						we <= 1'b1;
+					end
 					
 					// Quedarse en este estado si cache está  ocupado
 					if (stall_cache) begin
@@ -115,6 +126,10 @@ module PE #(
 				WAIT_DONE: begin
 				
 					req_valid <= 1'b0;
+
+					// Limpieza inmediata
+                    rd <= 1'b0;
+                    we <= 1'b0;
 					
 					// Mientras haya stall, seguir esperando
 					if (stall_cache) begin
@@ -130,7 +145,8 @@ module PE #(
 				// Final
 				END_STATE: begin
 					req_valid <= 1'b0;
-					req_type  <= 1'b0;
+					rd	      <= 1'b0;
+					we	      <= 1'b0;
 					addr      <= 5'd0;
 					data      <= 32'd0;
 					finished  <= 1'b1;
