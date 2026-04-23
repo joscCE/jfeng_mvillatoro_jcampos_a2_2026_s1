@@ -13,7 +13,8 @@ module tb_pe;
     reg [31:0] data_cache;
 
     wire        req_valid;
-    wire        req_type;
+    wire        rd;
+    wire        we;
     wire [4:0]  addr;
     wire [31:0] data;
     wire        finished;
@@ -29,7 +30,8 @@ module tb_pe;
         .stall_cache(stall_cache),
         .data_cache(data_cache),
         .req_valid(req_valid),
-        .req_type(req_type),
+        .rd(rd),
+        .we(we),
         .addr(addr),
         .data(data),
         .finished(finished)
@@ -63,15 +65,18 @@ module tb_pe;
             @(posedge clk);
 
             if (req_valid) begin
-                $display("[%t] PE solicita -> type=%0d addr=%0d data=%h",
-                         $time, req_type, addr, data);
+                $display("[%t] PE solicita -> %s addr=%0d data=%h",
+                         $time,
+                         rd ? "READ " : "WRITE",
+                         addr,
+                         data);
 
                 // simular 1 ciclo de espera
                 stall_cache = 1;
                 @(posedge clk);
 
                 // Cache responde
-                data_cache  = $random;   // aunque el PE no lo use aún
+                data_cache  = $random;
                 stall_cache = 0;
             end
         end

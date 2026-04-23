@@ -1,5 +1,5 @@
 Flow report for proyecto2
-Mon Apr 20 21:47:19 2026
+Thu Apr 23 11:10:30 2026
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Mon Apr 20 21:47:19 2026       ;
+; Flow Status                 ; Successful - Thu Apr 23 11:10:29 2026       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; proyecto2                                   ;
 ; Top-level Entity Name       ; PE                                          ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/20/2026 21:47:13 ;
+; Start date & time ; 04/23/2026 11:10:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; proyecto2           ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 91754973192.177674323349012            ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 250745398926571.177696422446776        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_pe          ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_pe                                  ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
@@ -100,8 +100,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4797 MB             ; 00:00:15                           ;
-; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:15                           ;
+; Analysis & Elaboration ; 00:00:05     ; 1.0                     ; 4797 MB             ; 00:00:14                           ;
+; Total                  ; 00:00:05     ; --                      ; --                  ; 00:00:14                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
