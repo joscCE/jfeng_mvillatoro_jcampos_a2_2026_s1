@@ -9,16 +9,16 @@ module Interconnect_MSI #(
 	input logic [37:0] request_packet [3:0],	// type 1 + address 5 + data 32
 	
 	// IC Broadcast
-	output logic		  bus_rd,		// Modified a shared
-	output logic		  bus_inv,		// Shared/Modified a Invalid
 	output logic		  ic_ready,
+	output logic		  bus_inv,		// Shared/Modified a Invalid
+	output logic		  bus_rd,		// Modified a shared
 	output logic [1:0]  tag,
 	output logic [63:0] cache_line,	// Doa bloques 32
 	
 	// IC -> memoria principal
 	output logic		  mem_we,
-	output logic [4:0] mem_address,
-	output logic [63:0] mem_data_in
+	output logic [4:0]  mem_address,
+	output logic [63:0] mem_data_in,
 	
 	// Desde memoria principal
 	input logic [63:0] mem_data_out,
@@ -73,28 +73,28 @@ module Interconnect_MSI #(
 				if (help == 4'b0000)
 					next_state = IDLE;
 				else if ($onehot(help))
-					next state = DECODE;
+					next_state = DECODE;
 				else
 					next_state = ARBITRATE;
 			end
 
 			// Se arbitra en caso de ser mas de un cache
-			ARBITRATE:
+			ARBITRATE: begin
 				next_state = DECODE;
 			end
 			
 			// Decifra el request_package
-			DECODE:
+			DECODE: begin
 				next_state = SNOOP_ISSUE;
 			end
 			
 			// IC emite el broadcast por el bus
-			SNOOP_ISSUE:
+			SNOOP_ISSUE: begin
 				next_state = WAIT_SNOOP;
 			end
 
 			// IC espera que el cache termine
-			WAIT_SNOOP:
+			WAIT_SNOOP: begin
 				if (snoop_counter == SNOOP_WAIT_CYCLES - 1)
 					next_state = MEM_ACCESS;
 				else
@@ -102,7 +102,7 @@ module Interconnect_MSI #(
 			end
 	
 			// Esperar que RAM confirme
-			MEM_ACCESS:
+			MEM_ACCESS: begin
 				if (mem_ready)
 					next_state = RESPOND;
 				else
@@ -110,7 +110,7 @@ module Interconnect_MSI #(
 			end
 	
 			// Responde el final de operacion y vuelve a IDLE
-			RESPOND:
+			RESPOND: begin
 				next_state = IDLE;
 			end
 			
@@ -227,9 +227,9 @@ module Interconnect_MSI #(
 				// ---------------------------------------
 				RESPOND: begin
 					// Activa bus y manda tag y linea de cache a cache
-					ic_ready			<= 1'b1;
-					ic_tag			<= req_address[4:3];
-					ic_cache_line	<= mem_data_out;
+					ic_ready		<= 1'b1;
+					tag			<= req_address[4:3];
+					cache_line	<= mem_data_out;
 				end
 				
 			endcase
