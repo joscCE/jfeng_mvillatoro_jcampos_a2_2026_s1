@@ -12,8 +12,8 @@ module Interconnect_MSI #(
 	output logic		  ic_ready,
 	output logic		  bus_inv,		// Shared/Modified a Invalid
 	output logic		  bus_rd,		// Modified a shared
-	output logic [1:0]  tag,
-	output logic [63:0] cache_line,	// Doa bloques 32
+	output logic [1:0]  ic_tag,
+	output logic [63:0] ic_cache_line,	// Doa bloques 32
 	
 	// IC -> memoria principal
 	output logic		  mem_we,
@@ -55,10 +55,8 @@ module Interconnect_MSI #(
 	// -------------Registros de estado
 	
 	always_ff @(posedge clk) begin
-		if (reset)
-			current_state <= IDLE;
-		else
-			current_state <= next_state;
+		if (reset)	current_state <= IDLE;
+		else			current_state <= next_state;
 	end
 	
 	// -------------Logica de cambios de estado
@@ -126,8 +124,8 @@ module Interconnect_MSI #(
 			bus_rd			<= 1'b0;
 			bus_inv			<= 1'b0;
 			ic_ready			<= 1'b0;
-			tag				<= 2'b0;
-			cache_line		<= 64'b0;
+			ic_tag				<= 2'b0;
+			ic_cache_line		<= 64'b0;
 			mem_we			<= 1'b0;
 			mem_address 	<= 5'b0;
 			mem_data_in 	<= 64'b0;
@@ -152,6 +150,12 @@ module Interconnect_MSI #(
 				// ---------------------------------------
 				IDLE: begin
 					snoop_counter <= 4'b0;
+					if ($onehot(help)) begin
+						if      (help[0]) winner <= 2'd0;
+						else if (help[1]) winner <= 2'd1;
+						else if (help[2]) winner <= 2'd2;
+						else              winner <= 2'd3;
+					end
 				end
 				
 				// ---------------------------------------
@@ -168,19 +172,9 @@ module Interconnect_MSI #(
 				// Si solo hay un PE pidiendo ayuda se empieza aqui
 				// ---------------------------------------
 				DECODE: begin
-					if (current_state == DECODE) begin
-						if ($onehot(help)) begin
-							if			(help[0]) winner <= 2'd0;
-							else if	(help[1]) winner <= 2'd1;
-							else if	(help[2]) winner <= 2'd2;
-							else					 winner <= 2'd3;
-						end
-					end
-					
-					req_type		<= request_packet[winner][37];
-					req_address	<= request_packet[winner][36:32];
-					req_data		<= request_packet[winner][31:0];
-				
+					req_type    <= request_packet[winner][37];
+					req_address <= request_packet[winner][36:32];
+					req_data    <= request_packet[winner][31:0];
 				end
 				
 				// ---------------------------------------
@@ -228,8 +222,8 @@ module Interconnect_MSI #(
 				RESPOND: begin
 					// Activa bus y manda tag y linea de cache a cache
 					ic_ready		<= 1'b1;
-					tag			<= req_address[4:3];
-					cache_line	<= mem_data_out;
+					ic_tag			<= req_address[4:3];
+					ic_cache_line	<= mem_data_out;
 				end
 				
 			endcase
