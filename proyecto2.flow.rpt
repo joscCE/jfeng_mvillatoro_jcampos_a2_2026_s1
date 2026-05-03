@@ -1,5 +1,5 @@
 Flow report for proyecto2
-Thu Apr 23 11:44:51 2026
+Sun May 03 00:16:07 2026
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -38,24 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Thu Apr 23 11:44:51 2026       ;
-; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name               ; proyecto2                                   ;
-; Top-level Entity Name       ; PE                                          ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CGXFC7C7F23C8                              ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Sun May 03 00:16:07 2026       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; proyecto2                                   ;
+; Top-level Entity Name           ; pe_cache_local                              ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CGXFC7C7F23C8                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 42                                          ;
+; Total pins                      ; 76                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 9,728                                       ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,61 +68,65 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/23/2026 11:44:45 ;
+; Start date & time ; 05/03/2026 00:16:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; proyecto2           ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                             ;
-+--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
-+--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 250745398926571.177696628542128        ; --            ; --          ; --             ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_pe          ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_pe                                  ; --            ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_FILE                  ; tb_pe.sv                               ; --            ; --          ; tb_pe          ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_pe                                  ; --            ; --          ; tb_pe          ;
-; EDA_TEST_BENCH_NAME                  ; tb_pe                                  ; --            ; --          ; eda_simulation ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; PE          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; PE          ; Top            ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; PE          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                     ; PE                                     ; proyecto2     ; --          ; --             ;
-+--------------------------------------+----------------------------------------+---------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                   ;
++--------------------------------------+----------------------------------------+---------------+----------------+-------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name    ; Section Id        ;
++--------------------------------------+----------------------------------------+---------------+----------------+-------------------+
+; COMPILER_SIGNATURE_ID                ; 91754973184.177778896049344            ; --            ; --             ; --                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --             ; pe_cache_local_tb ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --             ; tb_pe             ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; pe_cache_local_tb                      ; --            ; --             ; eda_simulation    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --             ; eda_simulation    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --             ; --                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --             ; eda_simulation    ;
+; EDA_TEST_BENCH_FILE                  ; testbench/pe_cache_local_tb.sv         ; --            ; --             ; pe_cache_local_tb ;
+; EDA_TEST_BENCH_FILE                  ; tb_pe.sv                               ; --            ; --             ; tb_pe             ;
+; EDA_TEST_BENCH_MODULE_NAME           ; pe_cache_local_tb                      ; --            ; --             ; pe_cache_local_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_pe                                  ; --            ; --             ; tb_pe             ;
+; EDA_TEST_BENCH_NAME                  ; tb_pe                                  ; --            ; --             ; eda_simulation    ;
+; EDA_TEST_BENCH_NAME                  ; pe_cache_local_tb                      ; --            ; --             ; eda_simulation    ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --             ; eda_simulation    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --             ; --                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --             ; --                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; pe_cache_local ; Top               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; pe_cache_local ; Top               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; pe_cache_local ; Top               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --             ; --                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --             ; --                ;
+; TOP_LEVEL_ENTITY                     ; pe_cache_local                         ; proyecto2     ; --             ; --                ;
++--------------------------------------+----------------------------------------+---------------+----------------+-------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4797 MB             ; 00:00:15                           ;
-; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:15                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4893 MB             ; 00:00:16                           ;
+; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:16                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; winjimmy         ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; winjimmy         ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off proyecto2 -c proyecto2 --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off proyecto2 -c proyecto2
 
 
 

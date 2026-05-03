@@ -56,7 +56,6 @@ module PE #(
 			state     <= START;
 			pc        <= 8'd0;
 			instr     <= 38'd0;
-			req_valid <= 1'b0;
 			rd	      <= 1'b0;
 			we	      <= 1'b0;
 			addr      <= 5'd0;
@@ -69,7 +68,6 @@ module PE #(
 				START: begin
 					pc        <= 8'd0;
 					instr     <= 38'd0;
-					req_valid <= 1'b0;
 					rd	      <= 1'b0;
 					we	      <= 1'b0;
 					addr      <= 5'd0;
@@ -80,7 +78,6 @@ module PE #(
 				
 				// Presentar dirección a la ROM
 				FETCH_INSTR: begin
-					req_valid <= 1'b0;
 					state     <= FETCH_WAIT;
 				end
 				
@@ -99,7 +96,6 @@ module PE #(
 
 				// Enviar a cache
 				SEND_REQ: begin
-					req_valid <= 1'b1;
 					addr      <= instr[36:32];
 					data      <= instr[31:0];
 
@@ -124,8 +120,6 @@ module PE #(
 				
 				// Esperar a dato del cache
 				WAIT_DONE: begin
-				
-					req_valid <= 1'b0;
 
 					// Limpieza inmediata
                     rd <= 1'b0;
@@ -144,7 +138,6 @@ module PE #(
 				
 				// Final
 				END_STATE: begin
-					req_valid <= 1'b0;
 					rd	      <= 1'b0;
 					we	      <= 1'b0;
 					addr      <= 5'd0;

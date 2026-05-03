@@ -9,56 +9,109 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim
-vPE
+vCache
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1776966303
+Z2 !s110 1777788924
 !i10b 1
-!s100 m6b^9=>bJ6[8@hlJ8cKDC2
+!s100 ^MGdeY:9_oE:[Y9n8UG_R2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IcNee_0o`Y5dn7SZ@TFefP3
+IF3MN=fT3=BYnB@GdTK3Hf1
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1776931261
-8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
-FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
-!i122 0
-L0 1 160
+w1777788553
+8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv
+FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv
+!i122 1
+L0 1 103
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1776966303.000000
-!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv|
+Z6 !s108 1777788924.000000
+!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv|
 !i113 1
 Z7 o-sv -work work
 Z8 !s92 -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1
 Z9 tCvgOpt 0
-n@p@e
-vtb_pe
+n@cache
+vPE
 R1
 R2
 !i10b 1
-!s100 OJVFNkbP0`oSgg<G42`fj1
+!s100 nig6;cQg:U8QTE[h:nc5;1
 R3
-IGhJ?_dbl]G^dN9H3?2g`A0
+I6f@nEDP?>d9QJRfOGfo_V3
 R4
 S1
 R0
-w1776966027
-8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv
-FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv
-!i122 1
-L0 3 93
+w1777786097
+8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
+FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
+!i122 2
+L0 1 153
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv|
+!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv|
 !i113 1
 R7
 R8
+R9
+n@p@e
+vpe_cache_local
+R1
+R2
+!i10b 1
+!s100 <1;`?i:?OaX5DImT42Dih1
+R3
+Ic4zSSJdERO2<dXATQ_2Z:2
+R4
+S1
+R0
+w1777788796
+8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local.sv
+FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local.sv
+!i122 0
+L0 1 68
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local.sv|
+!i113 1
+R7
+Z10 !s92 -sv -work work +incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench
+R9
+vpe_cache_local_tb
+R1
+R2
+!i10b 1
+!s100 [k=HGG`KoJ5g`NJkU[jZ]2
+R3
+IbK:USoQTAzzO=62]9DK1i2
+R4
+S1
+R0
+w1777788802
+8C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local_tb.sv
+FC:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local_tb.sv
+!i122 3
+L0 3 115
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench|C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/testbench/pe_cache_local_tb.sv|
+!i113 1
+R7
+R10
 R9
