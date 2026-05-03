@@ -5,7 +5,7 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv}
+vlog -sv -work work +incdir+C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv}
 
 vlog -sv -work work +incdir+C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1 {C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI_tb.sv}
 

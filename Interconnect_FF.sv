@@ -5,60 +5,53 @@ module Interconnect_FF #(
 	input logic 	reset,
 	
 	// Cache -> IC
-	input logic [3:0]  help,
+	input logic [3:0]  help,					// Una línea de cada cache puede solicitar acceso al bus cada ciclo
 	input logic [37:0] request_packet [3:0],	// type 1 + address 5 + data 32
+	input logic [3:0]  ready_c,
 	
 	// IC Broadcast
 	output logic		  ic_ready,
 	output logic		  bus_inv,		// no se usa en Firefly, se mantiene a 0
-	output logic		  bus_rd,		// snoop broadcast (lecturas y writes-update)
-	output logic [1:0]  ic_tag,
+	output logic		  bus_rd,		// snoop broadcast para lecturas y seguimiento remoto
+	output logic      bus_update,		// write-update para escritura remota
+	output logic [1:0]  resp_id,		// ID del cache al que se responde
+	output logic [4:0]  snoop_addr,		// dirección de snoop para que los caches receptores comparen líneas
+	output logic [1:0]  ic_tag,			// tag de dirección de acceso para que el cache receptor actualice estado
 	output logic [63:0] ic_cache_line,	// dos bloques de 32 bits
 	
 	// IC -> memoria principal
 	output logic		  mem_req,		// pulso de un ciclo, le indica a la RAM que arranque
-	output logic		  mem_we,
-	output logic [4:0]  mem_address,
-	output logic [63:0] mem_data_in,
+	output logic		  mem_we,		// 1 para write, 0 para read
+	output logic [4:0]  mem_address,	// dirección de la línea a acceder en RAM
+	output logic [63:0] mem_data_in,	// datos a escribir en RAM (en caso de write)
 	
 	// Desde memoria principal
-	input logic [63:0] mem_data_out,
-	input logic			 mem_ready
+	input logic [63:0] mem_data_out,	// datos leidos desde RAM (en caso de read)
+	input logic			 mem_ready		// RAM indica que esta listo
 );
-
-	// =============================================================
-	// Interconnect_FF - protocolo Firefly (Write-Update).
-	//
-	// Lo mismo que Interconnect_MSI pero con cambio en SNOOP_ISSUE:
-	//   - Lectura  (req_type=1): revisa bus_rd, igual que MSI.
-	//   - Escritura(req_type=0): revisa bus_rd y publica el dato
-	//     nuevo en ic_cache_line para que los caches remotos hagan
-	//     write-update y permanezcan validos en estado Shared.
-	//     bus_inv NUNCA se revisa en Firefly.
-
 
 	// Estados
 	typedef enum logic [2:0] {
 		IDLE			= 3'b000,
-		ARBITRATE	= 3'b001,
-		DECODE		= 3'b010,
-		SNOOP_ISSUE = 3'b011,
-		WAIT_SNOOP  = 3'b100,
-		MEM_ACCESS  = 3'b101,
-		RESPOND		= 3'b110
+		DECODE		= 3'b001,
+		SNOOP_ISSUE = 3'b010,
+		WAIT_SNOOP  = 3'b011,
+		MEM_ACCESS  = 3'b100,
+		RESPOND		= 3'b101
 	} state_t;
 	
 	state_t current_state, next_state;
 	
 	// -------------Registros internos
-	logic 	 	 req_type;
-	logic [4:0]  req_address;
-	logic [31:0] req_data;
+	logic 	 	 req_type;			// 0 para write, 1 para read
+	logic [4:0]  req_address;		// en write, se necesita enviar el dato en el bus, por lo que se extrae del request_packet
+	logic [31:0] req_data;			// en write, se necesita enviar el dato en el bus, por lo que se extrae del request_packet
+	logic        mem_cmd_issued;	// si ya se emitió el comando a RAM para evitar repetirlo durante MEM_ACCESS
 	
-	logic [1:0]  rr_ptr;
-	logic [1:0]  winner;
-	
-	logic [3:0]  snoop_counter;
+	logic [1:0]  rr_ptr;			// puntero para round-robin entre los caches que solicitan ayuda
+	logic [1:0]  winner;			// cache elegido para atender su request (en caso de múltiples solicitudes simultáneas)
+	logic all_ready_c;				// helper para saber si todos los caches ya respondieron a snoop
+	assign all_ready_c = &ready_c;	// si todos los bits de ready_c son 1, entonces all_ready_c es 1
 	
 	// -------------Registro de estado
 	always_ff @(posedge clk) begin
@@ -72,19 +65,11 @@ module Interconnect_FF #(
 		
 		case (current_state)
 		
-			// Lo mismo que MSI: si llega cualquier request, salta a DECODE.
-			// El winner se elige en IDLE usando rr_ptr para no depender de
-			// que help siga asertado en ciclos posteriores.
 			IDLE: begin
 				if (help == 4'b0000)
 					next_state = IDLE;
 				else
 					next_state = DECODE;
-			end
-
-			// Estado conservado por compatibilidad; no se entra aqui.
-			ARBITRATE: begin
-				next_state = DECODE;
 			end
 			
 			DECODE: begin
@@ -96,7 +81,7 @@ module Interconnect_FF #(
 			end
 
 			WAIT_SNOOP: begin
-				if (snoop_counter == SNOOP_WAIT_CYCLES - 1)
+				if (all_ready_c)
 					next_state = MEM_ACCESS;
 				else
 					next_state = WAIT_SNOOP;
@@ -123,7 +108,10 @@ module Interconnect_FF #(
 		if (reset) begin
 			bus_rd			<= 1'b0;
 			bus_inv			<= 1'b0;
+			bus_update	<= 1'b0;
 			ic_ready		<= 1'b0;
+			resp_id			<= 2'b0;
+			snoop_addr	<= 5'b0;
 			ic_tag			<= 2'b0;
 			ic_cache_line	<= 64'b0;
 			mem_req			<= 1'b0;
@@ -135,12 +123,13 @@ module Interconnect_FF #(
 			req_data		<= 32'b0;
 			rr_ptr			<= 2'b0;
 			winner			<= 2'b0;
-			snoop_counter	<= 4'b0;
+			mem_cmd_issued <= 1'b0;
 		end else begin
 		
 			// Limpieza por defecto de senales uniciclo
 			bus_rd	<= 1'b0;
 			bus_inv	<= 1'b0;	// en Firefly siempre permanece en 0
+			bus_update <= 1'b0;
 			ic_ready<= 1'b0;
 			mem_req	<= 1'b0;
 			mem_we	<= 1'b0;
@@ -151,7 +140,7 @@ module Interconnect_FF #(
 				// IDLE. Se elige winner con prioridad rr_ptr.
 				// ---------------------------------------
 				IDLE: begin
-					snoop_counter <= 4'b0;
+					mem_cmd_issued <= 1'b0;
 					if (help != 4'b0000) begin
 						if      (help[rr_ptr])         winner <= rr_ptr;
 						else if (help[rr_ptr + 2'd1])  winner <= rr_ptr + 2'd1;
@@ -161,52 +150,47 @@ module Interconnect_FF #(
 				end
 				
 				// ---------------------------------------
-				// Camino legacy.
-				// ---------------------------------------
-				ARBITRATE: begin
-					if      (help[rr_ptr])         winner <= rr_ptr;
-					else if (help[rr_ptr + 2'd1])  winner <= rr_ptr + 2'd1;
-					else if (help[rr_ptr + 2'd2])  winner <= rr_ptr + 2'd2;
-					else                           winner <= rr_ptr + 2'd3;
-				end
-
-				// ---------------------------------------
 				// DECODE: extrae los campos del paquete y avanza rr_ptr
 				// ---------------------------------------
 				DECODE: begin
 					req_type    <= request_packet[winner][37];
 					req_address <= request_packet[winner][36:32];
 					req_data    <= request_packet[winner][31:0];
+					resp_id     <= winner;
+					snoop_addr  <= request_packet[winner][36:32];
 					rr_ptr      <= winner + 2'd1;
 				end
 				
 				// ---------------------------------------
 				// SNOOP_ISSUE - Firefly Write-Update
-				// Lectura  (req_type=1)
-				// Escritura(req_type=0)
+				// Read:  bus_rd
+				// Write: bus_rd + bus_update
 				// ---------------------------------------
 				SNOOP_ISSUE: begin
-					bus_rd  <= 1'b1;
-					bus_inv <= 1'b0;	// reafirmamos: Firefly nunca invalida
+					bus_rd <= 1'b1;
+					bus_inv <= 1'b0;
+					snoop_addr <= req_address;
 					if (req_type == 1'b0) begin
-						// publicar dato nuevo a remotos para write-update
+						bus_update <= 1'b1;
 						ic_cache_line <= (req_address[0]) ?
 											{req_data, 32'b0} :
 											{32'b0, req_data};
-						ic_tag <= req_address[4:3];
 					end
-					snoop_counter <= 4'b0;
+					ic_tag <= req_address[4:3];
 				end
 
 				// ---------------------------------------
-				// WAIT_SNOOP - en el ultimo ciclo se le avisa a la RAM.
-				// La RAM debe quedar coherente: en escritura tambien
-				// le mandamos mem_we=1 para que actualice memoria
-				// (write-update + write-through).
+				// Espera de snoop por handshake real de caches.
 				// ---------------------------------------
 				WAIT_SNOOP: begin
-					snoop_counter <= snoop_counter + 4'd1;
-					if (snoop_counter == SNOOP_WAIT_CYCLES - 1) begin
+					// nada, solo espera all_ready_c
+				end
+				
+				// ---------------------------------------
+				// MEM_ACCESS - emitir un solo comando RAM y esperar mem_ready
+				// ---------------------------------------
+				MEM_ACCESS: begin
+					if (!mem_cmd_issued) begin
 						mem_req     <= 1'b1;
 						mem_address <= req_address;
 						if (req_type == 1'b0) begin
@@ -214,15 +198,11 @@ module Interconnect_FF #(
 							mem_data_in <= (req_address[0]) ?
 												{req_data, 32'b0} :
 												{32'b0, req_data};
+						end else begin
+							mem_we <= 1'b0;
 						end
+						mem_cmd_issued <= 1'b1;
 					end
-				end
-				
-				// ---------------------------------------
-				// MEM_ACCESS - solo esperamos mem_ready
-				// ---------------------------------------
-				MEM_ACCESS: begin
-					// nada
 				end
 
 				// ---------------------------------------
@@ -231,7 +211,13 @@ module Interconnect_FF #(
 				RESPOND: begin
 					ic_ready		<= 1'b1;
 					ic_tag			<= req_address[4:3];
-					ic_cache_line	<= mem_data_out;
+					if (req_type == 1'b0)
+						ic_cache_line <= (req_address[0]) ?
+											{req_data, 32'b0} :
+											{32'b0, req_data};
+					else
+						ic_cache_line <= mem_data_out;
+					mem_cmd_issued <= 1'b0;
 				end
 				
 			endcase

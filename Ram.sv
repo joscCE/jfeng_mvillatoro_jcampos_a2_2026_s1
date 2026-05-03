@@ -10,25 +10,23 @@ module Ram (
 
     // RAM -> IC
     output logic [63:0] data_out,       // linea completa leida
-    output logic        mem_ready       // operacion completada, IC puede avanzar
+    output logic        mem_ready       // todo listo, IC puede avanzar
 );
 
     // ----------------------------------------------------------------
     // Arreglo de memoria.
     // 4 entradas porque el indice del cache es de 2 bits (address[2:1]).
     // Cada entrada almacena una linea completa de 64 bits.
-    // No reseteamos el contenido para no impedir la inferencia
-    // de bloques M10K en Quartus si a futuro se escala el tamano.
-    // address[4:3] = tag, address[2:1] = index, address[0] = offset.
+    // address[4:3] = tag
+    // address[2:1] = index 
+    // address[0] = offset.
     // ----------------------------------------------------------------
 
     logic [63:0] memory [0:3];
 
     // ----------------------------------------------------------------
-    // Logica de lectura y escritura sincrona.
-    // mem_ready actua como pulso uniciclo: solo se activa el ciclo
-    // siguiente al pulso req. data_out queda registrado y valido el
-    // mismo ciclo en que mem_ready=1 (lectura sincrona, BRAM-friendly).
+    // Lectura y escritura
+    // mem_ready se activa el ciclo despues de req y data_out queda valido
     // ----------------------------------------------------------------
 
     always_ff @(posedge clk) begin
