@@ -2,11 +2,11 @@
 
 module Cache_tb();
 
-    // Señales del Reloj y Reset
+    // Reloj y Reset
     logic clk;
     logic reset;
     
-    // Interfaz Procesador -> Cache
+    // CPU -> Cache
     logic we;
     logic rd;
     logic [4:0] address;
@@ -14,25 +14,30 @@ module Cache_tb();
     logic [31:0] data_out;
     logic stall;
 
-    // Interfaz IC -> Cache
+    // IC -> Cache
     logic ready;
     logic bus_inv;
     logic bus_rd;
+    logic [1:0] bus_tag;   
     logic [1:0] ic_tag;
     logic [63:0] ic_data;
-    
-    // Monitoreo
+
+    // Salidas nuevas
+    logic ready_c;
+    logic [63:0] cache_line_c;
+
+    // Debug
     logic [1:0] current_state;
     logic [1:0] current_tag;
 
-    // Instancia de la Cache
+    // Instancia
     Cache uut (.*);
 
-    // Generación de Reloj (10ns periodo)
+    // Clock
     always #5 clk = ~clk;
 
     initial begin
-        // --- Inicialización ---
+        // Init
         clk = 0;
         reset = 1;
         we = 0;
@@ -42,63 +47,90 @@ module Cache_tb();
         ready = 0;
         bus_inv = 0;
         bus_rd = 0;
+        bus_tag = 0;
         ic_tag = 0;
         ic_data = 0;
 
         #15 reset = 0;
-        $display("--- Inicio de Testbench MSI ---");
+        $display("\n--- Inicio Testbench MSI (con Write-Back) ---");
 
-        // --- CASO 1: Read Miss (I -> S) ---
-        // El procesador quiere leer la dirección 0x04 (Tag 0, Index 2, Offset 0)
-        address = 5'b00100; 
+        // =========================================
+        // CASO 1: READ MISS (I -> S)
+        // =========================================
+        address = 5'b00100; // tag=00 index=10
         rd = 1;
         #10;
-        if (stall) $display("[T=25ns] Stall detectado: Read Miss en direccion 0x04");
 
-        // El IC responde después de un ciclo
         #10;
         ic_tag = 2'b00;
-        ic_data = {32'hBEEF_BEEF, 32'hCAFE_CAFE}; // Bloque completo
+        ic_data = {32'hBEEF_BEEF, 32'hCAFE_CAFE};
         ready = 1;
+
         #10;
         ready = 0;
         rd = 0;
-        $display("[T=45ns] Dato cargado. Estado actual: %b (Debe ser SHARED=01)", current_state);
 
-        // --- CASO 2: Write Hit (S -> M) ---
-        // El procesador escribe en la misma dirección que ya tiene
+        $display("[Read Miss] Estado: %b (esperado SHARED=01)", current_state);
+
+        // =========================================
+        //CASO 2: WRITE HIT (S -> M)
+        // =========================================
         address = 5'b00100;
         data_in = 32'h1234_5678;
         we = 1;
+
         #10;
         we = 0;
-        $display("[T=55ns] Write Hit ejecutado. Estado actual: %b (Debe ser MODIFIED=10)", current_state);
 
-        // --- CASO 3: Invalidación Externa (M -> I) ---
-        // El IC avisa que otro procesador quiere escribir en nuestro bloque
+        $display("[Write Hit] Estado: %b (esperado MODIFIED=10)", current_state);
+
+        // =========================================
+        //CASO 3: BUS_RD con MODIFIED (WRITE-BACK)
+        // =========================================
+        #10;
+        bus_tag = 2'b00; // mismo tag
+        bus_rd = 1;
+
+        #10;
+        bus_rd = 0;
+
+        $display("[BusRd] ready_c: %b (esperado 1)", ready_c);
+        $display("[BusRd] cache_line_c: %h (debe ser el bloque)");
+        $display("[BusRd] Estado: %b (esperado SHARED=01)", current_state);
+
+        // =========================================
+        //CASO 4: INVALIDACIÓN (S -> I)
+        // =========================================
         #10;
         bus_inv = 1;
+
         #10;
         bus_inv = 0;
-        $display("[T=75ns] Invalidez recibida del Bus. Estado actual: %b (Debe ser INVALID=00)", current_state);
 
-        // --- CASO 4: Write Miss Directo (I -> M) ---
-        // Procesador escribe en dirección 0x08 (Tag 1, Index 0, Offset 0)
-        address = 5'b01000;
+        $display("[Invalidate] Estado: %b (esperado INVALID=00)", current_state);
+
+        // =========================================
+        // CASO 5: WRITE MISS (I -> M)
+        // =========================================
+        address = 5'b01000; // tag=01 index=00
         data_in = 32'hAAAA_BBBB;
         we = 1;
+
         #10;
-        // Simulamos respuesta del IC
+
         ic_tag = 2'b01;
-        ic_data = 64'h0; // Datos base vacíos de memoria
+        ic_data = 64'h0;
         ready = 1;
+
         #10;
         ready = 0;
         we = 0;
-        $display("[T=105ns] Write Miss completado. Estado actual: %b (Debe ser MODIFIED=10)", current_state);
 
+        $display("[Write Miss] Estado: %b (esperado MODIFIED=10)", current_state);
+
+        // =========================================
         #20;
-        $display("--- Testbench Finalizado ---");
+        $display("--- Testbench Finalizado ---\n");
         $finish;
     end
 
