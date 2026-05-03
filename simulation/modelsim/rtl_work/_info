@@ -8,58 +8,58 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim
-vCache
+Z0 d/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim
+vCache_ff
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1777191556
+Z2 !s110 1777780483
 !i10b 1
-!s100 ^MGdeY:9_oE:[Y9n8UG_R2
+!s100 0GO`D1ho?k<_dE^iJTO9@3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IY3WK:PI7Mm?5gM2CE843S2
+IIP3D`WZHo>:BHaNlQG^nO1
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1776655994
-8C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv
-FC:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv
+w1777778701
+8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff.sv
+F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff.sv
 !i122 0
-L0 1 103
+L0 1 151
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1777191556.000000
-!s107 C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache.sv|
+Z6 !s108 1777780483.000000
+!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff.sv|
 !i113 1
 Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1
+Z8 !s92 -sv -work work {+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1}
 Z9 tCvgOpt 0
-n@cache
-vInterconnect_MSI_tb
+n@cache_ff
+vCache_ff_tb
 R1
 R2
 !i10b 1
-!s100 i8mn:7cUT_h`=_FjjX@4O3
+!s100 >FBkn<IF1Ae2z6=gola^i3
 R3
-ILLA3:i]emmefE7Qz:NHk01
+INihaDFiGVUjDYnzTKe7;61
 R4
 S1
 R0
-w1777190967
-8C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI_tb.sv
-FC:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI_tb.sv
+w1777778790
+8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff_tb.sv
+F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff_tb.sv
 !i122 1
-L0 3 197
+L0 3 107
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1|C:/Users/mavic/OneDrive/Escritorio/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI_tb.sv|
+!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff_tb.sv|
 !i113 1
 R7
 R8
 R9
-n@interconnect_@m@s@i_tb
+n@cache_ff_tb
