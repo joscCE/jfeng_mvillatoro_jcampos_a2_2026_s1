@@ -1,4 +1,5 @@
 vendor_name = ModelSim
+source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_ff.sv
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Coherence_Integration_Full_tb.sv
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
@@ -32,7 +33,7 @@ source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvil
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/trace2.mif
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_pe21.tdf
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/trace3.mif
-design_name = Top
-instance = comp, \reset~input , reset~input, Top, 1
-instance = comp, \clk~input , clk~input, Top, 1
-instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, Top, 1
+design_name = Top_ff
+instance = comp, \reset~input , reset~input, Top_ff, 1
+instance = comp, \clk~input , clk~input, Top_ff, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, Top_ff, 1
