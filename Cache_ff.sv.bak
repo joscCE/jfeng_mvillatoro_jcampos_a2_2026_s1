@@ -95,12 +95,12 @@ module Cache_ff(
 
         //contamos cantidad de updates
 
-	Counter #(.COUNTER(64)) count_updates (
-    .clk(clk),
-    .rst(reset),
-	 .control(bus_update),
-    .count(Count_update)
-		);
+        Counter #(COUNTER = 64)count_updtes (
+        .clk(clk),
+        .reset(reset),
+        .control(bus_update),
+        .count(Count_update)
+    );
 
 
 

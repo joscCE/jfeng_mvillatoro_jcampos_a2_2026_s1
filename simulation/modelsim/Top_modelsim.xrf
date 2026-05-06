@@ -33,6 +33,7 @@ source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvil
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/trace2.mif
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_pe21.tdf
 source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/trace3.mif
+source_file = 1, /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv
 design_name = Top_ff
 instance = comp, \reset~input , reset~input, Top_ff, 1
 instance = comp, \clk~input , clk~input, Top_ff, 1
