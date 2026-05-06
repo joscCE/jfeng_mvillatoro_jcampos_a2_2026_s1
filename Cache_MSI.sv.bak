@@ -56,25 +56,19 @@ module Cache_MSI(
     logic [67:0] cache [0:3];
     logic [67:0] cache_line;
 
-	 
-	 logic [63:0] Count_Time_stall;
-    logic [63:0] Count_Invalidate;
-	 
-	 
     assign cache_line = cache[index];
 
     assign current_tag   = cache_line[67:66];
     assign current_state = cache_line[1:0];
-	 
-	
-	 
+
     assign Time_stall = Count_Time_stall; 
+
     assign Counter_inv = Count_Invalidate; 
 
 
+    logic [63:0] Count_Time_stall;
 
-
-	Timer #(.COUNTER(64)) counter_timer (
+	TIMER #(.COUNTER(64)) counter_timer (
     .clk(clk),
     .rst(reset),
 	.control(stall),
@@ -82,7 +76,7 @@ module Cache_MSI(
 	);
 
 
-
+    logic [63:0] Count_Invalidate;
 
     //contamos cantidad de updates
 

@@ -29,6 +29,9 @@ module Top_ff (
     logic        mem_req, mem_we, mem_ready;
     logic [4:0]  mem_address;
     logic [63:0] mem_data_to_ram, mem_data_from_ram;
+	 
+	 logic [63:0] count_timer [3:0];
+	 logic [63:0] count_updt [3:0];
 
     // ============================================================
     // 1. Instanciación de Procesadores (PE)
@@ -87,7 +90,10 @@ module Top_ff (
                 .ic_data(ic_data_bus),
                 
                 .current_state(),
-                .current_tag()
+                .current_tag(),
+					 
+					 .Counter_upt(count_timer[i]),
+                .Time_stall(count_updt[i])  
             );
         end
     endgenerate

@@ -27,7 +27,11 @@ module Cache_ff(
 
     // Debug
     output logic [1:0] current_state,   // Estado de la línea cache
-    output logic [1:0] current_tag      // Tag de la línea cache
+    output logic [1:0] current_tag,      // Tag de la línea cache
+    output logic [63:0] Counter_upt,
+    output logic [63:0] Time_stall    
+
+
 );
 
     localparam VALID   = 2'b00;
@@ -72,11 +76,6 @@ module Cache_ff(
 
 
 
-
-
-
-
-
     assign help = pending;
     assign request_packet = {pending_type, pending_address, pending_data};
     assign stall = pending || (((rd || we) && (!hit || needs_update)) && !ready);
@@ -91,19 +90,33 @@ module Cache_ff(
 
 
 
+    assign Time_stall = Count_Time_stall; 
+
+    assign Counter_upt = Count_update; 
+
+
+
+    logic [63:0] Count_Time_stall;
+
+	Timer #(.COUNTER(64)) Timer_Stalls (
+    .clk(clk),
+    .rst(reset),
+	.control(stall),
+    .count(Count_Time_stall)
+	);
+
+
     logic [63:0] Count_update;
 
-        //contamos cantidad de updates
+    //contamos cantidad de updates
 
 	Counter #(.COUNTER(64)) count_updates (
     .clk(clk),
     .rst(reset),
-	 .control(bus_update),
-    .count(Count_update)
-		);
-
-
-
+	.control(help),
+    .count(Count_update),
+	 
+	);
 
 
     always_ff @(posedge clk or posedge reset) begin

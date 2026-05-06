@@ -9,62 +9,114 @@
 # Copying /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:29 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv 
+# -- Compiling module Counter
+# 
+# Top level modules:
+# 	Counter
+# End time: 15:57:29 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Timer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:29 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Timer.sv 
+# -- Compiling module Timer
+# 
+# Top level modules:
+# 	Timer
+# End time: 15:57:29 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:29 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv 
+# -- Compiling module PE
+# 
+# Top level modules:
+# 	PE
+# End time: 15:57:29 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:36:07 on May 05,2026
+# Start time: 15:57:29 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv 
 # -- Compiling module Top
 # 
 # Top level modules:
 # 	Top
-# End time: 18:36:07 on May 05,2026, Elapsed time: 0:00:00
+# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# 
-# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Coherence_Integration_Full_tb.sv}
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:36:08 on May 05,2026
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Coherence_Integration_Full_tb.sv 
-# -- Compiling module Coherence_Integration_Full_tb
+# Start time: 15:57:30 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv 
+# -- Compiling module Interconnect_MSI
+# ** Warning: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv(9): (vlog-13314) Defaulting port 'request_packet' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv(12): (vlog-13314) Defaulting port 'cache_line_c' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
-# 	Coherence_Integration_Full_tb
-# End time: 18:36:08 on May 05,2026, Elapsed time: 0:00:00
+# 	Interconnect_MSI
+# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:30 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram.sv 
+# -- Compiling module Ram
+# 
+# Top level modules:
+# 	Ram
+# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:30 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv 
+# -- Compiling module Cache_MSI
+# 
+# Top level modules:
+# 	Cache_MSI
+# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Coherence_Integration_Full_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Coherence_Integration_Full_tb 
-# Start time: 18:36:08 on May 05,2026
+# vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:57:30 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv 
+# -- Compiling module Top_tb
+# 
+# Top level modules:
+# 	Top_tb
+# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Top_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Top_tb 
+# Start time: 15:57:30 on May 06,2026
 # Loading sv_std.std
-# Loading work.Coherence_Integration_Full_tb
-# ** Error: (vsim-3033) Instantiation of 'Interconnect_FF' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /Coherence_Integration_Full_tb File: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Coherence_Integration_Full_tb.sv Line: 91
-#         Searched libraries:
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/220model
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/sgate
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_mf
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_lnsim
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cyclonev
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cyclonev_hssi
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cyclonev_pcie_hip
-#             /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim/rtl_work
-#             /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim/rtl_work
-# ** Error: (vsim-3033) Instantiation of 'Ram' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /Coherence_Integration_Full_tb File: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Coherence_Integration_Full_tb.sv Line: 113
-#         Searched libraries:
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/220model
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/sgate
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_mf
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_lnsim
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cyclonev
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cyclonev_hssi
-#             /home/jecampos/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cyclonev_pcie_hip
-#             /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim/rtl_work
-#             /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim/rtl_work
+# Loading work.Top_tb
+# Loading work.Top
+# Loading work.Interconnect_MSI
+# Loading work.Ram
+# Loading work.PE
+# Loading altera_mf_ver.altsyncram
+# Loading work.Cache_MSI
+# Loading work.Timer
+# Loading work.Counter
+# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[0]/u_pe/trace_rom' has an incompatible value.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[0]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
+# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[1]/u_pe/trace_rom' has an incompatible value.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[1]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
+# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[2]/u_pe/trace_rom' has an incompatible value.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[2]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
+# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[3]/u_pe/trace_rom' has an incompatible value.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[3]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
 # Error loading design
 # Error: Error loading design
 #        Pausing macro execution
-# MACRO ./Top_run_msim_rtl_verilog.do PAUSED at line 12
-# End time: 18:36:13 on May 05,2026, Elapsed time: 0:00:05
-# Errors: 2, Warnings: 0
+# MACRO ./Top_run_msim_rtl_verilog.do PAUSED at line 18
+# End time: 15:57:55 on May 06,2026, Elapsed time: 0:00:25
+# Errors: 4, Warnings: 0
