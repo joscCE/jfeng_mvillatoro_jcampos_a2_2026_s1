@@ -19,7 +19,7 @@ module tb_pe;
     // Instancia del PE
     // ================================
     PE #(
-        .TRACE_MIF("trace.mif")
+        .TRACE_MIF("trace0.mif")
     ) uut (
         .clk(clk),
         .rst(rst),
