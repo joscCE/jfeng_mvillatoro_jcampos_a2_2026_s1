@@ -7,10 +7,14 @@ module tb_pe;
     // ================================
     reg clk;
     reg rst;
-    reg done;
+
+    // Nuevas señales hacia el PE
+    reg stall_cache;
+    reg [31:0] data_cache;
 
     wire        req_valid;
-    wire        req_type;
+    wire        rd;
+    wire        we;
     wire [4:0]  addr;
     wire [31:0] data;
     wire        finished;
@@ -23,9 +27,11 @@ module tb_pe;
     ) uut (
         .clk(clk),
         .rst(rst),
-        .done(done),
+        .stall_cache(stall_cache),
+        .data_cache(data_cache),
         .req_valid(req_valid),
-        .req_type(req_type),
+        .rd(rd),
+        .we(we),
         .addr(addr),
         .data(data),
         .finished(finished)
@@ -44,12 +50,13 @@ module tb_pe;
     // ================================
     initial begin
         // Inicialización
-        done = 0;
-        rst  = 1;   // activar reset
+        rst         = 1;
+        stall_cache = 0;
+        data_cache  = 32'h12345678;
 
         $display("---- Iniciando Testbench ----");
 
-        // Mantener reset por un tiempo
+        // Mantener reset
         #20;
         rst = 0;
 
@@ -58,15 +65,19 @@ module tb_pe;
             @(posedge clk);
 
             if (req_valid) begin
-                $display("[%t] PE solicita -> type=%0d addr=%0d data=%h",
-                    $time, req_type, addr, data);
+                $display("[%t] PE solicita -> %s addr=%0d data=%h",
+                         $time,
+                         rd ? "READ " : "WRITE",
+                         addr,
+                         data);
 
-                // Simula que la cache tarda 1 ciclo en responder
+                // simular 1 ciclo de espera
+                stall_cache = 1;
                 @(posedge clk);
-                done = 1;
 
-                @(posedge clk);
-                done = 0;
+                // Cache responde
+                data_cache  = $random;
+                stall_cache = 0;
             end
         end
     end
