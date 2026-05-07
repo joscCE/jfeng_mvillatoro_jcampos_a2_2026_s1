@@ -11,47 +11,47 @@
 # 
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:29 on May 06,2026
+# Start time: 19:08:51 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv 
 # -- Compiling module Counter
 # 
 # Top level modules:
 # 	Counter
-# End time: 15:57:29 on May 06,2026, Elapsed time: 0:00:00
+# End time: 19:08:51 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Timer.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:29 on May 06,2026
+# Start time: 19:08:51 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Timer.sv 
 # -- Compiling module Timer
 # 
 # Top level modules:
 # 	Timer
-# End time: 15:57:29 on May 06,2026, Elapsed time: 0:00:00
+# End time: 19:08:52 on May 06,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:29 on May 06,2026
+# Start time: 19:08:52 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv 
 # -- Compiling module PE
 # 
 # Top level modules:
 # 	PE
-# End time: 15:57:29 on May 06,2026, Elapsed time: 0:00:00
+# End time: 19:08:52 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:29 on May 06,2026
+# Start time: 19:08:52 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv 
 # -- Compiling module Top
 # 
 # Top level modules:
 # 	Top
-# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:01
+# End time: 19:08:52 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:30 on May 06,2026
+# Start time: 19:08:52 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv 
 # -- Compiling module Interconnect_MSI
 # ** Warning: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv(9): (vlog-13314) Defaulting port 'request_packet' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -59,43 +59,43 @@
 # 
 # Top level modules:
 # 	Interconnect_MSI
-# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
+# End time: 19:08:52 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:30 on May 06,2026
+# Start time: 19:08:52 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram.sv 
 # -- Compiling module Ram
 # 
 # Top level modules:
 # 	Ram
-# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
+# End time: 19:08:52 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:30 on May 06,2026
+# Start time: 19:08:52 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv 
 # -- Compiling module Cache_MSI
 # 
 # Top level modules:
 # 	Cache_MSI
-# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
+# End time: 19:08:52 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+/home/jecampos/Documents/materias/Arqui\ 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1 {/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:57:30 on May 06,2026
+# Start time: 19:08:52 on May 06,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1" /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv 
 # -- Compiling module Top_tb
 # 
 # Top level modules:
 # 	Top_tb
-# End time: 15:57:30 on May 06,2026, Elapsed time: 0:00:00
+# End time: 19:08:52 on May 06,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Top_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Top_tb 
-# Start time: 15:57:30 on May 06,2026
+# Start time: 19:08:52 on May 06,2026
 # Loading sv_std.std
 # Loading work.Top_tb
 # Loading work.Top
@@ -106,17 +106,118 @@
 # Loading work.Cache_MSI
 # Loading work.Timer
 # Loading work.Counter
-# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[0]/u_pe/trace_rom' has an incompatible value.
-#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[0]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
-# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[1]/u_pe/trace_rom' has an incompatible value.
-#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[1]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
-# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[2]/u_pe/trace_rom' has an incompatible value.
-#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[2]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
-# ** Error: (vsim-8576) Override of parameter 'init_file' from '/Top_tb/dut/gen_pe[3]/u_pe/trace_rom' has an incompatible value.
-#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[3]/u_pe/trace_rom File: $MODEL_TECH/../altera/verilog/src/altera_mf.v
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./Top_run_msim_rtl_verilog.do PAUSED at line 18
-# End time: 15:57:55 on May 06,2026, Elapsed time: 0:00:25
-# Errors: 4, Warnings: 0
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'trace_rom'.  Expected 23, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[0]/u_pe/trace_rom File: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 40
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'trace_rom'.  Expected 23, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[1]/u_pe/trace_rom File: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 40
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'trace_rom'.  Expected 23, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[2]/u_pe/trace_rom File: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 40
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'trace_rom'.  Expected 23, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /Top_tb/dut/gen_pe[3]/u_pe/trace_rom File: /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 40
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: (vsim-3722) /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv(40): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# --- Iniciando Simulación del Sistema Multi-Core MSI ---
+# --- Reset liberado, ejecutando trazas ---
+# 
+# ========================================================
+#          REPORTE DE RENDIMIENTO (HARDWARE COUNTERS)      
+# ========================================================
+# CORE 0:
+#   > Invalidaciones recibidas (count_inv):   5
+#   > Ciclos totales en STALL (count_timer):  147
+# --------------------------------------------------------
+# CORE 1:
+#   > Invalidaciones recibidas (count_inv):   5
+#   > Ciclos totales en STALL (count_timer):  156
+# --------------------------------------------------------
+# CORE 2:
+#   > Invalidaciones recibidas (count_inv):   5
+#   > Ciclos totales en STALL (count_timer):  165
+# --------------------------------------------------------
+# CORE 3:
+#   > Invalidaciones recibidas (count_inv):   5
+#   > Ciclos totales en STALL (count_timer):  174
+# --------------------------------------------------------
+# Simulación finalizada a las 100020000
+# ** Note: $finish    : /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv(48)
+#    Time: 100020 ns  Iteration: 0  Instance: /Top_tb
+# 1
+# Break in Module Top_tb at /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv line 48
+# End time: 19:09:03 on May 06,2026, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 72

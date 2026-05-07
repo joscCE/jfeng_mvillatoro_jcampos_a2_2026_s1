@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
-// DATE "05/06/2026 15:53:02"
+// DATE "05/06/2026 19:08:19"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -32,8 +32,8 @@
 module Top (
 	clk,
 	reset);
-input 	clk;
-input 	reset;
+input 	logic clk ;
+input 	logic reset ;
 
 // Design Ports Information
 // reset	=>  Location: PIN_AA14,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default

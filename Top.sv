@@ -34,11 +34,9 @@ module Top (
     genvar i;
     generate
         for (i = 0; i < 4; i++) begin : gen_pe
-            localparam string TRACE_FILE = (i == 0) ? "trace0.mif" :
-                                           (i == 1) ? "trace1.mif" :
-                                           (i == 2) ? "trace2.mif" : "trace3.mif";
+
             PE #(
-                .TRACE_MIF(TRACE_FILE)
+                .TRACE_MIF("trace0.mif")
             ) u_pe (
                 .clk(clk),
                 .rst(reset),
@@ -82,8 +80,8 @@ module Top (
                 .ic_data(ic_data_bus),
                 .current_state(),
                 .current_tag(),
-					 .Counter_inv(count_timer[i]),
-					 .Time_stall(count_inv[i])   
+				.Counter_inv(count_inv[i]),
+				.Time_stall(count_timer[i])   
             );
         end
     endgenerate
