@@ -1,8 +1,39 @@
 module Top (
-    input  logic clk,
-    input  logic reset
+    input  logic clk50,
+    input  logic reset,
+	 output logic Hs, Vs,
+	 output logic VGA_Blank, VGA_Sync_N, VGA_CLK,
+	 output logic [7:0]  R, G, B
+	 
 );
 
+
+	logic clk;
+	
+	clk_div div_clo(
+		 .clk(clk50),
+		 .rst_active(reset),
+		 .clk25(clk)
+	);
+	
+	Vga_Controller #(.N(8)) vga_control(
+   .clk(clk), 
+	.rst(reset),
+    .Hs(Hs), 
+	.Vs(Vs),
+	.VGA_Blank(VGA_Blank), 
+	.VGA_Sync_N(VGA_Sync_N),
+	.Q_X(), 
+	.Q_Y(),
+	.R(R),
+	.G(G),
+	.B(B),
+	.count_timer(count_timer),
+	.count_inv(count_inv)
+
+);
+	
+	
     // --- Señales PE <-> Cache ---
     logic [3:0]  pe_we, pe_rd, pe_stall;
     logic [4:0]  pe_address [3:0];
@@ -31,29 +62,62 @@ module Top (
 	 logic [63:0] count_timer [3:0];
 	 logic [63:0] count_inv [3:0];
 
-    genvar i;
-    generate
-        for (i = 0; i < 4; i++) begin : gen_pe
+PE #(
+    .TRACE_MIF("trace0.mif")
+) u_pe0 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!pe_stall[0]),
+    .rd(pe_rd[0]),
+    .we(pe_we[0]),
+    .addr(pe_address[0]),
+    .data(pe_data_to_cache[0]),
+    .finished()
+);
 
-            PE #(
-                .TRACE_MIF("trace0.mif")
-            ) u_pe (
-                .clk(clk),
-                .rst(reset),
-                // --- Conexiones con nombres corregidos ---
-                .done(!pe_stall[i]),    // done es la entrada de feedback
-                .req_valid(pe_rd[i]),   // Usamos la señal rd como habilitador[cite: 11]
-                .req_type(pe_we[i]),    // 1 para lectura, 0 para escritura[cite: 11]
-                .addr(pe_address[i]),   // Puerto de dirección[cite: 11]
-                .data(pe_data_to_cache[i]), // Puerto de datos[cite: 11]
-                .finished()             // Salida opcional[cite: 11]
-            );
-        end
-    endgenerate
+PE #(
+    .TRACE_MIF("trace1.mif")
+) u_pe1 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!pe_stall[1]),
+    .rd(pe_rd[1]),
+    .we(pe_we[1]),
+    .addr(pe_address[1]),
+    .data(pe_data_to_cache[1]),
+    .finished()
+);
+
+PE #(
+    .TRACE_MIF("trace2.mif")
+) u_pe2 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!pe_stall[2]),
+    .rd(pe_rd[2]),
+    .we(pe_we[2]),
+    .addr(pe_address[2]),
+    .data(pe_data_to_cache[2]),
+    .finished()
+);
+
+PE #(
+    .TRACE_MIF("trace3.mif")
+) u_pe3 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!pe_stall[3]),
+    .rd(pe_rd[3]),
+    .we(pe_we[3]),
+    .addr(pe_address[3]),
+    .data(pe_data_to_cache[3]),
+    .finished()
+);
 
     // ============================================================
     // 2. Instanciación de Caches MSI[cite: 8]
     // ============================================================
+	genvar i;
     generate
         for (i = 0; i < 4; i++) begin : gen_cache
             Cache_MSI u_cache (

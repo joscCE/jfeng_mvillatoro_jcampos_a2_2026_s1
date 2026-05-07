@@ -31,7 +31,6 @@ module Cache_ff(
     output logic [63:0] Counter_upt,
     output logic [63:0] Time_stall    
 
-
 );
 
     localparam VALID   = 2'b00;
@@ -88,7 +87,9 @@ module Cache_ff(
     end
 
 
-
+	 logic [63:0] Count_Time_stall;
+	 
+	 logic [63:0] Count_update;
 
     assign Time_stall = Count_Time_stall; 
 
@@ -96,7 +97,7 @@ module Cache_ff(
 
 
 
-    logic [63:0] Count_Time_stall;
+   
 
 	Timer #(.COUNTER(64)) Timer_Stalls (
     .clk(clk),
@@ -106,7 +107,7 @@ module Cache_ff(
 	);
 
 
-    logic [63:0] Count_update;
+    
 
     //contamos cantidad de updates
 
@@ -114,7 +115,7 @@ module Cache_ff(
     .clk(clk),
     .rst(reset),
 	.control(help),
-    .count(Count_update),
+    .count(Count_update)
 	 
 	);
 

@@ -4,7 +4,7 @@ module Top_ff (
 );
 
     // --- Señales PE <-> Cache ---
-    logic [3:0]  pe_req_valid, pe_req_type;
+    logic [3:0]  pe_rd, pe_we;
     logic [4:0]  pe_addr [3:0];
     logic [31:0] pe_data_to_cache [3:0];
     logic [31:0] pe_data_from_cache [3:0];
@@ -30,33 +30,65 @@ module Top_ff (
     logic [4:0]  mem_address;
     logic [63:0] mem_data_to_ram, mem_data_from_ram;
 	 
-	 logic [63:0] count_timer [3:0];
-	 logic [63:0] count_updt [3:0];
+	logic [63:0] count_timer [3:0];
+	logic [63:0] count_updt [3:0];
 
     // ============================================================
     // 1. Instanciación de Procesadores (PE)
     // ============================================================
     genvar i;
-    generate
-        for (i = 0; i < 4; i++) begin : gen_pe
-            localparam string TRACE_FILE = (i == 0) ? "trace0.mif" :
-                                           (i == 1) ? "trace1.mif" :
-                                           (i == 2) ? "trace2.mif" : "trace3.mif";
-            PE #(
-                .TRACE_MIF(TRACE_FILE)
-            ) u_pe (
-                .clk(clk),
-                .rst(reset),
-                .done(!cache_stall[i]), // El PE avanza cuando NO hay stall[cite: 14]
-                .req_valid(pe_req_valid[i]),
-                .req_type(pe_req_type[i]),
-                .addr(pe_addr[i]),
-                .data(pe_data_to_cache[i]),
-                .finished() 
-            );
-        end
-    endgenerate
+  
+    PE #(
+    .TRACE_MIF("trace0.mif")
+) u_pe0 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!cache_stall[0]),
+    .rd(pe_rd[0]),
+    .we(pe_we[0]),
+    .addr(pe_addr[0]),
+    .data(pe_data_to_cache[0]),
+    .finished()
+);
 
+PE #(
+    .TRACE_MIF("trace1.mif")
+) u_pe1 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!cache_stall[1]),
+    .rd(pe_rd[1]),
+    .we(pe_we[1]),
+    .addr(pe_addr[1]),
+    .data(pe_data_to_cache[1]),
+    .finished()
+);
+
+PE #(
+    .TRACE_MIF("trace2.mif")
+) u_pe2 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!cache_stall[2]),
+    .rd(pe_rd[2]),
+    .we(pe_we[2]),
+    .addr(pe_addr[2]),
+    .data(pe_data_to_cache[2]),
+    .finished()
+);
+
+PE #(
+    .TRACE_MIF("trace3.mif")
+) u_pe3 (
+    .clk(clk),
+    .rst(reset),
+    .stall_cache(!cache_stall[3]),
+    .rd(pe_rd[3]),
+    .we(pe_we[3]),
+    .addr(pe_addr[3]),
+    .data(pe_data_to_cache[3]),
+    .finished()
+);
     // ============================================================
     // 2. Instanciación de Caches Firefly (Cache_ff)
     // ============================================================
@@ -66,8 +98,8 @@ module Top_ff (
                 .clk(clk),
                 .reset(reset),
                 .cache_id(i[1:0]),
-                .we(pe_req_type[i]),     // 0 = Write
-                .rd(pe_req_valid[i]),    // 1 = Read[cite: 12]
+                .we(pe_we[i]),     // 0 = Write
+                .rd(pe_rd[i]),    // 1 = Read[cite: 12]
                 .address(pe_addr[i]),
                 .data_in(pe_data_to_cache[i]),
                 .data_out(pe_data_from_cache[i]),
@@ -92,8 +124,8 @@ module Top_ff (
                 .current_state(),
                 .current_tag(),
 					 
-					 .Counter_upt(count_timer[i]),
-                .Time_stall(count_updt[i])  
+				.Counter_upt(count_updt[i]),
+                .Time_stall(count_timer[i])  
             );
         end
     endgenerate
