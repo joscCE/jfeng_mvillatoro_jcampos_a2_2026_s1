@@ -1,7 +1,24 @@
 module Top_ff (
-    input  logic clk,
-    input  logic reset
+    input  logic clk50,
+    input  logic reset,
+    	 output logic Hs, Vs,
+	 output logic VGA_Blank, VGA_Sync_N, VGA_CLK,
+	 output logic [7:0]  R, G, B
 );
+
+
+	logic clk;
+	
+	clk_div div_clo(
+		 .clk(clk50),
+		 .rst_active(reset),
+		 .clk25(clk)
+	);
+	
+
+    assign VGA_CLK = clk;	
+
+
 
     // --- Señales PE <-> Cache ---
     logic [3:0]  pe_rd, pe_we;
@@ -33,6 +50,29 @@ module Top_ff (
 	logic [63:0] count_timer [3:0];
 	logic [63:0] count_updt [3:0];
 
+    
+    
+    
+    
+    Vga_Controller #(.N(8)) vga_control(
+    .clk(clk), 
+	.rst(reset),
+    .Hs(Hs), 
+	.Vs(Vs),
+    .VGA_Blank(VGA_Blank), 
+	.VGA_Sync_N(VGA_Sync_N),
+    .Q_X(), 
+	.Q_Y(),
+    .R(R), 
+	.G(G), 
+	.B(B),
+    .count_timer(count_timer),
+    .count_inv(count_updt) 
+);
+
+    
+    
+    
     // ============================================================
     // 1. Instanciación de Procesadores (PE)
     // ============================================================

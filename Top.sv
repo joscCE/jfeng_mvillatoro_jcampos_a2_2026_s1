@@ -16,22 +16,8 @@ module Top (
 		 .clk25(clk)
 	);
 	
-	Vga_Controller #(.N(8)) vga_control(
-   .clk(clk), 
-	.rst(reset),
-    .Hs(Hs), 
-	.Vs(Vs),
-	.VGA_Blank(VGA_Blank), 
-	.VGA_Sync_N(VGA_Sync_N),
-	.Q_X(), 
-	.Q_Y(),
-	.R(R),
-	.G(G),
-	.B(B),
-	.count_timer(count_timer),
-	.count_inv(count_inv)
 
-);
+assign VGA_CLK = clk;	
 	
 	
     // --- Señales PE <-> Cache ---
@@ -61,6 +47,26 @@ module Top (
 
 	 logic [63:0] count_timer [3:0];
 	 logic [63:0] count_inv [3:0];
+	 
+	 
+
+	 
+	Vga_Controller #(.N(8)) vga_control(
+    .clk(clk), 
+	 .rst(reset),
+    .Hs(Hs), 
+	 .Vs(Vs),
+    .VGA_Blank(VGA_Blank), 
+	 .VGA_Sync_N(VGA_Sync_N),
+    .Q_X(), 
+	 .Q_Y(),
+    .R(R), 
+	 .G(G), 
+	 .B(B),
+    .count_timer(count_timer),
+    .count_inv(count_inv) 
+);
+
 
 PE #(
     .TRACE_MIF("trace0.mif")

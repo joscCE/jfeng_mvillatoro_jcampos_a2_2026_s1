@@ -1,16 +1,17 @@
 module Vga_Controller #(
-	 N=8,
-   H_Va = 10'd640,
+   parameter N=8,
+	H_Va = 10'd640,
 	H_FP = 10'd16,
 	H_SycP = 10'd96,
 	H_BckP = 10'd48,
 	H_Total = H_Va + H_FP + H_SycP + H_BckP,
+	
 	V_Va = 10'd480,
 	V_FP = 10'd10,
 	V_SycP = 10'd2,
 	V_BckP = 10'd33,
-	V_Total = V_Va + V_FP + V_SycP + V_BckP 
-   
+	V_Total = V_Va + V_FP + V_SycP + V_BckP
+    
 )(
     input logic clk, rst,
     output logic Hs, Vs,
@@ -18,7 +19,7 @@ module Vga_Controller #(
     output logic [9:0] Q_X, Q_Y,
     output logic [7:0] R, G, B,
     
-    // --- Entradas de tu Proyecto MSI ---
+
     input logic [63:0] count_timer [3:0],
     input logic [63:0] count_inv [3:0]
 );
@@ -26,7 +27,7 @@ module Vga_Controller #(
     // --- Señales de Sincronización (Tu lógica original) ---
     logic [9:0] Q_x, Q_y, D_x, D_y;
     logic rstx, rsty;
-    CounterV count_y(clk, (rstx & rsty)| rst, rstx, 1'b1 ,D_y);					
+    CounterV count_y(clk, (rstx & rsty)| rst, rstx, 1'b1 ,D_y);			
     CounterV count_x(clk, rstx | rst , 1'b1, 1'b1 ,D_x);
     Register reg_x(clk, rst, D_x, 1'b1 ,Q_x);
     Register reg_y(clk, rst, D_y, 1'b1 ,Q_y);
@@ -44,7 +45,7 @@ module Vga_Controller #(
     
     logic [3:0] d_inv [3:0][2:0];   // Dígitos para Invalidaciones (4 cores, 3 dígitos c/u)
     logic [3:0] d_stall [3:0][2:0]; // Dígitos para Stall (4 cores, 3 dígitos c/u)
-    logic [11:0] v_inv;  
+	 logic [11:0] v_inv;  
     logic [11:0] v_stall;
 
     genvar i;
