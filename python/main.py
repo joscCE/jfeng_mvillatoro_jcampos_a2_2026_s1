@@ -16,9 +16,9 @@ instr_pe_test_MSI_LOCAL = [
     (1, 0, 2),  # WRITE dir 0, Hit, State Modified -> Modified
 ]
 
-generate_mif(instr_pe_test_MSI_LOCAL, f"trace.mif")
+#generate_mif(instr_pe_test_MSI_LOCAL, f"trace.mif")
 
 # Generar MIF para cada conjunto de instrucciones de contención
-# for i, instr in enumerate(contencion):
-#     print(f"\nInstrucciones PE{i+1}:")
-#     generate_mif(instr, f"trace{i+1}.mif")
+for i, instr in enumerate(contencion):
+    print(f"\nInstrucciones PE{i+1}:")
+    generate_mif(instr, f"trace{i+1}.mif")
