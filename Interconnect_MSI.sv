@@ -58,10 +58,27 @@ module Interconnect_MSI #(
     logic [1:0] winner;
     logic [1:0] selected_winner;
 
+    // Double-servicing fix: skip one IDLE cycle after serving a cache
+    // so its 'help' has time to de-assert before we sample again.
+    logic        skip_cycle;
+    logic [1:0]  last_served;
+
     logic [3:0] snoop_pending;
     logic       all_ready_c;
+    logic [3:0] help_masked;
+    logic [1:0] rr_ptr_safe;
 
     assign all_ready_c = (snoop_pending == 4'b0000);
+
+    // If rr_ptr is ever unknown in simulation, fall back to 0 so RR can recover.
+    assign rr_ptr_safe = (^rr_ptr === 1'bx) ? 2'd0 : rr_ptr;
+
+    // Build masked help robustly (avoid ternary X-propagation when skip_cycle is X).
+    always_comb begin
+        help_masked = help;
+        if (skip_cycle === 1'b1)
+            help_masked[last_served] = 1'b0;
+    end
 
     // =====================================================
     // combinacional RR
@@ -69,19 +86,19 @@ module Interconnect_MSI #(
 
     always_comb begin
 
-        selected_winner = rr_ptr;
+        selected_winner = rr_ptr_safe;
 
-        if (help[rr_ptr])
-            selected_winner = rr_ptr;
+        if (help_masked[rr_ptr_safe])
+            selected_winner = rr_ptr_safe;
 
-        else if (help[(rr_ptr + 2'd1) & 2'b11])
-            selected_winner = (rr_ptr + 2'd1) & 2'b11;
+        else if (help_masked[(rr_ptr_safe + 2'd1) & 2'b11])
+            selected_winner = (rr_ptr_safe + 2'd1) & 2'b11;
 
-        else if (help[(rr_ptr + 2'd2) & 2'b11])
-            selected_winner = (rr_ptr + 2'd2) & 2'b11;
+        else if (help_masked[(rr_ptr_safe + 2'd2) & 2'b11])
+            selected_winner = (rr_ptr_safe + 2'd2) & 2'b11;
 
-        else if (help[(rr_ptr + 2'd3) & 2'b11])
-            selected_winner = (rr_ptr + 2'd3) & 2'b11;
+        else if (help_masked[(rr_ptr_safe + 2'd3) & 2'b11])
+            selected_winner = (rr_ptr_safe + 2'd3) & 2'b11;
 
     end
 
@@ -104,7 +121,9 @@ module Interconnect_MSI #(
         case (current_state)
 
             IDLE: begin
-                if (help != 4'b0000)
+                if (skip_cycle)
+                    next_state = IDLE;
+                else if (help_masked != 4'b0000)
                     next_state = SNOOP_ISSUE;
             end
 
@@ -166,6 +185,8 @@ module Interconnect_MSI #(
 
             rr_ptr <= 2'b0;
             winner <= 2'b0;
+            skip_cycle  <= 1'b0;
+            last_served <= 2'b0;
 
             snoop_pending <= 4'b0000;
         end
@@ -194,7 +215,11 @@ module Interconnect_MSI #(
 
                     snoop_pending <= 4'b0000;
 
-                    if (help != 4'b0000) begin
+                    if (skip_cycle) begin
+                        // Burn one cycle so the just-served cache's 'help'
+                        // de-asserts before we sample help again.
+                        skip_cycle <= 1'b0;
+                    end else if (help_masked != 4'b0000) begin
 
                         winner <= selected_winner;
 
@@ -346,11 +371,17 @@ module Interconnect_MSI #(
 
                     mem_cmd_issued <= 1'b0;
 
+                    // Arm skip so IDLE burns one cycle before re-sampling help.
+                    // This gives the served cache time to clear its 'pending'
+                    // and de-assert 'help', preventing double-servicing.
+                    skip_cycle  <= 1'b1;
+                    last_served <= winner;
+
                     $display(
                         "[IC][RESP] addr=%0d resp=%0d time=%0t",
                         req_address,
                         resp_id,
-                        $time
+                    $time
                     );
 
                 end

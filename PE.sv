@@ -24,6 +24,7 @@ module PE #(
 	} state_t;
 	
 	state_t state;
+	state_t state_prev;
 	
 	logic [7:0] pc;
 	logic [37:0] rom_q;
@@ -54,6 +55,7 @@ module PE #(
 		
 		if (rst) begin
 			state     <= START;
+			state_prev<= START;
 			pc        <= 8'd0;
 			instr     <= 38'd0;
 			rd	      <= 1'b0;
@@ -63,6 +65,17 @@ module PE #(
 			finished  <= 1'b0;
 		end
 		else begin
+			state_prev <= state;
+
+			`ifdef PE_DEBUG
+			if ((state != state_prev) ||
+			    ((state == SEND_REQ) && (rd || we)) ||
+			    ((state == WAIT_DONE) && (stall_cache === 1'b1))) begin
+				$display("[PE][%s] t=%0t state=%0d pc=%0d instr=%h rd=%0b we=%0b addr=%0d stall_cache=%0b finished=%0b",
+					TRACE_MIF, $time, state, pc, instr, rd, we, addr, stall_cache, finished);
+			end
+			`endif
+
 			case (state) 
 				// Estado inicial
 				START: begin
@@ -126,7 +139,9 @@ module PE #(
     data <= data;
     rd   <= rd;
     we   <= we;
-    if (!stall_cache) begin
+	// Cuando stall_cache=1 el cache ya no esta frenando al PE,
+	// por lo que podemos cerrar el request y avanzar PC.
+	if (stall_cache) begin
         // limpiar request
         rd <= 1'b0;
         we <= 1'b0;
