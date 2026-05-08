@@ -50,25 +50,25 @@ assign VGA_CLK = clk;
 	 
 	 
 	 
-//	Vga_Controller #(.N(8)) vga_control(
-//    .clk(clk), 
-//	 .rst(reset),
-//    .Hs(Hs), 
-//	 .Vs(Vs),
-//    .VGA_Blank(VGA_Blank), 
-//	 .VGA_Sync_N(VGA_Sync_N),
-//    .Q_X(), 
-//	 .Q_Y(),
-//    .R(R), 
-//	 .G(G), 
-//	 .B(B),
-//    .count_timer(count_timer),
-//    .count_inv(count_inv) 
-//);
+	Vga_Controller #(.N(8)) vga_control(
+    .clk(clk), 
+	 .rst(reset),
+    .Hs(Hs), 
+	 .Vs(Vs),
+    .VGA_Blank(VGA_Blank), 
+	 .VGA_Sync_N(VGA_Sync_N),
+    .Q_X(), 
+	 .Q_Y(),
+    .R(R), 
+	 .G(G), 
+	 .B(B),
+    .count_timer(count_timer),
+    .count_inv(count_inv) 
+);
 
 
 PE #(
-    .TRACE_MIF("trace0.mif")
+    .TRACE_MIF("trace1.mif")
 ) u_pe0 (
     .clk(clk),
     .rst(reset),
@@ -81,7 +81,7 @@ PE #(
 );
 
 PE #(
-    .TRACE_MIF("trace1.mif")
+    .TRACE_MIF("trace2.mif")
 ) u_pe1 (
     .clk(clk),
     .rst(reset),
@@ -94,7 +94,7 @@ PE #(
 );
 
 PE #(
-    .TRACE_MIF("trace2.mif")
+    .TRACE_MIF("trace3.mif")
 ) u_pe2 (
     .clk(clk),
     .rst(reset),
@@ -107,7 +107,7 @@ PE #(
 );
 
 PE #(
-    .TRACE_MIF("trace3.mif")
+    .TRACE_MIF("trace4.mif")
 ) u_pe3 (
     .clk(clk),
     .rst(reset),
@@ -131,7 +131,7 @@ PE #(
                 .cache_id(i[1:0]),
                 .we(pe_we[i]),
                 .rd(pe_rd[i]),
-                .address(pe_address[i]),
+            .address(pe_address[i]),
                 .data_in(pe_data_to_cache[i]),
                 .data_out(pe_data_from_cache[i]),
                 .stall(pe_stall[i]),

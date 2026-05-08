@@ -45,7 +45,10 @@ workload_PE2.append((1, 60, 0)) # R dir
 # Instrucciones PE3
 # ==========================
 workload_PE3 = []
-
+workload_PE3.append((1, 5, 0)) # R dir 5
+workload_PE3.append((1, 15, 0)) # R dir 10
+workload_PE3.append((1, 40, 0)) # R dir 5
+workload_PE3.append((1, 60, 0)) # R dir 
 
 
 # Agrupar los 4 programas para los 4 PEs

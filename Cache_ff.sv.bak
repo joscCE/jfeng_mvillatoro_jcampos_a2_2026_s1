@@ -1,4 +1,3 @@
-
 module Cache_ff(
     input logic clk,                // Reloj
     input logic reset,              // Reset sincrónico
@@ -139,14 +138,6 @@ module Cache_ff(
             ready_c  <= 1'b0;
             wb_valid <= 1'b0;
             cache_line_c <= 64'b0;
-				
-				$display(
-				"[cache] request type=%0d addres=%0d data=%0d time=%0t",
-                pending_type,
-                address,
-                pending_data,
-            $time
-               );
 
             // Snoop de bus: si el snoop afecta milínea se responde con ready_c y actualizo estado/linea si es necesario
             if (bus_rd || bus_update) begin
@@ -189,8 +180,14 @@ module Cache_ff(
                 pending_type       <= rd ? 1'b1 : 1'b0;
                 pending_address    <= address;
                 pending_data       <= data_in;
-					 
-				
+
+                 $display(
+				"[cache] request type=%0d addres=%0d data=%0d time=%0t",
+                pending_type,
+                pending_address,
+                pending_data,
+            $time
+               );
 
 
             end
