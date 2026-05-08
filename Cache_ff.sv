@@ -74,11 +74,17 @@ module Cache_ff(
     assign needs_update = we && hit && (current_state == SHARED);
     assign self_snoop = pending && (pending_address == snoop_addr);
 
-
+    // Detecta el ciclo exacto en que se resuelve el request pendiente
+    logic resolving;
+    logic just_resolved;
+    assign resolving = pending && pending_ready_armed && (pending_age >= 3'd2) &&
+                       ready && (resp_id == cache_id);
 
     assign help = pending;
     assign request_packet = {pending_type, pending_address, pending_data};
-    assign stall = pending || (((rd || we) && (!hit || needs_update)) && !ready);
+    // Suprimir stall durante resolución y el ciclo siguiente para que PE avance
+    assign stall = (pending && !resolving) ||
+                   (((rd || we) && (!hit || needs_update)) && !ready && !resolving && !just_resolved);
 
     always_comb begin
         if (hit)
@@ -91,6 +97,7 @@ module Cache_ff(
 	 logic [63:0] Count_Time_stall;
 	 
 	 logic [63:0] Count_update;
+     logic update_event;
 
     assign Time_stall = Count_Time_stall; 
 
@@ -114,7 +121,7 @@ module Cache_ff(
 	Counter #(.COUNTER(64)) count_updates (
     .clk(clk),
     .rst(reset),
-	.control(help),
+    .control(update_event),
     .count(Count_update)
 	 
 	);
@@ -127,6 +134,7 @@ module Cache_ff(
                 cache[i][1:0] <= INVALID;
             end
             pending            <= 1'b0;
+            just_resolved      <= 1'b0;
             pending_ready_armed<= 1'b0;
             pending_age        <= 3'b0;
             pending_type       <= 1'b0;
@@ -136,17 +144,12 @@ module Cache_ff(
             wb_valid           <= 1'b0;
             cache_line_c       <= 64'b0;
         end else begin
+			update_event <= 1'b0;
+            just_resolved <= resolving;
             ready_c  <= 1'b0;
             wb_valid <= 1'b0;
             cache_line_c <= 64'b0;
-				
-				$display(
-				"[cache] request type=%0d addres=%0d data=%0d time=%0t",
-                pending_type,
-                address,
-                pending_data,
-            $time
-               );
+
 
             // Snoop de bus: si el snoop afecta milínea se responde con ready_c y actualizo estado/linea si es necesario
             if (bus_rd || bus_update) begin
@@ -159,6 +162,7 @@ module Cache_ff(
                         else
                             cache[snoop_index][33:2] <= ic_data[31:0];
                         cache[snoop_index][1:0] <= SHARED;
+						update_event <= 1'b1;
                     end
                     if (bus_rd) begin
                         cache[snoop_index][1:0] <= SHARED;
@@ -182,7 +186,7 @@ module Cache_ff(
             end
 
             // Generación de request hacia IC
-            if (!pending && ((rd || we) && (!hit || needs_update))) begin
+            if (!pending && !just_resolved && ((rd || we) && (!hit || needs_update))) begin
                 pending            <= 1'b1;
                 pending_ready_armed<= 1'b0;
                 pending_age        <= 3'b0;

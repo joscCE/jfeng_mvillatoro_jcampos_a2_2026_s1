@@ -235,15 +235,6 @@ module Interconnect_MSI #(
 
                         rr_ptr <= selected_winner + 2'd1;
 
-                        $display(
-                            "[IC][IDLE] help=%b winner=%0d addr=%0d type=%0d time=%0t",
-                            help,
-                            selected_winner,
-                            request_packet[selected_winner][36:32],
-                            request_packet[selected_winner][37],
-                            $time
-                        );
-
                     end
 
                 end
@@ -262,14 +253,6 @@ module Interconnect_MSI #(
                         bus_rd <= 1'b1;
 
                     snoop_addr <= req_address;
-
-                    $display(
-                        "[IC][SNOOP] addr=%0d winner=%0d type=%0d time=%0t",
-                        req_address,
-                        winner,
-                        req_type,
-                        $time
-                    );
 
                 end
 
@@ -376,13 +359,6 @@ module Interconnect_MSI #(
                     // and de-assert 'help', preventing double-servicing.
                     skip_cycle  <= 1'b1;
                     last_served <= winner;
-
-                    $display(
-                        "[IC][RESP] addr=%0d resp=%0d time=%0t",
-                        req_address,
-                        resp_id,
-                    $time
-                    );
 
                 end
 

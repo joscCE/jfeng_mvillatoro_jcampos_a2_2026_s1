@@ -59,6 +59,7 @@ module Cache_MSI(
 	 
 	 logic [63:0] Count_Time_stall;
     logic [63:0] Count_Invalidate;
+     logic inv_event;
 	 
 	 
     assign cache_line = cache[index];
@@ -92,7 +93,7 @@ module Cache_MSI(
 	Counter #(.COUNTER(64)) counter_invalidate (
     .clk(clk),
     .rst(reset),
-	.control(help),
+    .control(inv_event),
     .count(Count_Invalidate)
 	);
 
@@ -130,6 +131,15 @@ module Cache_MSI(
     // STALL: se queda activo mientras haya request pendiente
     assign stall = pending || (((rd || we) && (!hit || needs_upgrade)) && !ready);
 
+    // Índices y offsets calculados combinacionalmente
+    logic [1:0] p_index_comb;
+    logic p_offset_comb;
+
+    always_comb begin
+        p_index_comb = pending_address[2:1];
+        p_offset_comb = pending_address[0];
+    end
+
     // READ
     always_comb begin
         if (hit)
@@ -153,6 +163,7 @@ module Cache_MSI(
             wb_valid        <= 1'b0;
             cache_line_c    <= 64'b0;
         end else begin
+			inv_event <= 1'b0;
 
             
 
@@ -204,6 +215,7 @@ module Cache_MSI(
 					  if (bus_inv) begin
 							cache[snoop_index][1:0] <= INVALID;
 							invalidado_papi <= 1'b1;
+                            inv_event <= 1'b1;
 					  end
 				 end
 			end
@@ -235,19 +247,7 @@ module Cache_MSI(
                 pending_address <= address;
                 pending_data    <= data_in;
 
-                $display(
-			 	"[cache] request type=%0d addres=%0d data=%0d time=%0t",
-                 pending_type,
-                 pending_address,
-                 pending_data,
-             $time
-                );
-					 
 
-            end
-
-            // Armado de ready para evitar capturar un ready viejo
-            if (pending && !pending_ready_armed) begin
                 pending_ready_armed <= 1'b1;
             end
 
@@ -263,26 +263,22 @@ module Cache_MSI(
             // =========================
             if (pending && pending_ready_armed && (pending_age >= 3'd2) &&
                 ready && (resp_id == cache_id)) begin
-                logic [1:0] p_index;
-                logic p_offset;
-                p_index  = pending_address[2:1];
-                p_offset = pending_address[0];
 
-                cache[p_index][67:66] <= ic_tag;
-                cache[p_index][65:2]  <= ic_data;
+                cache[p_index_comb][67:66] <= ic_tag;
+                cache[p_index_comb][65:2]  <= ic_data;
 
                 if (pending_type == 1'b0) begin
                     // Miss de escritura: termina en M y parchea palabra
-                    cache[p_index][1:0] <= MODIFIED;
+                    cache[p_index_comb][1:0] <= MODIFIED;
 
-                    if (p_offset)
-                        cache[p_index][65:34] <= pending_data;
+                    if (p_offset_comb)
+                        cache[p_index_comb][65:34] <= pending_data;
                     else
-                        cache[p_index][33:2] <= pending_data;
+                        cache[p_index_comb][33:2] <= pending_data;
 
                 end else begin
                     // Miss de lectura: I -> S
-                    cache[p_index][1:0] <= SHARED;
+                    cache[p_index_comb][1:0] <= SHARED;
                 end
 
                 pending <= 1'b0;

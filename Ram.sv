@@ -29,8 +29,11 @@ module Ram (
     // mem_ready se activa el ciclo despues de req y data_out queda valido
     // ----------------------------------------------------------------
 
-    always_ff @(posedge clk) begin
+    always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
+            for (int i = 0; i < 4; i++) begin
+                memory[i] <= 64'b0;
+            end
             data_out  <= 64'b0;
             mem_ready <= 1'b0;
         end else begin

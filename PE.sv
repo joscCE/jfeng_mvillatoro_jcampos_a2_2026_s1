@@ -133,22 +133,22 @@ module PE #(
 				
 				// Esperar a dato del cache
 				WAIT_DONE: begin
-
-    // mantener request vivo
-    addr <= addr;
-    data <= data;
-    rd   <= rd;
-    we   <= we;
-	// Cuando stall_cache=1 el cache ya no esta frenando al PE,
-	// por lo que podemos cerrar el request y avanzar PC.
-	if (stall_cache) begin
-        // limpiar request
-        rd <= 1'b0;
-        we <= 1'b0;
-        pc <= pc + 8'd1;
-        state <= FETCH_INSTR;
-    end
-end
+					// mantener request vivo
+					addr <= addr;
+					data <= data;
+					rd   <= rd;
+					we   <= we;
+					
+					// Cuando stall_cache=1 el cache ya ha aceptado la operacion,
+					// por lo que podemos cerrar el request y avanzar PC.
+					if (stall_cache) begin
+						// limpiar request
+						rd <= 1'b0;
+						we <= 1'b0;
+						pc <= pc + 8'd1;
+						state <= FETCH_INSTR;
+					end
+				end
 				
 				// Final
 				END_STATE: begin

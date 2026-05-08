@@ -2,6 +2,32 @@
 
 ## Especificacion rapida de interfaces
 
+## Ejecucion rapida de testbenches (MSI y Firefly)
+
+Desde `simulation/modelsim`:
+
+1. Correr MSI en consola:
+
+```powershell
+vsim -c -do "Top_run_msim_rtl_verilog.do"
+```
+
+2. Correr Firefly en consola:
+
+```powershell
+vsim -c -do "Top_ff_run_msim_rtl_verilog.do"
+```
+
+3. Correr ambas corridas y resumir resultados:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_sims.ps1
+```
+
+Notas:
+- Los scripts `.do` usan rutas relativas al repo para que cualquier clon pueda ejecutar sin editar paths locales.
+- Los trazos `trace0.mif` a `trace4.mif` estan versionados y se usan directamente durante la simulacion.
+
 ### Cache <-> Interconnect (MSI)
 
 ```text
