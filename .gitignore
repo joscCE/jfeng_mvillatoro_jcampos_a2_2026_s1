@@ -87,3 +87,28 @@ coverage/
 # =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Limpieza adicional del repo
+# =========================
+rtl_work/
+simulation/modelsim/rtl_work/
+simulation/modelsim/work/
+simulation/modelsim/transcript
+simulation/modelsim/msim_transcript
+simulation/modelsim/*.wlf
+simulation/modelsim/wlft*
+simulation/modelsim/*.sft
+simulation/modelsim/*.svo
+simulation/modelsim/*.xrf
+simulation/modelsim/*.log
+simulation/modelsim/*_output.txt
+simulation/modelsim/*.bak*
+
+python/__pycache__/
+*.pyc
+
+Top_nativelink_simulation.rpt
+
+*.bak
+*.bak*

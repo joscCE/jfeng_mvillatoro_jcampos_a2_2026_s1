@@ -27,7 +27,10 @@ module Cache_MSI(
     
     // Debug / salida
     output logic [1:0] current_state,   // Estado de la línea cache 
-    output logic [1:0] current_tag      // Tag de la línea cache
+    output logic [1:0] current_tag,      // Tag de la línea cache
+    output logic [63:0] Counter_inv,
+    output logic [63:0] Time_stall    
+
 );
 
     // Estados MSI
@@ -53,14 +56,52 @@ module Cache_MSI(
     logic [67:0] cache [0:3];
     logic [67:0] cache_line;
 
+	 
+	 logic [63:0] Count_Time_stall;
+    logic [63:0] Count_Invalidate;
+     logic inv_event;
+	 
+	 
     assign cache_line = cache[index];
 
     assign current_tag   = cache_line[67:66];
     assign current_state = cache_line[1:0];
+	 
+	
+	 
+    assign Time_stall = Count_Time_stall; 
+    assign Counter_inv = Count_Invalidate; 
+
+
+
+
+	Timer #(.COUNTER(64)) counter_timer (
+    .clk(clk),
+    .rst(reset),
+	.control(stall),
+    .count(Count_Time_stall)
+	);
+
+
+
+
+    //contamos cantidad de updates
+	 
+	 logic invalidado_papi;
+
+
+	Counter #(.COUNTER(64)) counter_invalidate (
+    .clk(clk),
+    .rst(reset),
+    .control(inv_event),
+    .count(Count_Invalidate)
+	);
+
 
     // HIT
     logic hit;
     assign hit = (current_tag == tag) && (current_state != INVALID);
+	 
 
     // Write hit en SHARED ocupa transaccion de coherencia (upgrade)
     logic needs_upgrade;
@@ -74,6 +115,8 @@ module Cache_MSI(
     logic [4:0] pending_address;    // Dirección del request pendiente
     logic [31:0] pending_data;      // Datos de escritura del request pendiente
     logic self_snoop;               // Snoop actual es la propia transacción pendiente en el bus
+	 
+	
 
     // Si hay request pendiente a la misma direccion el snoop es la propia transaccion en el bus.
     assign self_snoop = pending && (pending_address == snoop_addr);
@@ -82,8 +125,20 @@ module Cache_MSI(
     assign help = pending;
     assign request_packet = {pending_type, pending_address, pending_data};
 
+
+
+
     // STALL: se queda activo mientras haya request pendiente
     assign stall = pending || (((rd || we) && (!hit || needs_upgrade)) && !ready);
+
+    // Índices y offsets calculados combinacionalmente
+    logic [1:0] p_index_comb;
+    logic p_offset_comb;
+
+    always_comb begin
+        p_index_comb = pending_address[2:1];
+        p_offset_comb = pending_address[0];
+    end
 
     // READ
     always_comb begin
@@ -108,37 +163,62 @@ module Cache_MSI(
             wb_valid        <= 1'b0;
             cache_line_c    <= 64'b0;
         end else begin
+			inv_event <= 1'b0;
+
+            
+
 
             // defaults de pulsos/salidas a IC
             ready_c  <= 1'b0;
             wb_valid <= 1'b0;
 
+//                         $display(
+//     "[CACHE %0d] type=%0d addres=%0d data=%0d we=%0d rd=%0d stall=%0d time=%0t",
+//	  cache_id,
+//     pending_type,
+//     pending_address,
+//     pending_data,
+//     we,
+//     rd,
+//     stall,
+//     $time
+// );
+
+
+
             // =========================
             // 1. SNOOP (BUS)
             // =========================
-            if (bus_rd || bus_inv) begin
-                // Ack de snoop: este cache ya proceso el ciclo de bus
-                ready_c <= 1'b1;
+				if (bus_rd || bus_inv) begin
+				 // Ack de snoop
+				 ready_c <= 1'b1;
 
-                // Solo toca la linea que calza con el snoop_addr
-                if (cache[snoop_index][67:66] == snoop_tag &&
-                    cache[snoop_index][1:0] != INVALID && !self_snoop) begin
+				 // Default
+				 invalidado_papi <= 1'b0;
 
-                    // BusRd: si estaba en M, hace write-back de la linea
-                    if (bus_rd) begin
-                        if (cache[snoop_index][1:0] == MODIFIED) begin
-                            wb_valid     <= 1'b1;
-                            cache_line_c <= cache[snoop_index][65:2];
-                        end
-                        cache[snoop_index][1:0] <= SHARED;
-                    end
+				 // Solo toca la línea correcta
+				 if (cache[snoop_index][67:66] == snoop_tag &&
+					  cache[snoop_index][1:0] != INVALID &&
+					  !self_snoop) begin
 
-                    // BusInv: S/M -> I
-                    if (bus_inv) begin
-                        cache[snoop_index][1:0] <= INVALID;
-                    end
-                end
-            end
+					  // BusRd
+					  if (bus_rd) begin
+							if (cache[snoop_index][1:0] == MODIFIED) begin
+								 wb_valid     <= 1'b1;
+								 cache_line_c <= cache[snoop_index][65:2];
+							end
+
+							cache[snoop_index][1:0] <= SHARED;
+					  end
+
+					  // BusInv
+					  if (bus_inv) begin
+							cache[snoop_index][1:0] <= INVALID;
+							invalidado_papi <= 1'b1;
+                            inv_event <= 1'b1;
+					  end
+				 end
+			end
 
             // =========================
             // HIT LOCAL
@@ -166,10 +246,8 @@ module Cache_MSI(
                 pending_type    <= rd ? 1'b1 : 1'b0;
                 pending_address <= address;
                 pending_data    <= data_in;
-            end
 
-            // Armado de ready para evitar capturar un ready viejo
-            if (pending && !pending_ready_armed) begin
+
                 pending_ready_armed <= 1'b1;
             end
 
@@ -185,26 +263,22 @@ module Cache_MSI(
             // =========================
             if (pending && pending_ready_armed && (pending_age >= 3'd2) &&
                 ready && (resp_id == cache_id)) begin
-                logic [1:0] p_index;
-                logic p_offset;
-                p_index  = pending_address[2:1];
-                p_offset = pending_address[0];
 
-                cache[p_index][67:66] <= ic_tag;
-                cache[p_index][65:2]  <= ic_data;
+                cache[p_index_comb][67:66] <= ic_tag;
+                cache[p_index_comb][65:2]  <= ic_data;
 
                 if (pending_type == 1'b0) begin
                     // Miss de escritura: termina en M y parchea palabra
-                    cache[p_index][1:0] <= MODIFIED;
+                    cache[p_index_comb][1:0] <= MODIFIED;
 
-                    if (p_offset)
-                        cache[p_index][65:34] <= pending_data;
+                    if (p_offset_comb)
+                        cache[p_index_comb][65:34] <= pending_data;
                     else
-                        cache[p_index][33:2] <= pending_data;
+                        cache[p_index_comb][33:2] <= pending_data;
 
                 end else begin
                     // Miss de lectura: I -> S
-                    cache[p_index][1:0] <= SHARED;
+                    cache[p_index_comb][1:0] <= SHARED;
                 end
 
                 pending <= 1'b0;

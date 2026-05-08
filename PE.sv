@@ -1,5 +1,5 @@
 module PE #(
-	parameter TRACE_MIF = "trace.mif"
+	parameter TRACE_MIF = "trace0.mif"
 )(
 	input logic clk, rst,
 	input logic stall_cache,
@@ -24,6 +24,7 @@ module PE #(
 	} state_t;
 	
 	state_t state;
+	state_t state_prev;
 	
 	logic [7:0] pc;
 	logic [37:0] rom_q;
@@ -54,6 +55,7 @@ module PE #(
 		
 		if (rst) begin
 			state     <= START;
+			state_prev<= START;
 			pc        <= 8'd0;
 			instr     <= 38'd0;
 			rd	      <= 1'b0;
@@ -63,6 +65,17 @@ module PE #(
 			finished  <= 1'b0;
 		end
 		else begin
+			state_prev <= state;
+
+			`ifdef PE_DEBUG
+			if ((state != state_prev) ||
+			    ((state == SEND_REQ) && (rd || we)) ||
+			    ((state == WAIT_DONE) && (stall_cache === 1'b1))) begin
+				$display("[PE][%s] t=%0t state=%0d pc=%0d instr=%h rd=%0b we=%0b addr=%0d stall_cache=%0b finished=%0b",
+					TRACE_MIF, $time, state, pc, instr, rd, we, addr, stall_cache, finished);
+			end
+			`endif
+
 			case (state) 
 				// Estado inicial
 				START: begin
@@ -109,7 +122,7 @@ module PE #(
 					end
 					
 					// Quedarse en este estado si cache está  ocupado
-					if (stall_cache) begin
+					if (!stall_cache) begin
 						state <= SEND_REQ;
 					end
 					else begin
@@ -120,18 +133,19 @@ module PE #(
 				
 				// Esperar a dato del cache
 				WAIT_DONE: begin
-
-					// Limpieza inmediata
-                    rd <= 1'b0;
-                    we <= 1'b0;
+					// mantener request vivo
+					addr <= addr;
+					data <= data;
+					rd   <= rd;
+					we   <= we;
 					
-					// Mientras haya stall, seguir esperando
+					// Cuando stall_cache=1 el cache ya ha aceptado la operacion,
+					// por lo que podemos cerrar el request y avanzar PC.
 					if (stall_cache) begin
-						state <= WAIT_DONE;
-					end
-					else begin
-					// Operacion completada
-						pc    <= pc + 8'd1;
+						// limpiar request
+						rd <= 1'b0;
+						we <= 1'b0;
+						pc <= pc + 8'd1;
 						state <= FETCH_INSTR;
 					end
 				end
