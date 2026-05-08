@@ -8,7 +8,7 @@ module Top_ff_tb();
 
     // Instancia del módulo Top
     Top_ff dut (
-        .clk(clk),
+        .clk50(clk),
         .reset(reset)
     );
 

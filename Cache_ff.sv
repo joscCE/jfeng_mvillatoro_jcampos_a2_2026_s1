@@ -180,6 +180,16 @@ module Cache_ff(
                 pending_type       <= rd ? 1'b1 : 1'b0;
                 pending_address    <= address;
                 pending_data       <= data_in;
+
+                 $display(
+				"[cache] request type=%0d addres=%0d data=%0d time=%0t",
+                pending_type,
+                pending_address,
+                pending_data,
+            $time
+               );
+
+
             end
 
             // Manejo de respuesta de IC para request pendiente
