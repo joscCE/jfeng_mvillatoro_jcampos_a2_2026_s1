@@ -52,7 +52,7 @@ module Top_ff (
 
     
     
-    
+
     
     Vga_Controller #(.N(8)) vga_control(
     .clk(clk), 
@@ -71,8 +71,7 @@ module Top_ff (
 );
 
     
-    
-    
+
     // ============================================================
     // 1. Instanciación de Procesadores (PE)
     // ============================================================

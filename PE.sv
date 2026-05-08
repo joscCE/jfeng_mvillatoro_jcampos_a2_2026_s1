@@ -109,7 +109,7 @@ module PE #(
 					end
 					
 					// Quedarse en este estado si cache está  ocupado
-					if (stall_cache) begin
+					if (!stall_cache) begin
 						state <= SEND_REQ;
 					end
 					else begin
@@ -121,20 +121,19 @@ module PE #(
 				// Esperar a dato del cache
 				WAIT_DONE: begin
 
-					// Limpieza inmediata
-                    rd <= 1'b0;
-                    we <= 1'b0;
-					
-					// Mientras haya stall, seguir esperando
-					if (stall_cache) begin
-						state <= WAIT_DONE;
-					end
-					else begin
-					// Operacion completada
-						pc    <= pc + 8'd1;
-						state <= FETCH_INSTR;
-					end
-				end
+    // mantener request vivo
+    addr <= addr;
+    data <= data;
+    rd   <= rd;
+    we   <= we;
+    if (!stall_cache) begin
+        // limpiar request
+        rd <= 1'b0;
+        we <= 1'b0;
+        pc <= pc + 8'd1;
+        state <= FETCH_INSTR;
+    end
+end
 				
 				// Final
 				END_STATE: begin

@@ -8,7 +8,7 @@ module Top_tb();
 
     // Instancia del módulo Top
     Top dut (
-        .clk(clk),
+        .clk50(clk),
         .reset(reset)
     );
 
@@ -49,16 +49,16 @@ module Top_tb();
     end
 
     // Opcional: Monitor de eventos críticos en consola
-    initial begin
-        forever begin
-            @(posedge clk);
-            for(int j=0; j<4; j++) begin
-                if (dut.bus_inv && dut.snoop_addr != 0) begin
-                    // Ejemplo de log si quieres ver las invalidaciones en tiempo real
-                    // $display("[BUS] Invalidación detectada en dirección: %h", dut.snoop_addr);
-                end
-            end
-        end
-    end
+//    initial begin
+//        forever begin
+//            @(posedge clk);
+//            for(int j=0; j<4; j++) begin
+//                if (dut.bus_inv && dut.snoop_addr != 0) begin
+//                    // Ejemplo de log si quieres ver las invalidaciones en tiempo real
+//                    // $display("[BUS] Invalidación detectada en dirección: %h", dut.snoop_addr);
+//                end
+//            end
+//        end
+//    end
 
 endmodule 

@@ -86,16 +86,19 @@ module Cache_MSI(
 
     //contamos cantidad de updates
 
+
 	Counter #(.COUNTER(64)) counter_invalidate (
     .clk(clk),
     .rst(reset),
-	.control(help),
+	.control(bus_inv),
     .count(Count_Invalidate)
 	);
+
 
     // HIT
     logic hit;
     assign hit = (current_tag == tag) && (current_state != INVALID);
+	 
 
     // Write hit en SHARED ocupa transaccion de coherencia (upgrade)
     logic needs_upgrade;
@@ -116,6 +119,9 @@ module Cache_MSI(
     // Hilo de request hacia IC: mientras pending=1, help sigue alto
     assign help = pending;
     assign request_packet = {pending_type, pending_address, pending_data};
+
+
+
 
     // STALL: se queda activo mientras haya request pendiente
     assign stall = pending || (((rd || we) && (!hit || needs_upgrade)) && !ready);
@@ -144,9 +150,24 @@ module Cache_MSI(
             cache_line_c    <= 64'b0;
         end else begin
 
+            
+
+
             // defaults de pulsos/salidas a IC
             ready_c  <= 1'b0;
             wb_valid <= 1'b0;
+
+            $display(
+    "[CACHE %0d] addr=%0d pending=%0d paddr=%0d we=%0d rd=%0d stall=%0d time=%0t",
+    cache_id,
+    address,
+    pending,
+    pending_address,
+    we,
+    rd,
+    stall,
+    $time
+);
 
             // =========================
             // 1. SNOOP (BUS)
@@ -155,10 +176,14 @@ module Cache_MSI(
                 // Ack de snoop: este cache ya proceso el ciclo de bus
                 ready_c <= 1'b1;
 
+         
+
                 // Solo toca la linea que calza con el snoop_addr
                 if (cache[snoop_index][67:66] == snoop_tag &&
                     cache[snoop_index][1:0] != INVALID && !self_snoop) begin
 
+                
+					
                     // BusRd: si estaba en M, hace write-back de la linea
                     if (bus_rd) begin
                         if (cache[snoop_index][1:0] == MODIFIED) begin
@@ -201,6 +226,16 @@ module Cache_MSI(
                 pending_type    <= rd ? 1'b1 : 1'b0;
                 pending_address <= address;
                 pending_data    <= data_in;
+
+            //      $display(
+			// 	"[cache] request type=%0d addres=%0d data=%0d time=%0t",
+            //     pending_type,
+            //     pending_address,
+            //     pending_data,
+            // $time
+            //    );
+					 
+
             end
 
             // Armado de ready para evitar capturar un ready viejo
