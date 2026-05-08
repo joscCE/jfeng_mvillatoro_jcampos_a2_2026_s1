@@ -11,24 +11,24 @@ cModel Technology
 Z0 d/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/simulation/modelsim
 vCache_MSI
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1778207511
+Z2 !s110 1778209574
 !i10b 1
-!s100 3aiEBj7Dg>]691GK<aASf0
+!s100 JQE6dKM9:@XR>W9IKldD01
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IDgLaD571;FFoj<JkGLW7E1
+IVeKlk8P=;916bzDX8L5zY0
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1778205352
+w1778208915
 8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv
 !i122 6
-L0 1 287
+L0 1 289
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1778207511.000000
+Z6 !s108 1778209574.000000
 !s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv|
 !i113 1
@@ -49,7 +49,7 @@ R0
 Z10 w1778132214
 8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/clk_div.sv
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/clk_div.sv
-!i122 8
+!i122 7
 L0 1 14
 R5
 r1
@@ -62,36 +62,9 @@ R6
 R7
 R8
 R9
-vComparator
-R1
-R2
-!i10b 1
-!s100 HJ3:aLS4ab^9QNaBhgJd60
-R3
-INSCGGUMJJ_P=55_3Be>zo0
-R4
-S1
-R0
-R10
-8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Comparator.sv
-F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Comparator.sv
-!i122 14
-L0 1 10
-R5
-r1
-!s85 0
-31
-R6
-!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Comparator.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Comparator.sv|
-!i113 1
-R7
-R8
-R9
-n@comparator
 vCounter
 R1
-Z11 !s110 1778207510
+Z11 !s110 1778209573
 !i10b 1
 !s100 53C5U6dQjnPlEL2@oZe[m1
 R3
@@ -108,7 +81,7 @@ R5
 r1
 !s85 0
 31
-Z12 !s108 1778207510.000000
+Z12 !s108 1778209573.000000
 !s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv|
 !i113 1
@@ -116,75 +89,21 @@ R7
 R8
 R9
 n@counter
-vCounterV
-R1
-R2
-!i10b 1
-!s100 Z7I2ZPRIRaEI9Rlh7>4Re2
-R3
-In1Mh[W>QQc9`o0^0H??ZL1
-R4
-S1
-R0
-R10
-8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/CounterV.sv
-F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/CounterV.sv
-!i122 9
-L0 1 19
-R5
-r1
-!s85 0
-31
-R6
-!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/CounterV.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/CounterV.sv|
-!i113 1
-R7
-R8
-R9
-n@counter@v
-vdeco_BDS
-R1
-R2
-!i10b 1
-!s100 HB@]k0DlAcC`4hm1RC6DU3
-R3
-I@WLBna2;=ZW7`>zaU?AK?3
-R4
-S1
-R0
-R10
-8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/deco_BDS.sv
-F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/deco_BDS.sv
-!i122 10
-L0 1 21
-R5
-r1
-!s85 0
-31
-R6
-!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/deco_BDS.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/deco_BDS.sv|
-!i113 1
-R7
-R8
-R9
-ndeco_@b@d@s
 vInterconnect_MSI
 R1
 R11
 !i10b 1
-!s100 >jiHhVeQ81DYIIg?;94>O3
+!s100 bV7:^QM5JkNZeLK7k65[h0
 R3
-I<FUCk[[KafT99;=JG7bTb2
+ImeVZ?9hnC9F1bNSXO2`k:0
 R4
 S1
 R0
-w1778200740
+w1778209449
 8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv
 !i122 4
-L0 1 356
+L0 1 367
 R5
 r1
 !s85 0
@@ -207,7 +126,7 @@ IEIY9=]V=]6df^J5TRG>mC2
 R4
 S1
 R0
-w1778207364
+w1778207537
 8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv
 !i122 2
@@ -226,7 +145,7 @@ R9
 n@p@e
 vRam
 R1
-R11
+R2
 !i10b 1
 !s100 ^S>]>MmJfOEQTMX5VY9Aa2
 R3
@@ -243,7 +162,7 @@ R5
 r1
 !s85 0
 31
-R12
+R6
 !s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram.sv|
 !i113 1
@@ -251,87 +170,6 @@ R7
 R8
 R9
 n@ram
-vRegister
-R1
-R2
-!i10b 1
-!s100 MOf8zIG>XSPd9SQO6TG@20
-R3
-I>jO^5:agl16>g=Jf?AWSS2
-R4
-S1
-R0
-R10
-8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Register.sv
-F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Register.sv
-!i122 13
-L0 1 17
-R5
-r1
-!s85 0
-31
-R6
-!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Register.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Register.sv|
-!i113 1
-R7
-R8
-R9
-n@register
-vSevenSeg_Display
-R1
-R2
-!i10b 1
-!s100 TVA@Ih?_<<Po@HJES8ZH11
-R3
-I^LPjZzn9Q>GM`BiU6hR2B1
-R4
-S1
-R0
-R10
-8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/SevenSeg_Display.sv
-F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/SevenSeg_Display.sv
-!i122 11
-L0 1 62
-R5
-r1
-!s85 0
-31
-R6
-!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/SevenSeg_Display.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/SevenSeg_Display.sv|
-!i113 1
-R7
-R8
-R9
-n@seven@seg_@display
-vSquare_Area
-R1
-R2
-!i10b 1
-!s100 I8jk295nI1^f3zVfCi]nn3
-R3
-IeBROWB;IYfjbI=Vn:Tc_K3
-R4
-S1
-R0
-R10
-8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Square_Area.sv
-F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Square_Area.sv
-!i122 12
-L0 1 31
-R5
-r1
-!s85 0
-31
-R6
-!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Square_Area.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Square_Area.sv|
-!i113 1
-R7
-R8
-R9
-n@square_@area
 vTimer
 R1
 R11
@@ -363,13 +201,13 @@ vTop
 R1
 R11
 !i10b 1
-!s100 Sk2;We9c:dQ^4M<gz7PBO3
+!s100 b28@eAcYD;`QXXn[Wz;RZ3
 R3
-I][g_JmXS;8B498eRZ`b4<3
+IY2M0N6Cfob82ZcGDBg`PN3
 R4
 S1
 R0
-w1778189706
+w1778208070
 8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv
 !i122 3
@@ -399,7 +237,7 @@ R0
 w1778194956
 8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv
 F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv
-!i122 15
+!i122 8
 L0 3 62
 R5
 r1
@@ -413,30 +251,3 @@ R7
 R8
 R9
 n@top_tb
-vVga_Controller
-R1
-R2
-!i10b 1
-!s100 I:<4S=GkO6a:6PzkN7^C42
-R3
-I]c[D]6Oe2_=DmY6Gf6@Q_2
-R4
-S1
-R0
-w1778183445
-8/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Vga_Controller.sv
-F/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Vga_Controller.sv
-!i122 7
-L0 1 104
-R5
-r1
-!s85 0
-31
-R6
-!s107 /home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Vga_Controller.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1|/home/jecampos/Documents/materias/Arqui 2/Proyecto_2/jfeng_mvillatoro_jcampos_a2_2026_s1/Vga_Controller.sv|
-!i113 1
-R7
-R8
-R9
-n@vga_@controller

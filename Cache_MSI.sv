@@ -157,17 +157,19 @@ module Cache_MSI(
             ready_c  <= 1'b0;
             wb_valid <= 1'b0;
 
-            $display(
-    "[CACHE %0d] addr=%0d pending=%0d paddr=%0d we=%0d rd=%0d stall=%0d time=%0t",
-    cache_id,
-    address,
-    pending,
-    pending_address,
-    we,
-    rd,
-    stall,
-    $time
-);
+//                         $display(
+//     "[CACHE %0d] type=%0d addres=%0d data=%0d we=%0d rd=%0d stall=%0d time=%0t",
+//	  cache_id,
+//     pending_type,
+//     pending_address,
+//     pending_data,
+//     we,
+//     rd,
+//     stall,
+//     $time
+// );
+
+
 
             // =========================
             // 1. SNOOP (BUS)

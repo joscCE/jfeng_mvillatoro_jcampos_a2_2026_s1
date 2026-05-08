@@ -31,21 +31,19 @@ module Interconnect_MSI #(
     input logic        mem_ready
 );
 
-
     typedef enum logic [2:0] {
         IDLE        = 3'b000,
-        DECODE      = 3'b001,
-        SNOOP_ISSUE = 3'b010,
-        WAIT_SNOOP  = 3'b011,
-        MEM_ACCESS  = 3'b100,
-        RESPOND     = 3'b101
+        SNOOP_ISSUE = 3'b001,
+        WAIT_SNOOP  = 3'b010,
+        MEM_ACCESS  = 3'b011,
+        RESPOND     = 3'b100
     } state_t;
 
     state_t current_state, next_state;
 
-    // =========================================================
-    // Registros internos
-    // =========================================================
+    // =====================================================
+    // internos
+    // =====================================================
 
     logic        req_type;
     logic [4:0]  req_address;
@@ -56,19 +54,40 @@ module Interconnect_MSI #(
     logic        mem_cmd_issued;
     logic        use_owner_line_in_respond;
 
-    // RR
     logic [1:0] rr_ptr;
     logic [1:0] winner;
+    logic [1:0] selected_winner;
 
-    // snoop tracking
     logic [3:0] snoop_pending;
     logic       all_ready_c;
 
     assign all_ready_c = (snoop_pending == 4'b0000);
 
-    // =========================================================
-    // FSM state register
-    // =========================================================
+    // =====================================================
+    // combinacional RR
+    // =====================================================
+
+    always_comb begin
+
+        selected_winner = rr_ptr;
+
+        if (help[rr_ptr])
+            selected_winner = rr_ptr;
+
+        else if (help[(rr_ptr + 2'd1) & 2'b11])
+            selected_winner = (rr_ptr + 2'd1) & 2'b11;
+
+        else if (help[(rr_ptr + 2'd2) & 2'b11])
+            selected_winner = (rr_ptr + 2'd2) & 2'b11;
+
+        else if (help[(rr_ptr + 2'd3) & 2'b11])
+            selected_winner = (rr_ptr + 2'd3) & 2'b11;
+
+    end
+
+    // =====================================================
+    // FSM state
+    // =====================================================
 
     always_ff @(posedge clk) begin
         if (reset)
@@ -76,11 +95,9 @@ module Interconnect_MSI #(
         else
             current_state <= next_state;
     end
-
-    // =========================================================
+    // =====================================================
     // FSM next state
-    // =========================================================
-
+    // =====================================================
     always_comb begin
         next_state = current_state;
 
@@ -88,11 +105,7 @@ module Interconnect_MSI #(
 
             IDLE: begin
                 if (help != 4'b0000)
-                    next_state = DECODE;
-            end
-
-            DECODE: begin
-                next_state = SNOOP_ISSUE;
+                    next_state = SNOOP_ISSUE;
             end
 
             SNOOP_ISSUE: begin
@@ -120,71 +133,61 @@ module Interconnect_MSI #(
         endcase
     end
 
-    // =========================================================
-    // Main sequential logic
-    // =========================================================
+    // =====================================================
+    // MAIN
+    // =====================================================
 
     always_ff @(posedge clk) begin
 
         if (reset) begin
 
-            bus_rd      <= 1'b0;
-            bus_inv     <= 1'b0;
-            ic_ready    <= 1'b0;
+            bus_rd <= 1'b0;
+            bus_inv <= 1'b0;
+            ic_ready <= 1'b0;
 
-            resp_id     <= 2'b0;
-            snoop_addr  <= 5'b0;
-            ic_tag      <= 2'b0;
-
+            resp_id <= 2'b0;
+            snoop_addr <= 5'b0;
+            ic_tag <= 2'b0;
             ic_cache_line <= 64'b0;
 
-            mem_req     <= 1'b0;
-            mem_we      <= 1'b0;
+            mem_req <= 1'b0;
+            mem_we <= 1'b0;
             mem_address <= 5'b0;
             mem_data_in <= 64'b0;
 
-            req_type    <= 1'b0;
+            req_type <= 1'b0;
             req_address <= 5'b0;
 
-            owner_line  <= 64'b0;
+            owner_line <= 64'b0;
             owner_found <= 1'b0;
 
             mem_cmd_issued <= 1'b0;
             use_owner_line_in_respond <= 1'b0;
 
-            rr_ptr      <= 2'b0;
-            winner      <= 2'b0;
+            rr_ptr <= 2'b0;
+            winner <= 2'b0;
 
             snoop_pending <= 4'b0000;
-
         end
         else begin
-
-            // =================================================
-            // defaults uniciclo
-            // =================================================
-
+            // defaults
             ic_ready <= 1'b0;
-            mem_req  <= 1'b0;
-            mem_we   <= 1'b0;
-
-            // IMPORTANTE:
-            // bus_inv y bus_rd NO se limpian aquí
-            // se controlan por estado
+            mem_req <= 1'b0;
+            mem_we <= 1'b0;
 
             case (current_state)
 
-                // =============================================
+                // =========================================
                 // IDLE
-                // =============================================
+                // =========================================
 
                 IDLE: begin
 
                     bus_inv <= 1'b0;
-                    bus_rd  <= 1'b0;
+                    bus_rd <= 1'b0;
 
                     owner_found <= 1'b0;
-                    owner_line  <= 64'b0;
+                    owner_line <= 64'b0;
 
                     mem_cmd_issued <= 1'b0;
                     use_owner_line_in_respond <= 1'b0;
@@ -193,41 +196,36 @@ module Interconnect_MSI #(
 
                     if (help != 4'b0000) begin
 
-                        if (help[rr_ptr])
-                            winner <= rr_ptr;
+                        winner <= selected_winner;
 
-                        else if (help[(rr_ptr + 2'd1) & 2'b11])
-                            winner <= (rr_ptr + 2'd1) & 2'b11;
+                        req_type <= request_packet[selected_winner][37];
 
-                        else if (help[(rr_ptr + 2'd2) & 2'b11])
-                            winner <= (rr_ptr + 2'd2) & 2'b11;
+                        req_address <=
+                            request_packet[selected_winner][36:32];
 
-                        else
-                            winner <= (rr_ptr + 2'd3) & 2'b11;
+                        resp_id <= selected_winner;
+
+                        snoop_addr <=
+                            request_packet[selected_winner][36:32];
+
+                        rr_ptr <= selected_winner + 2'd1;
+
+                        $display(
+                            "[IC][IDLE] help=%b winner=%0d addr=%0d type=%0d time=%0t",
+                            help,
+                            selected_winner,
+                            request_packet[selected_winner][36:32],
+                            request_packet[selected_winner][37],
+                            $time
+                        );
 
                     end
-                end
-
-                // =============================================
-                // DECODE
-                // =============================================
-
-                DECODE: begin
-
-                    req_type    <= request_packet[winner][37];
-                    req_address <= request_packet[winner][36:32];
-
-                    resp_id     <= winner;
-
-                    rr_ptr      <= winner + 2'd1;
-
-                    snoop_addr  <= request_packet[winner][36:32];
 
                 end
 
-                // =============================================
+                // =========================================
                 // SNOOP_ISSUE
-                // =============================================
+                // =========================================
 
                 SNOOP_ISSUE: begin
 
@@ -240,78 +238,78 @@ module Interconnect_MSI #(
 
                     snoop_addr <= req_address;
 
-                    // $display(
-                    //     "[IC] SNOOP addr=%0d winner=%0d type=%0d time=%0t",
-                    //     req_address,
-                    //     winner,
-                    //     req_type,
-                    //     $time
-                    // );
+                    $display(
+                        "[IC][SNOOP] addr=%0d winner=%0d type=%0d time=%0t",
+                        req_address,
+                        winner,
+                        req_type,
+                        $time
+                    );
 
                 end
 
-                // =============================================
+                // =========================================
                 // WAIT_SNOOP
-                // =============================================
+                // =========================================
 
                 WAIT_SNOOP: begin
 
-                    // mantener broadcast activo
+                    // mantener bus activo
                     if (req_type == 1'b0)
                         bus_inv <= 1'b1;
                     else
                         bus_rd <= 1'b1;
 
-                    // limpiar participantes que ya respondieron
+                    // limpiar caches que respondieron
                     snoop_pending <= snoop_pending & ~ready_c;
 
-                    // capturar owner modificado
+                    // capturar owner
                     if (wb_valid != 4'b0000) begin
 
                         if (wb_valid[0]) begin
                             owner_found <= 1'b1;
-                            owner_line  <= cache_line_c[0];
+                            owner_line <= cache_line_c[0];
                         end
                         else if (wb_valid[1]) begin
                             owner_found <= 1'b1;
-                            owner_line  <= cache_line_c[1];
+                            owner_line <= cache_line_c[1];
                         end
                         else if (wb_valid[2]) begin
                             owner_found <= 1'b1;
-                            owner_line  <= cache_line_c[2];
+                            owner_line <= cache_line_c[2];
                         end
                         else begin
                             owner_found <= 1'b1;
-                            owner_line  <= cache_line_c[3];
+                            owner_line <= cache_line_c[3];
                         end
 
                     end
 
-                    // apagar broadcast cuando termina
                     if (all_ready_c) begin
                         bus_inv <= 1'b0;
-                        bus_rd  <= 1'b0;
+                        bus_rd <= 1'b0;
                     end
 
                 end
 
-                // =============================================
+                // =========================================
                 // MEM_ACCESS
-                // =============================================
+                // =========================================
 
                 MEM_ACCESS: begin
 
                     bus_inv <= 1'b0;
-                    bus_rd  <= 1'b0;
+                    bus_rd <= 1'b0;
 
                     if (!mem_cmd_issued) begin
 
-                        mem_req     <= 1'b1;
+                        mem_req <= 1'b1;
+
                         mem_address <= req_address;
 
                         if (owner_found) begin
 
-                            mem_we      <= 1'b1;
+                            mem_we <= 1'b1;
                             mem_data_in <= owner_line;
 
                             use_owner_line_in_respond <= 1'b1;
@@ -331,9 +329,10 @@ module Interconnect_MSI #(
 
                 end
 
-                // ============================================
+                // =========================================
                 // RESPOND
-                // =============================================
+                // =========================================
+
                 RESPOND: begin
 
                     ic_ready <= 1'b1;
@@ -346,6 +345,13 @@ module Interconnect_MSI #(
                         ic_cache_line <= mem_data_out;
 
                     mem_cmd_issued <= 1'b0;
+
+                    $display(
+                        "[IC][RESP] addr=%0d resp=%0d time=%0t",
+                        req_address,
+                        resp_id,
+                        $time
+                    );
 
                 end
 
