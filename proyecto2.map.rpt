@@ -1,0 +1,904 @@
+Analysis & Elaboration report for proyecto2
+Fri May 08 21:38:36 2026
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Source assignments for PE:u_pe0|altsyncram:trace_rom|altsyncram_ne21:auto_generated
+  5. Source assignments for PE:u_pe1|altsyncram:trace_rom|altsyncram_oe21:auto_generated
+  6. Source assignments for PE:u_pe2|altsyncram:trace_rom|altsyncram_pe21:auto_generated
+  7. Source assignments for PE:u_pe3|altsyncram:trace_rom|altsyncram_qe21:auto_generated
+  8. Parameter Settings for User Entity Instance: PE:u_pe0
+  9. Parameter Settings for User Entity Instance: PE:u_pe0|altsyncram:trace_rom
+ 10. Parameter Settings for User Entity Instance: PE:u_pe1
+ 11. Parameter Settings for User Entity Instance: PE:u_pe1|altsyncram:trace_rom
+ 12. Parameter Settings for User Entity Instance: PE:u_pe2
+ 13. Parameter Settings for User Entity Instance: PE:u_pe2|altsyncram:trace_rom
+ 14. Parameter Settings for User Entity Instance: PE:u_pe3
+ 15. Parameter Settings for User Entity Instance: PE:u_pe3|altsyncram:trace_rom
+ 16. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[0].u_cache|Timer:counter_timer
+ 17. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[0].u_cache|Counter:counter_invalidate
+ 18. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[1].u_cache|Timer:counter_timer
+ 19. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[1].u_cache|Counter:counter_invalidate
+ 20. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[2].u_cache|Timer:counter_timer
+ 21. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[2].u_cache|Counter:counter_invalidate
+ 22. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[3].u_cache|Timer:counter_timer
+ 23. Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[3].u_cache|Counter:counter_invalidate
+ 24. Parameter Settings for User Entity Instance: Interconnect_MSI:u_ic
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Analysis & Elaboration Settings
+ 27. Port Connectivity Checks: "Cache_MSI:gen_cache[3].u_cache"
+ 28. Port Connectivity Checks: "Cache_MSI:gen_cache[2].u_cache"
+ 29. Port Connectivity Checks: "Cache_MSI:gen_cache[1].u_cache"
+ 30. Port Connectivity Checks: "Cache_MSI:gen_cache[0].u_cache"
+ 31. Port Connectivity Checks: "PE:u_pe3"
+ 32. Port Connectivity Checks: "PE:u_pe2"
+ 33. Port Connectivity Checks: "PE:u_pe1"
+ 34. Port Connectivity Checks: "PE:u_pe0"
+ 35. Analysis & Elaboration Messages
+ 36. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Fri May 08 21:38:36 2026       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; proyecto2                                   ;
+; Top-level Entity Name         ; Top                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 10          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------+
+; Source assignments for PE:u_pe0|altsyncram:trace_rom|altsyncram_ne21:auto_generated ;
++---------------------------------+--------------------+------+-----------------------+
+; Assignment                      ; Value              ; From ; To                    ;
++---------------------------------+--------------------+------+-----------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                     ;
++---------------------------------+--------------------+------+-----------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Source assignments for PE:u_pe1|altsyncram:trace_rom|altsyncram_oe21:auto_generated ;
++---------------------------------+--------------------+------+-----------------------+
+; Assignment                      ; Value              ; From ; To                    ;
++---------------------------------+--------------------+------+-----------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                     ;
++---------------------------------+--------------------+------+-----------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Source assignments for PE:u_pe2|altsyncram:trace_rom|altsyncram_pe21:auto_generated ;
++---------------------------------+--------------------+------+-----------------------+
+; Assignment                      ; Value              ; From ; To                    ;
++---------------------------------+--------------------+------+-----------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                     ;
++---------------------------------+--------------------+------+-----------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Source assignments for PE:u_pe3|altsyncram:trace_rom|altsyncram_qe21:auto_generated ;
++---------------------------------+--------------------+------+-----------------------+
+; Assignment                      ; Value              ; From ; To                    ;
++---------------------------------+--------------------+------+-----------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                     ;
++---------------------------------+--------------------+------+-----------------------+
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe0 ;
++----------------+------------+-------------------------+
+; Parameter Name ; Value      ; Type                    ;
++----------------+------------+-------------------------+
+; TRACE_MIF      ; trace1.mif ; String                  ;
++----------------+------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe0|altsyncram:trace_rom ;
++------------------------------------+----------------------+----------------+
+; Parameter Name                     ; Value                ; Type           ;
++------------------------------------+----------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped        ;
+; WIDTH_A                            ; 38                   ; Signed Integer ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WIDTH_B                            ; 1                    ; Untyped        ;
+; WIDTHAD_B                          ; 1                    ; Untyped        ;
+; NUMWORDS_B                         ; 1                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; INIT_FILE                          ; trace1.mif           ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_ne21      ; Untyped        ;
++------------------------------------+----------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe1 ;
++----------------+------------+-------------------------+
+; Parameter Name ; Value      ; Type                    ;
++----------------+------------+-------------------------+
+; TRACE_MIF      ; trace2.mif ; String                  ;
++----------------+------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe1|altsyncram:trace_rom ;
++------------------------------------+----------------------+----------------+
+; Parameter Name                     ; Value                ; Type           ;
++------------------------------------+----------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped        ;
+; WIDTH_A                            ; 38                   ; Signed Integer ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WIDTH_B                            ; 1                    ; Untyped        ;
+; WIDTHAD_B                          ; 1                    ; Untyped        ;
+; NUMWORDS_B                         ; 1                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; INIT_FILE                          ; trace2.mif           ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_oe21      ; Untyped        ;
++------------------------------------+----------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe2 ;
++----------------+------------+-------------------------+
+; Parameter Name ; Value      ; Type                    ;
++----------------+------------+-------------------------+
+; TRACE_MIF      ; trace3.mif ; String                  ;
++----------------+------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe2|altsyncram:trace_rom ;
++------------------------------------+----------------------+----------------+
+; Parameter Name                     ; Value                ; Type           ;
++------------------------------------+----------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped        ;
+; WIDTH_A                            ; 38                   ; Signed Integer ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WIDTH_B                            ; 1                    ; Untyped        ;
+; WIDTHAD_B                          ; 1                    ; Untyped        ;
+; NUMWORDS_B                         ; 1                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; INIT_FILE                          ; trace3.mif           ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_pe21      ; Untyped        ;
++------------------------------------+----------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe3 ;
++----------------+------------+-------------------------+
+; Parameter Name ; Value      ; Type                    ;
++----------------+------------+-------------------------+
+; TRACE_MIF      ; trace4.mif ; String                  ;
++----------------+------------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PE:u_pe3|altsyncram:trace_rom ;
++------------------------------------+----------------------+----------------+
+; Parameter Name                     ; Value                ; Type           ;
++------------------------------------+----------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
+; OPERATION_MODE                     ; ROM                  ; Untyped        ;
+; WIDTH_A                            ; 38                   ; Signed Integer ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WIDTH_B                            ; 1                    ; Untyped        ;
+; WIDTHAD_B                          ; 1                    ; Untyped        ;
+; NUMWORDS_B                         ; 1                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; INIT_FILE                          ; trace4.mif           ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_qe21      ; Untyped        ;
++------------------------------------+----------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[0].u_cache|Timer:counter_timer ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[0].u_cache|Counter:counter_invalidate ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[1].u_cache|Timer:counter_timer ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[1].u_cache|Counter:counter_invalidate ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[2].u_cache|Timer:counter_timer ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[2].u_cache|Counter:counter_invalidate ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[3].u_cache|Timer:counter_timer ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cache_MSI:gen_cache[3].u_cache|Counter:counter_invalidate ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; COUNTER        ; 64    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Interconnect_MSI:u_ic ;
++-------------------+-------+----------------------------------------+
+; Parameter Name    ; Value ; Type                                   ;
++-------------------+-------+----------------------------------------+
+; SNOOP_WAIT_CYCLES ; 4     ; Signed Integer                         ;
++-------------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                          ;
++-------------------------------------------+-------------------------------+
+; Name                                      ; Value                         ;
++-------------------------------------------+-------------------------------+
+; Number of entity instances                ; 4                             ;
+; Entity Instance                           ; PE:u_pe0|altsyncram:trace_rom ;
+;     -- OPERATION_MODE                     ; ROM                           ;
+;     -- WIDTH_A                            ; 38                            ;
+;     -- NUMWORDS_A                         ; 256                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                  ;
+;     -- WIDTH_B                            ; 1                             ;
+;     -- NUMWORDS_B                         ; 1                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ;
+; Entity Instance                           ; PE:u_pe1|altsyncram:trace_rom ;
+;     -- OPERATION_MODE                     ; ROM                           ;
+;     -- WIDTH_A                            ; 38                            ;
+;     -- NUMWORDS_A                         ; 256                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                  ;
+;     -- WIDTH_B                            ; 1                             ;
+;     -- NUMWORDS_B                         ; 1                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ;
+; Entity Instance                           ; PE:u_pe2|altsyncram:trace_rom ;
+;     -- OPERATION_MODE                     ; ROM                           ;
+;     -- WIDTH_A                            ; 38                            ;
+;     -- NUMWORDS_A                         ; 256                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                  ;
+;     -- WIDTH_B                            ; 1                             ;
+;     -- NUMWORDS_B                         ; 1                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ;
+; Entity Instance                           ; PE:u_pe3|altsyncram:trace_rom ;
+;     -- OPERATION_MODE                     ; ROM                           ;
+;     -- WIDTH_A                            ; 38                            ;
+;     -- NUMWORDS_A                         ; 256                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                  ;
+;     -- WIDTH_B                            ; 1                             ;
+;     -- NUMWORDS_B                         ; 1                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                        ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                          ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ;
++-------------------------------------------+-------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; Top                ; proyecto2          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Cache_MSI:gen_cache[3].u_cache"                                                              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_id      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; data_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; current_state ; Output ; Info     ; Explicitly unconnected                                                              ;
+; current_tag   ; Output ; Info     ; Explicitly unconnected                                                              ;
+; Counter_inv   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Time_stall    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Cache_MSI:gen_cache[2].u_cache"                                                              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_id[1]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cache_id[0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; current_state ; Output ; Info     ; Explicitly unconnected                                                              ;
+; current_tag   ; Output ; Info     ; Explicitly unconnected                                                              ;
+; Counter_inv   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Time_stall    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Cache_MSI:gen_cache[1].u_cache"                                                              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_id[1]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cache_id[0]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; data_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; current_state ; Output ; Info     ; Explicitly unconnected                                                              ;
+; current_tag   ; Output ; Info     ; Explicitly unconnected                                                              ;
+; Counter_inv   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Time_stall    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Cache_MSI:gen_cache[0].u_cache"                                                              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; cache_id      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; current_state ; Output ; Info     ; Explicitly unconnected                                                              ;
+; current_tag   ; Output ; Info     ; Explicitly unconnected                                                              ;
+; Counter_inv   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Time_stall    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PE:u_pe3"                                                                                                                                          ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; finished   ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; data_cache ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; req_valid  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PE:u_pe2"                                                                                                                                          ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; finished   ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; data_cache ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; req_valid  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PE:u_pe1"                                                                                                                                          ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; finished   ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; data_cache ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; req_valid  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PE:u_pe0"                                                                                                                                          ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; finished   ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; data_cache ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; req_valid  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri May 08 21:38:30 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proyecto2 -c proyecto2 --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.sv
+    Info (12023): Found entity 1: Vga_Controller File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Vga_Controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file top_tb.sv
+    Info (12023): Found entity 1: Top_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file top_ff_tb.sv
+    Info (12023): Found entity 1: Top_ff_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_ff_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file top_ff.sv
+    Info (12023): Found entity 1: Top_ff File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top_ff.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file top.sv
+    Info (12023): Found entity 1: Top File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file timer.sv
+    Info (12023): Found entity 1: Timer File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Timer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pe.sv
+    Info (12023): Found entity 1: tb_pe File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/tb_pe.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file ram_tb.sv
+    Info (12023): Found entity 1: Ram_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file ram.sv
+    Info (12023): Found entity 1: Ram File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Ram.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pe.sv
+    Info (12023): Found entity 1: PE File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file interconnect_msi_tb.sv
+    Info (12023): Found entity 1: Interconnect_MSI_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file interconnect_msi_double_service_tb.sv
+    Info (12023): Found entity 1: Interconnect_MSI_double_service_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI_double_service_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file interconnect_msi.sv
+    Info (12023): Found entity 1: Interconnect_MSI File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_MSI.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file interconnect_ff_tb.sv
+    Info (12023): Found entity 1: Interconnect_FF_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_FF_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file interconnect_ff.sv
+    Info (12023): Found entity 1: Interconnect_FF File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Interconnect_FF.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter.sv
+    Info (12023): Found entity 1: Counter File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Counter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file coherence_msi_ff_massive_tb.sv
+    Info (12023): Found entity 1: Coherence_MSI_FF_massive_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Coherence_MSI_FF_massive_tb.sv Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file coherence_integration_full_tb.sv
+    Info (12023): Found entity 1: Coherence_Integration_Full_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Coherence_Integration_Full_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file clk_div.sv
+    Info (12023): Found entity 1: clk_div File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/clk_div.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cache_msi_tb.sv
+    Info (12023): Found entity 1: Cache_MSI_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file cache_msi.sv
+    Info (12023): Found entity 1: Cache_MSI File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cache_ff_tb.sv
+    Info (12023): Found entity 1: Cache_ff_tb File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file cache_ff.sv
+    Info (12023): Found entity 1: Cache_ff File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_ff.sv Line: 2
+Info (12127): Elaborating entity "Top" for the top level hierarchy
+Warning (10034): Output port "R" at Top.sv(6) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 6
+Warning (10034): Output port "G" at Top.sv(6) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 6
+Warning (10034): Output port "B" at Top.sv(8) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 8
+Warning (10034): Output port "Hs" at Top.sv(4) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 4
+Warning (10034): Output port "Vs" at Top.sv(4) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 4
+Warning (10034): Output port "VGA_Blank" at Top.sv(5) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 5
+Warning (10034): Output port "VGA_Sync_N" at Top.sv(5) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 5
+Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:div_clo" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 17
+Info (12128): Elaborating entity "PE" for hierarchy "PE:u_pe0" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 81
+Warning (10036): Verilog HDL or VHDL warning at PE.sv(27): object "state_prev" assigned a value but never read File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 27
+Warning (10034): Output port "req_valid" at PE.sv(8) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 8
+Info (12128): Elaborating entity "altsyncram" for hierarchy "PE:u_pe0|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12130): Elaborated megafunction instantiation "PE:u_pe0|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12133): Instantiated megafunction "PE:u_pe0|altsyncram:trace_rom" with the following parameter: File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "width_a" = "38"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "init_file" = "trace1.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ne21.tdf
+    Info (12023): Found entity 1: altsyncram_ne21 File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_ne21.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_ne21" for hierarchy "PE:u_pe0|altsyncram:trace_rom|altsyncram_ne21:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "PE" for hierarchy "PE:u_pe1" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 94
+Warning (10036): Verilog HDL or VHDL warning at PE.sv(27): object "state_prev" assigned a value but never read File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 27
+Warning (10034): Output port "req_valid" at PE.sv(8) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 8
+Info (12128): Elaborating entity "altsyncram" for hierarchy "PE:u_pe1|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12130): Elaborated megafunction instantiation "PE:u_pe1|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12133): Instantiated megafunction "PE:u_pe1|altsyncram:trace_rom" with the following parameter: File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "width_a" = "38"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "init_file" = "trace2.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_oe21.tdf
+    Info (12023): Found entity 1: altsyncram_oe21 File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_oe21.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_oe21" for hierarchy "PE:u_pe1|altsyncram:trace_rom|altsyncram_oe21:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "PE" for hierarchy "PE:u_pe2" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 107
+Warning (10036): Verilog HDL or VHDL warning at PE.sv(27): object "state_prev" assigned a value but never read File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 27
+Warning (10034): Output port "req_valid" at PE.sv(8) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 8
+Info (12128): Elaborating entity "altsyncram" for hierarchy "PE:u_pe2|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12130): Elaborated megafunction instantiation "PE:u_pe2|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12133): Instantiated megafunction "PE:u_pe2|altsyncram:trace_rom" with the following parameter: File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "width_a" = "38"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "init_file" = "trace3.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pe21.tdf
+    Info (12023): Found entity 1: altsyncram_pe21 File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_pe21.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_pe21" for hierarchy "PE:u_pe2|altsyncram:trace_rom|altsyncram_pe21:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "PE" for hierarchy "PE:u_pe3" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 120
+Warning (10036): Verilog HDL or VHDL warning at PE.sv(27): object "state_prev" assigned a value but never read File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 27
+Warning (10034): Output port "req_valid" at PE.sv(8) has no driver File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 8
+Info (12128): Elaborating entity "altsyncram" for hierarchy "PE:u_pe3|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12130): Elaborated megafunction instantiation "PE:u_pe3|altsyncram:trace_rom" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+Info (12133): Instantiated megafunction "PE:u_pe3|altsyncram:trace_rom" with the following parameter: File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/PE.sv Line: 50
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "width_a" = "38"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "init_file" = "trace4.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qe21.tdf
+    Info (12023): Found entity 1: altsyncram_qe21 File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/db/altsyncram_qe21.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_qe21" for hierarchy "PE:u_pe3|altsyncram:trace_rom|altsyncram_qe21:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "Cache_MSI" for hierarchy "Cache_MSI:gen_cache[0].u_cache" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 154
+Warning (10036): Verilog HDL or VHDL warning at Cache_MSI.sv(44): object "snoop_offset" assigned a value but never read File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv Line: 44
+Warning (10036): Verilog HDL or VHDL warning at Cache_MSI.sv(90): object "invalidado_papi" assigned a value but never read File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv Line: 90
+Info (12128): Elaborating entity "Timer" for hierarchy "Cache_MSI:gen_cache[0].u_cache|Timer:counter_timer" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv Line: 83
+Info (12128): Elaborating entity "Counter" for hierarchy "Cache_MSI:gen_cache[0].u_cache|Counter:counter_invalidate" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Cache_MSI.sv Line: 98
+Info (12128): Elaborating entity "Interconnect_MSI" for hierarchy "Interconnect_MSI:u_ic" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 180
+Info (12128): Elaborating entity "Ram" for hierarchy "Ram:u_ram" File: C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/Top.sv Line: 192
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/proyecto2.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Fri May 08 21:38:36 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:14
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/jimmy/GitHub/jfeng_mvillatoro_jcampos_a2_2026_s1/proyecto2.map.smsg.
+
+

@@ -43,6 +43,7 @@ module Top_tb();
             default: msi_state_to_str = "UNKNOWN";
         endcase
     endfunction
+	 
 
     always_comb begin
         case (dut.u_ic.current_state)
