@@ -1,6 +1,7 @@
 from mif import generate_mif
 from contention import contencion
 from patron_migratorio import patron_migratorio
+from test import test
 
 """
 instrucción de 38 bits:
@@ -19,9 +20,15 @@ instr_pe_test_MSI_LOCAL = [
 
 #generate_mif(instr_pe_test_MSI_LOCAL, f"trace.mif")
 
-if input("1. Alta Contencion o 2. Patrón Migratorio? (1/2): ") == "1":
+user_input = input("1. Alta Contencion o 2. Patrón Migratorio? o 3. Test: (1/2/3): ")
+
+if user_input == "1":
     # Generar MIF para cada conjunto de instrucciones de contención
     for i, instr in enumerate(contencion):
+        print(f"\nInstrucciones PE{i+1}:")
+        generate_mif(instr, f"trace{i+1}.mif")
+elif user_input == "3":
+    for i, instr in enumerate(test):
         print(f"\nInstrucciones PE{i+1}:")
         generate_mif(instr, f"trace{i+1}.mif")
 else:

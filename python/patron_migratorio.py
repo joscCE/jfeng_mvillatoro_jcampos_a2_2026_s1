@@ -19,10 +19,10 @@ def lock_and_update(pe, mutex_addr, data_addr, wait_cycles):
     # 3. SECCIÓN CRÍTICA
     # Modifica el dato protegido.
     pe.append([0, data_addr, 0])
-    pe.append([1, data_addr, 500]) # Nuevo precio
+    pe.append([1, data_addr, 500])
 
     # 4. LIBERAR MUTEX (Migración al siguiente)
-    # Escribe un 0. El siguiente PE que esté en 'Spinning' verá el cambio.
+    # Escribe un 0. El siguiente PE que esté en busy waiting verá el cambio.
     pe.append([1, mutex_addr, 0])
 
 
