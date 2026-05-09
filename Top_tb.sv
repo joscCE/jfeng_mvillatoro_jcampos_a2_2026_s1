@@ -97,8 +97,8 @@ module Top_tb();
         // Acumular estadísticas globales
         //--------------------------------------------------
         for (int i = 0; i < 4; i++) begin
-            total_req   += dut.count_req[i];
-            total_miss  += dut.count_miss[i];
+            total_req   += dut.Count_req[i];
+            total_miss  += dut.count_misses[i];
             total_stall += dut.count_timer[i];
         end
 
@@ -114,15 +114,15 @@ module Top_tb();
 
             // Miss Rate = misses / requests
             miss_rate[i] =
-                (dut.count_req[i] != 0) ?
-                real'(dut.count_miss[i]) /
-                real'(dut.count_req[i]) :
+                (dut.Count_req[i] != 0) ?
+                real'(dut.count_misses[i]) /
+                real'(dut.Count_req[i]) :
                 0.0;
 
             // Pseudo IPC = requests / stall
             pseudo_ipc[i] =
                 (dut.count_timer[i] != 0) ?
-                real'(dut.count_req[i]) /
+                real'(dut.Count_req[i]) /
                 real'(dut.count_timer[i]) :
                 0.0;
 
@@ -135,10 +135,10 @@ module Top_tb();
                      dut.count_timer[i]);
 
             $display("  > Cantidad de Misses:            %0d",
-                     dut.count_miss[i]);
+                     dut.count_misses[i]);
 
             $display("  > Cantidad de Requests:          %0d",
-                     dut.count_req[i]);
+                     dut.Count_req[i]);
 
             $display("  > Miss Rate:                     %.4f",
                      miss_rate[i]);

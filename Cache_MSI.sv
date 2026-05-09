@@ -61,7 +61,7 @@ module Cache_MSI(
 	logic [63:0] Count_Time_stall;
     logic [63:0] Count_Invalidate;
     logic inv_event;
-	logic [63:0] Count_misses;
+
      
 	 
     assign cache_line = cache[index];
@@ -73,7 +73,7 @@ module Cache_MSI(
 	 
     assign Time_stall = Count_Time_stall; 
     assign Counter_inv = Count_Invalidate;
-    assign Counter_misses =  Count_misses;
+
 
 
 
@@ -98,13 +98,7 @@ module Cache_MSI(
 	);
 
 
-    //cantidad de misses que tiene la cache
-	Counter #(.COUNTER(64)) counter_M (
-    .clk(clk),
-    .rst(reset),
-    .control(!hit & (rd || we)),
-    .count(Count_misses)
-	);
+
 
 
     //cantidad de peticiones
@@ -120,6 +114,14 @@ module Cache_MSI(
     // HIT
     logic hit;
     assign hit = (current_tag == tag) && (current_state != INVALID);
+	 
+	     //cantidad de misses que tiene la cache
+	Counter #(.COUNTER(64)) counter_M (
+    .clk(clk),
+    .rst(reset),
+    .control(!hit & (rd || we)),
+    .count(Counter_misses)
+	);
 	 
 
     // Write hit en SHARED ocupa transaccion de coherencia (upgrade)
