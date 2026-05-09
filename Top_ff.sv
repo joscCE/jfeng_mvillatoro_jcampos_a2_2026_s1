@@ -1,6 +1,7 @@
 module Top_ff (
     input  logic clk50,
     input  logic reset,
+	 input logic select,
     	 output logic Hs, Vs,
 	 output logic VGA_Blank, VGA_Sync_N, VGA_CLK,
 	 output logic [7:0]  R, G, B
@@ -50,18 +51,20 @@ module Top_ff (
 	logic [63:0] count_timer [3:0];
 	logic [63:0] count_updt [3:0];
 	logic [63:0] count_misses [3:0];
-    logic [63:0] Count_req [3:0];
+   logic [63:0] Count_req [3:0];
     
 	
 	logic [63:0] Cycles;
 	
-	
+	logic [63:0] esta1 [3:0];
 
-    
+	logic [63:0] esta2 [3:0];
+	
+	
     Vga_Controller #(.N(8)) vga_control(
     .clk(clk), 
 	.rst(reset),
-    .Hs(Hs), 
+   .Hs(Hs), 
 	.Vs(Vs),
     .VGA_Blank(VGA_Blank), 
 	.VGA_Sync_N(VGA_Sync_N),
@@ -70,9 +73,26 @@ module Top_ff (
     .R(R), 
 	.G(G), 
 	.B(B),
-    .count_timer(count_timer),
-    .count_inv(count_updt) 
+    .count_timer(esta1),
+    .count_inv(esta2) 
 );
+
+
+
+
+
+Mux_s control_esta(
+    .stat1(count_timer),
+    .stat2(count_updt),
+    .stat3(count_misses),
+    .stat4(Count_req),
+    .selec(select),
+    .selec_stat1(esta1),
+    .selec_stat2(esta2)
+
+);
+
+
 
     
 

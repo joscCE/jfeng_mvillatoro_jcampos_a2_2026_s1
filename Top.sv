@@ -1,9 +1,11 @@
 module Top (
     input  logic clk50,
     input  logic reset,
+	 input logic select,
 	 output logic Hs, Vs,
 	 output logic VGA_Blank, VGA_Sync_N, VGA_CLK,
 	 output logic [7:0]  R, G, B
+	 
 	 
 );
 
@@ -48,8 +50,10 @@ assign VGA_CLK = clk;
 	logic [63:0] Count_req [3:0];
    
 
+	logic [63:0] esta1 [3:0];
 
- 	
+	logic [63:0] esta2 [3:0];
+ 
 	Vga_Controller #(.N(8)) vga_control(
     .clk(clk), 
 	 .rst(reset),
@@ -62,9 +66,23 @@ assign VGA_CLK = clk;
     .R(R), 
 	 .G(G), 
 	 .B(B),
-    .count_timer(count_timer),
-    .count_inv(count_inv) 
+    .count_timer(esta1),
+    .count_inv(esta2) 
 );
+
+
+
+Mux_s control_esta(
+    .stat1(count_timer),
+    .stat2(count_inv),
+    .stat3(count_misses),
+    .stat4(Count_req),
+    .selec(select),
+    .selec_stat1(esta1),
+    .selec_stat2(esta2)
+
+);
+
 
 
 PE #(

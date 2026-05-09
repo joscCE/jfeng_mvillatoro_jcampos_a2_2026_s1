@@ -36,25 +36,96 @@ module SevenSeg_Display #(
     endgenerate
 
   // Segmento A (horizontal arriba)
-    Square_Area #(.x0(x+4), .x1(x+28), .y0(y+0),  .y1(y+6),  .corn(3)) segA (.Q_X(Q_X), .Q_Y(Q_Y), .Aden(seg_area[6]));
+    // Segmento A
+    Square_Area #(
+        .x0(x+2),
+        .x1(x+14),
+        .y0(y+0),
+        .y1(y+3),
+        .corn(1)
+    ) segA (
+        .Q_X(Q_X),
+        .Q_Y(Q_Y),
+        .Aden(seg_area[6])
+    );
 
-    // Segmento B (vertical superior derecha)
-    Square_Area #(.x0(x+28), .x1(x+34), .y0(y+6),  .y1(y+28), .corn(3)) segB (.Q_X(Q_X), .Q_Y(Q_Y), .Aden(seg_area[5]));
+    // Segmento B
+    Square_Area #(
+        .x0(x+14),
+        .x1(x+17),
+        .y0(y+3),
+        .y1(y+14),
+        .corn(1)
+    ) segB (
+        .Q_X(Q_X),
+        .Q_Y(Q_Y),
+        .Aden(seg_area[5])
+    );
 
-    // Segmento C (vertical inferior derecha)
-    Square_Area #(.x0(x+28), .x1(x+34), .y0(y+32), .y1(y+54), .corn(3)) segC (.Q_X(Q_X), .Q_Y(Q_Y), .Aden(seg_area[4]));
+    // Segmento C
+    Square_Area #(
+        .x0(x+14),
+        .x1(x+17),
+        .y0(y+16),
+        .y1(y+27),
+        .corn(1)
+    ) segC (
+        .Q_X(Q_X),
+        .Q_Y(Q_Y),
+        .Aden(seg_area[4])
+    );
 
-    // Segmento D (horizontal abajo)
-    Square_Area #(.x0(x+4), .x1(x+28), .y0(y+54), .y1(y+60), .corn(3)) segD (.Q_X(Q_X), .Q_Y(Q_Y), .Aden(seg_area[3]));
+    // Segmento D
+    Square_Area #(
+        .x0(x+2),
+        .x1(x+14),
+        .y0(y+27),
+        .y1(y+30),
+        .corn(1)
+    ) segD (
+        .Q_X(Q_X),
+        .Q_Y(Q_Y),
+        .Aden(seg_area[3])
+    );
 
-    // Segmento E (vertical inferior izquierda)
-    Square_Area #(.x0(x-2), .x1(x+4),  .y0(y+32), .y1(y+54), .corn(3)) segE (.Q_X(Q_X), .Q_Y(Q_Y), .Aden(seg_area[2]));
+    // Segmento E
+    Square_Area #(
+        .x0(x-1),
+        .x1(x+2),
+        .y0(y+16),
+        .y1(y+27),
+        .corn(1)
+    ) segE (
+        .Q_X(Q_X),
+        .Q_Y(Q_Y),
+        .Aden(seg_area[2])
+    );
 
-    // Segmento F (vertical superior izquierda)
-    Square_Area #(.x0(x-2), .x1(x+4),  .y0(y+6),  .y1(y+28), .corn(3)) segF (.Q_X(Q_X), .Q_Y(Q_Y), .Aden(seg_area[1]));
+    // Segmento F
+    Square_Area #(
+        .x0(x-1),
+        .x1(x+2),
+        .y0(y+3),
+        .y1(y+14),
+        .corn(1)
+    ) segF (
+        .Q_X(Q_X),
+        .Q_Y(Q_Y),
+        .Aden(seg_area[1])
+    );
 
-    // Segmento G (horizontal medio)
-    Square_Area #(.x0(x+4), .x1(x+28), .y0(y+27), .y1(y+33), .corn(3)) segG (.Q_X(Q_X), .Q_Y(Q_Y), .Aden(seg_area[0]));
+    // Segmento G
+    Square_Area #(
+        .x0(x+2),
+        .x1(x+14),
+        .y0(y+14),
+        .y1(y+17),
+        .corn(1)
+    ) segG (
+        .Q_X(Q_X),
+        .Q_Y(Q_Y),
+        .Aden(seg_area[0])
+    );
 
     // Visibilidad final si está encendido y colisiona
     assign visible = |(seg_en & seg_area);
