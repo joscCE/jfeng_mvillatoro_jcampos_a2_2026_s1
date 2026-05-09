@@ -114,9 +114,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE Square_Area.sv
 set_global_assignment -name SYSTEMVERILOG_FILE CounterV.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Register.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Comparator.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to B
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to B[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to B[1]
@@ -166,4 +163,7 @@ set_global_assignment -name EDA_TEST_BENCH_FILE Coherence_Integration_Full_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_pe.sv -section_id tb_pe
 set_global_assignment -name EDA_TEST_BENCH_FILE Top_tb.sv -section_id Top_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE Top_ff_tb.sv -section_id Top_ff_tb
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

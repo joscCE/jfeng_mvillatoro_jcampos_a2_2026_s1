@@ -29,8 +29,12 @@ stk_phone      = 30
 stk_headphones = 20 
 stk_tablet     = 10  
 
-def buy_product(pe, product ,cart_addr, repeats):
+productos = ["phone", "laptop", "tablet", "headphones"]
 
+reps = 4  # Número de veces que cada PE intentará comprar cada producto
+
+
+def buy_product(pe, product, cart_addr, repeats):
     if product == "phone":
         stock_addr = 2
         initial_stock = stk_phone
@@ -46,11 +50,12 @@ def buy_product(pe, product ,cart_addr, repeats):
 
     final_cart = 0
     for i in range(repeats):
-        pe.append([1, stock_addr, initial_stock - i])
+        pe.append([0, stock_addr, 0])  #  RE-LEE antes de escribir (fuerza I→S→M)
+        pe.append([1, stock_addr, initial_stock - i])  # W -> invalida a los demás
         final_cart += 1
-    pe.append([0, cart_addr, 0])  # Leer carrito para verificar cantidad
+
+    pe.append([0, cart_addr, 0])
     pe.append([1, cart_addr, final_cart])
-    return 
 
 # ==========================
 # Instrucciones PE0 (phone, headphones, tablet)
@@ -64,14 +69,9 @@ workload_PE0 = [
 
     #[0,  8, 0],   # R cart_user0         -> MISS, I->S,  slot 0 tag=01
 ]
-# Fase 2: tomar phone 
-buy_product(workload_PE0, "phone", 8, 5)  
-# Fase 3: tomar headphones
-buy_product(workload_PE0, "headphones", 8, 5)
-# Fase 4: tomar tablet
-buy_product(workload_PE0, "tablet", 8, 5)
-# Fase 5: tomar laptop
-buy_product(workload_PE0, "laptop", 8, 5)
+# Fase 2: comprar productos 
+for producto in productos:
+    buy_product(workload_PE0, producto, 8,  reps)
 
 # ==========================
 # Instrucciones PE1 (laptop, headphones, tablet)
@@ -85,14 +85,9 @@ workload_PE1 = [
 
     #[0, 10, 0],   # R cart_user1         -> MISS, I->S,  slot 1 tag=01
 ]
-# Fase 2: tomar phone 
-buy_product(workload_PE1, "phone", 10, 5) 
-# Fase 3: tomar headphones
-buy_product(workload_PE1, "headphones", 10, 5)
-# Fase 4: tomar tablet
-buy_product(workload_PE1, "tablet", 10, 5)
-# Fase 5: tomar laptop
-buy_product(workload_PE1, "laptop", 10, 5)
+# Fase 2: comprar productos  
+for producto in productos:
+    buy_product(workload_PE1, producto, 10, reps)
 
 #=========================
 # Instrucciones PE2 (laptop, phone, tablet)
@@ -106,14 +101,9 @@ workload_PE2 = [
 
     #[0, 12, 0],   # R cart_user2         -> MISS, I->S,  slot 2 tag=01
 ]     
-# Fase 2: tomar phone 
-buy_product(workload_PE2, "phone", 12, 5)
-# Fase 3: tomar laptop
-buy_product(workload_PE2, "laptop", 12, 5)
-# Fase 4: tomar tablet
-buy_product(workload_PE2, "tablet", 12, 5)
-# Fase 5: tomar laptop
-buy_product(workload_PE2, "laptop", 12, 5)
+# Fase 2: comprar productos  
+for producto in productos:
+    buy_product(workload_PE2, producto, 12, reps)
 
 # ==========================
 # Instrucciones PE3 (laptop, phone, headphones)
@@ -127,14 +117,9 @@ workload_PE3 = [
 
     #[0, 14, 0],   # R cart_user3         -> MISS, I->S,  slot 3 tag=01
 ]
-# Fase 2: tomar phone
-buy_product(workload_PE3, "phone", 14, 5)
-# Fase 3: tomar laptop
-buy_product(workload_PE3, "laptop", 14, 5)
-# Fase 4: tomar tablet
-buy_product(workload_PE3, "tablet", 14, 5)
-# Fase 5: tomar laptop
-buy_product(workload_PE3, "laptop", 14, 5)
+# Fase 2: comprar productos 
+for producto in productos:
+    buy_product(workload_PE3, producto, 14, reps)
 
 
 # Agrupar los 4 programas para los 4 PEs
