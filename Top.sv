@@ -7,7 +7,6 @@ module Top (
 	 
 );
 
-
 	logic clk;
 	
 	clk_div div_clo(
@@ -16,10 +15,8 @@ module Top (
 		 .clk25(clk)
 	);
 	
-
 assign VGA_CLK = clk;	
-	
-	
+		
     // --- Señales PE <-> Cache ---
     logic [3:0]  pe_we, pe_rd, pe_stall;
     logic [4:0]  pe_address [3:0];
@@ -47,9 +44,10 @@ assign VGA_CLK = clk;
 
 	 logic [63:0] count_timer [3:0];
 	 logic [63:0] count_inv [3:0];
+	 logic [63:0] count_miss [3:0];
+	 logic [63:0] count_req [3:0];
 	 
-	 
-	 
+ 	
 //	Vga_Controller #(.N(8)) vga_control(
 //    .clk(clk), 
 //	 .rst(reset),
@@ -68,7 +66,7 @@ assign VGA_CLK = clk;
 
 
 PE #(
-    .TRACE_MIF("trace0.mif")
+    .TRACE_MIF("trace1.mif")
 ) u_pe0 (
     .clk(clk),
     .rst(reset),
@@ -81,7 +79,7 @@ PE #(
 );
 
 PE #(
-    .TRACE_MIF("trace1.mif")
+    .TRACE_MIF("trace2.mif")
 ) u_pe1 (
     .clk(clk),
     .rst(reset),
@@ -94,7 +92,7 @@ PE #(
 );
 
 PE #(
-    .TRACE_MIF("trace2.mif")
+    .TRACE_MIF("trace3.mif")
 ) u_pe2 (
     .clk(clk),
     .rst(reset),
@@ -107,7 +105,7 @@ PE #(
 );
 
 PE #(
-    .TRACE_MIF("trace3.mif")
+    .TRACE_MIF("trace4.mif")
 ) u_pe3 (
     .clk(clk),
     .rst(reset),
@@ -150,7 +148,10 @@ PE #(
                 .current_state(),
                 .current_tag(),
 				.Counter_inv(count_inv[i]),
-				.Time_stall(count_timer[i])   
+				.Time_stall(count_timer[i]),
+               .Counter_misses(count_miss[i]),
+					.Counter_reques(count_req[i])
+					
             );
         end
     endgenerate

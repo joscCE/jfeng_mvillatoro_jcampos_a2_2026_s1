@@ -30,7 +30,10 @@ module Cache_ff(
     output logic [1:0] current_state,   // Estado de la línea cache
     output logic [1:0] current_tag,      // Tag de la línea cache
     output logic [63:0] Counter_upt,
-    output logic [63:0] Time_stall    
+    output logic [63:0] Time_stall,    
+    output logic [63:0] Counter_misses,   
+    output logic [63:0] Counter_request    
+
 
 );
 
@@ -70,6 +73,7 @@ module Cache_ff(
     logic [31:0] pending_data;      // Datos de la request pendiente
     logic self_snoop;               // Indica si la request pendiente es un snoop propio
 
+
     assign hit = (current_tag == tag) && (current_state != INVALID);
     assign needs_update = we && hit && (current_state == SHARED);
     assign self_snoop = pending && (pending_address == snoop_addr);
@@ -98,11 +102,13 @@ module Cache_ff(
 	 
 	 logic [63:0] Count_update;
      logic update_event;
+     logic [63:0] Count_misses;
 
     assign Time_stall = Count_Time_stall; 
 
     assign Counter_upt = Count_update; 
-
+    assign Counter_misses =  Count_misses;
+    
 
 
    
@@ -125,6 +131,25 @@ module Cache_ff(
     .count(Count_update)
 	 
 	);
+
+
+    //cantidad de misses que tiene la cache
+	Counter #(.COUNTER(64)) counter_M (
+    .clk(clk),
+    .rst(reset),
+    .control(help),
+    .count(Count_misses)
+	);
+
+
+    //cantidad de peticiones
+	Counter #(.COUNTER(64)) counter_R (
+    .clk(clk),
+    .rst(reset),
+    .control(we || rd),
+    .count(Counter_request)
+	);
+
 
 
     always_ff @(posedge clk or posedge reset) begin

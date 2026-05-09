@@ -12,7 +12,7 @@ module Top_ff_tb();
         .reset(reset)
     );
 
-    // Generación de Reloj (100MHz aprox)
+    // Generación de reloj (100 MHz aprox)
     always #5 clk = ~clk;
 
     // ---- Monitor del estado del Interconnect Firefly ----
@@ -20,10 +20,18 @@ module Top_ff_tb();
     logic [2:0] prev_state;
     logic [3:0] prev_help;
     logic prev_bus_update;
-    
-    // Contadores de requests por PE
-    integer count_requests[3:0];
-    logic [3:0] prev_rw;  // Track previous rd|we per PE
+
+    // Variables para estadísticas
+    real miss_rate [3:0];
+    real pseudo_ipc [3:0];
+
+    real global_miss_rate;
+    real bandwidth_bits;
+    real bandwidth_bytes;
+
+    longint total_req;
+    longint total_miss;
+    longint total_stall;
 
     function string ff_state_to_str(input logic [2:0] st);
         case (st)
@@ -49,69 +57,145 @@ module Top_ff_tb();
 
     always @(posedge clk) begin
         if (!reset) begin
-            // Count rising edges of (rd | we) for each PE
-                if ((dut.u_pe0.rd | dut.u_pe0.we) && !prev_rw[0]) count_requests[0]++;
-                if ((dut.u_pe1.rd | dut.u_pe1.we) && !prev_rw[1]) count_requests[1]++;
-                if ((dut.u_pe2.rd | dut.u_pe2.we) && !prev_rw[2]) count_requests[2]++;
-                if ((dut.u_pe3.rd | dut.u_pe3.we) && !prev_rw[3]) count_requests[3]++;
-            
-                prev_rw[0] <= (dut.u_pe0.rd | dut.u_pe0.we);
-                prev_rw[1] <= (dut.u_pe1.rd | dut.u_pe1.we);
-                prev_rw[2] <= (dut.u_pe2.rd | dut.u_pe2.we);
-                prev_rw[3] <= (dut.u_pe3.rd | dut.u_pe3.we);
-
-            prev_state <= dut.u_ic.current_state;
-            prev_help <= dut.cache_help;
+            prev_state      <= dut.u_ic.current_state;
+            prev_help       <= dut.cache_help;
             prev_bus_update <= dut.bus_update;
-        end else begin
-            prev_state <= dut.u_ic.current_state;
-            prev_help <= dut.cache_help;
+        end
+        else begin
+            prev_state      <= dut.u_ic.current_state;
+            prev_help       <= dut.cache_help;
             prev_bus_update <= dut.bus_update;
         end
     end
 
-    // Proceso de prueba
-    initial begin
-        // Inicialización de señales
-        clk = 0;
-        reset = 1;
-        
-        // Inicializar contadores
-        for (int i = 0; i < 4; i++) begin
-            count_requests[i] = 0;
-            prev_rw[i] = 1'b0;
-        end
 
-        // Reset del sistema
+    //--------------------------------------------------
+    // Proceso principal de prueba
+    //--------------------------------------------------
+    initial begin
+
+        clk   = 0;
+        reset = 1;
+
+        total_req   = 0;
+        total_miss  = 0;
+        total_stall = 0;
+
         $display("--- Iniciando Simulación del Sistema Multi-Core Firefly ---");
+
         #20;
         reset = 0;
+
         $display("--- Reset liberado, ejecutando trazas ---");
 
-        // Esperar a que los PE terminen o un tiempo prudencial
-        // Dado que usas archivos .mif, la simulación debe durar lo suficiente
-        // para que cada procesador ejecute sus instrucciones.
-        #100000; 
+        // Esperar ejecución
+        #100000;
 
-        // Mostrar reporte de estadísticas por cada Cache
-        $display("\n========================================================");
-        $display("         REPORTE DE RENDIMIENTO (HARDWARE COUNTERS)      ");
-        $display("========================================================");
-        
+
+        //--------------------------------------------------
+        // Acumular estadísticas globales
+        //--------------------------------------------------
         for (int i = 0; i < 4; i++) begin
+            total_req   += dut.Count_req[i];
+            total_miss  += dut.count_misses[i];
+            total_stall += dut.count_timer[i];
+        end
+
+
+        //--------------------------------------------------
+        // Reporte individual por core
+        //--------------------------------------------------
+        $display("\n========================================================");
+        $display("         REPORTE DE RENDIMIENTO (FIREFLY)");
+        $display("========================================================");
+
+        for (int i = 0; i < 4; i++) begin
+
+            // Miss Rate = misses / requests
+            miss_rate[i] =
+                (dut.Count_req[i] != 0) ?
+                real'(dut.count_misses[i]) /
+                real'(dut.Count_req[i]) :
+                0.0;
+
+            // Pseudo IPC = requests / stall
+            pseudo_ipc[i] =
+                (dut.count_timer[i] != 0) ?
+                real'(dut.Count_req[i]) /
+                real'(dut.count_timer[i]) :
+                0.0;
+
             $display("CORE %0d:", i);
-            $display("  > Requests emitidos (count_requests):     %0d", count_requests[i]);
-            $display("  > Updates recibidos (count_updt):         %0d", dut.count_updt[i]);
-            $display("  > Ciclos totales en STALL (count_timer):  %0d", dut.count_timer[i]);
+
+            $display("  > Updates recibidos:            %0d",
+                     dut.count_updt[i]);
+
+            $display("  > Ciclos totales en STALL:      %0d",
+                     dut.count_timer[i]);
+
+            $display("  > Cantidad de Misses:           %0d",
+                     dut.count_misses[i]);
+
+            $display("  > Cantidad de Requests:         %0d",
+                     dut.Count_req[i]);
+
+            $display("  > Miss Rate:                    %.4f",
+                     miss_rate[i]);
+
+            $display("  > IPC estimado (Req/Stall):     %.4f",
+                     pseudo_ipc[i]);
+
             $display("--------------------------------------------------------");
         end
-        
-        $display("\nTotales FF (trace1-4):");
-        $display("  Total Requests: %0d (esperado: 16)", 
-            count_requests[0] + count_requests[1] + count_requests[2] + count_requests[3]);
-        
+
+
+        //--------------------------------------------------
+        // Estadísticas globales
+        //--------------------------------------------------
+        global_miss_rate =
+            (total_req != 0) ?
+            real'(total_miss) / real'(total_req) :
+            0.0;
+
+        // Cache line = 64 bits
+        bandwidth_bits =
+            (total_stall != 0) ?
+            real'(total_miss * 64) /
+            real'(total_stall) :
+            0.0;
+
+        bandwidth_bytes =
+            (total_stall != 0) ?
+            real'(total_miss * 8) /
+            real'(total_stall) :
+            0.0;
+
+
+        $display("\n================ ESTADISTICAS GLOBALES =================");
+
+        $display("Total Requests:                   %0d",
+                 total_req);
+
+        $display("Total Misses:                     %0d",
+                 total_miss);
+
+        $display("Total Stall Cycles:               %0d",
+                 total_stall);
+
+        $display("Global Miss Rate:                 %.4f",
+                 global_miss_rate);
+
+        $display("Bandwidth efectivo:               %.4f bits/cycle",
+                 bandwidth_bits);
+
+        $display("Bandwidth efectivo:               %.4f bytes/cycle",
+                 bandwidth_bytes);
+
+        $display("========================================================");
+
+
         $display("\nSimulación finalizada a las %0t", $time);
         $finish;
     end
 
-endmodule 
+endmodule

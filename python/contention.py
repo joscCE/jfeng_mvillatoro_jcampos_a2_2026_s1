@@ -15,40 +15,41 @@
 # ==========================
 # Instrucciones PE0
 # ==========================
+
 workload_PE0 = []
 workload_PE0.append((1, 5, 0)) # R dir 5
-workload_PE0.append((1, 15, 0)) # R dir 10
-workload_PE0.append((1, 40, 0)) # R dir 5
-workload_PE0.append((1, 60, 0)) # R dir 
+workload_PE0.append((0, 5, 0)) # R dir 5
 
 
 
 # ==========================
 # Instrucciones PE1
 # ==========================
+
 workload_PE1 = []
 workload_PE1.append((1, 5, 0)) # R dir 5
-workload_PE1.append((1, 15, 0)) # R dir 10
-workload_PE1.append((1, 40, 0)) # R dir 5
-workload_PE1.append((1, 60, 0)) # R dir 
+
+
+
+
+
+
 
 # ==========================
 # Instrucciones PE2
 # ==========================
 workload_PE2 = []
-workload_PE2.append((1, 5, 0)) # R dir 5
-workload_PE2.append((1, 15, 0)) # R dir 10
-workload_PE2.append((1, 40, 0)) # R dir 5
-workload_PE2.append((1, 60, 0)) # R dir 
+
+
+
 
 # ==========================
 # Instrucciones PE3
 # ==========================
+
 workload_PE3 = []
-workload_PE3.append((1, 5, 0)) # R dir 5
-workload_PE3.append((1, 15, 0)) # R dir 10
-workload_PE3.append((1, 40, 0)) # R dir 5
-workload_PE3.append((1, 60, 0)) # R dir 
+
+
 
 
 # Agrupar los 4 programas para los 4 PEs

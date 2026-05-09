@@ -1,5 +1,5 @@
 module PE #(
-	parameter TRACE_MIF = "trace0.mif"
+	parameter TRACE_MIF = "trace1.mif"
 )(
 	input logic clk, rst,
 	input logic stall_cache,

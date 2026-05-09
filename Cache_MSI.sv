@@ -29,8 +29,9 @@ module Cache_MSI(
     output logic [1:0] current_state,   // Estado de la línea cache 
     output logic [1:0] current_tag,      // Tag de la línea cache
     output logic [63:0] Counter_inv,
-    output logic [63:0] Time_stall    
-
+    output logic [63:0] Time_stall, 
+    output logic [63:0] Counter_misses,    
+    output logic [63:0] Counter_reques
 );
 
     // Estados MSI
@@ -57,10 +58,11 @@ module Cache_MSI(
     logic [67:0] cache_line;
 
 	 
-	 logic [63:0] Count_Time_stall;
+	logic [63:0] Count_Time_stall;
     logic [63:0] Count_Invalidate;
-     logic inv_event;
-	 
+    logic inv_event;
+	logic [63:0] Count_misses;
+     
 	 
     assign cache_line = cache[index];
 
@@ -70,7 +72,8 @@ module Cache_MSI(
 	
 	 
     assign Time_stall = Count_Time_stall; 
-    assign Counter_inv = Count_Invalidate; 
+    assign Counter_inv = Count_Invalidate;
+    assign Counter_misses =  Count_misses;
 
 
 
@@ -82,20 +85,36 @@ module Cache_MSI(
     .count(Count_Time_stall)
 	);
 
-
-
-
-    //contamos cantidad de updates
 	 
 	 logic invalidado_papi;
 
 
+    //cantidadd de invalidates que tiene
 	Counter #(.COUNTER(64)) counter_invalidate (
     .clk(clk),
     .rst(reset),
     .control(inv_event),
     .count(Count_Invalidate)
 	);
+
+
+    //cantidad de misses que tiene la cache
+	Counter #(.COUNTER(64)) counter_M (
+    .clk(clk),
+    .rst(reset),
+    .control(help),
+    .count(Count_misses)
+	);
+
+
+    //cantidad de peticiones
+	Counter #(.COUNTER(64)) counter_R (
+    .clk(clk),
+    .rst(reset),
+    .control(we || rd),
+    .count(Counter_reques)
+	);
+
 
 
     // HIT

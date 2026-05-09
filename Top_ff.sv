@@ -49,9 +49,13 @@ module Top_ff (
 	 
 	logic [63:0] count_timer [3:0];
 	logic [63:0] count_updt [3:0];
-
+	logic [63:0] count_misses [3:0];
+    logic [63:0] Count_req [3:0];
     
-    
+	
+	logic [63:0] Cycles;
+	
+	
 
     
     Vga_Controller #(.N(8)) vga_control(
@@ -158,13 +162,15 @@ PE #(
                 .snoop_addr(snoop_addr),
                 .resp_id(resp_id),
                 .ic_tag(ic_tag),
-                .ic_data(ic_data_bus),
-                
+                .ic_data(ic_data_bus),       
                 .current_state(),
                 .current_tag(),
 					 
-					.Counter_upt(count_updt[i]),
-                .Time_stall(count_timer[i])  
+				.Counter_upt(count_updt[i]),
+               .Time_stall(count_timer[i]),
+				.Counter_misses(count_misses[i]),
+                .Counter_request(Count_req[i])
+            
             );
         end
     endgenerate
