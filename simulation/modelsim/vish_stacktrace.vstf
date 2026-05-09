@@ -1,0 +1,16 @@
+# Current time Fri May 08 20:27:52 2026
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 34000000. Traceback:
+# 0    0x34000000: '<unknown (@0x34000000)>'
+# 1    0x7b7a0a7b: '<unknown (@0x7b7a0a7b)>'
+# 2    0x7b79f1e0: '<unknown (@0x7b79f1e0)>'
+# 3    0x7b79f41c: '<unknown (@0x7b79f41c)>'
+StackWalk failed 299
+# End of Stack Trace
+

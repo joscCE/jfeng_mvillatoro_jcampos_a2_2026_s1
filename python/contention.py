@@ -1,9 +1,22 @@
 # =================================================================
-# Workload: Spinlock con 4 PEs ((Alta contención))
+# Workload: Carrito de compras con 4 PEs (Alta contención)
 #
-# Convención de direcciones:
-#   addr = 5 -> lock (0 = libre, 1 = ocupado)
-#   addr = 12 -> recurso compartido (simulado con writes)
+# Descomposición de addr[4:0]:
+#   addr[4:3] = tag    (2 bits)
+#   addr[2:1] = index  (2 bits -> slot 0,1,2,3)
+#   addr[0]   = offset (1 bit  -> word 0 o word 1 dentro de la línea)
+#
+# Productos compartidos (tag=00, slots distintos):
+#   stock_laptop     -> slot 0 -> addr = 0  (00_00_0)
+#   stock_phone      -> slot 1 -> addr = 2  (00_01_0)
+#   stock_headphones -> slot 2 -> addr = 4  (00_10_0)
+#   stock_tablet     -> slot 3 -> addr = 6  (00_11_0)
+#
+# Carritos privados (tag=01, slots distintos):
+#   cart_user0 -> slot 0 -> addr = 8  (01_00_0)
+#   cart_user1 -> slot 1 -> addr = 10 (01_01_0)
+#   cart_user2 -> slot 2 -> addr = 12 (01_10_0)
+#   cart_user3 -> slot 3 -> addr = 14 (01_11_0)
 #
 # Formato: (req_type, addr, data)
 #   req_type: 0 = read, 1 = write
@@ -11,44 +24,117 @@
 #   data:     valor escrito en caso de write (ignorando en read)
 # =================================================================
 
+stk_laptop     = 10  
+stk_phone      = 30  
+stk_headphones = 20 
+stk_tablet     = 10  
+
+def buy_product(pe, product ,cart_addr, repeats):
+
+    if product == "phone":
+        stock_addr = 2
+        initial_stock = stk_phone
+    elif product == "laptop":
+        stock_addr = 0
+        initial_stock = stk_laptop
+    elif product == "headphones":
+        stock_addr = 4
+        initial_stock = stk_headphones
+    elif product == "tablet":
+        stock_addr = 6
+        initial_stock = stk_tablet
+
+    final_cart = 0
+    for i in range(repeats):
+        pe.append([1, stock_addr, initial_stock - i])
+        final_cart += 1
+    pe.append([0, cart_addr, 0])  # Leer carrito para verificar cantidad
+    pe.append([1, cart_addr, final_cart])
+    return 
 
 # ==========================
-# Instrucciones PE0
+# Instrucciones PE0 (phone, headphones, tablet)
 # ==========================
-workload_PE0 = []
-workload_PE0.append((1, 5, 0)) # R dir 5
-workload_PE0.append((1, 15, 0)) # R dir 10
-workload_PE0.append((1, 40, 0)) # R dir 5
-workload_PE0.append((1, 60, 0)) # R dir 
+workload_PE0 = [
+    # Fase 1: verificar stock inicial
+    [0,  2, 0],   # R stock_phone        -> MISS, I->S,  slot 1 tag=00
+    [0,  4, 0],   # R stock_headphones   -> MISS, I->S,  slot 2 tag=00
+    [0,  6, 0],   # R stock_tablet       -> MISS, I->S,  slot 3 tag=00
+    [0,  0, 0],   # R stock_laptop       -> MISS, I->S,  slot 0 tag=00
 
-
-
-# ==========================
-# Instrucciones PE1
-# ==========================
-workload_PE1 = []
-workload_PE1.append((1, 5, 0)) # R dir 5
-workload_PE1.append((1, 15, 0)) # R dir 10
-workload_PE1.append((1, 40, 0)) # R dir 5
-workload_PE1.append((1, 60, 0)) # R dir 
-
-# ==========================
-# Instrucciones PE2
-# ==========================
-workload_PE2 = []
-workload_PE2.append((1, 5, 0)) # R dir 5
-workload_PE2.append((1, 15, 0)) # R dir 10
-workload_PE2.append((1, 40, 0)) # R dir 5
-workload_PE2.append((1, 60, 0)) # R dir 
+    #[0,  8, 0],   # R cart_user0         -> MISS, I->S,  slot 0 tag=01
+]
+# Fase 2: tomar phone 
+buy_product(workload_PE0, "phone", 8, 5)  
+# Fase 3: tomar headphones
+buy_product(workload_PE0, "headphones", 8, 5)
+# Fase 4: tomar tablet
+buy_product(workload_PE0, "tablet", 8, 5)
+# Fase 5: tomar laptop
+buy_product(workload_PE0, "laptop", 8, 5)
 
 # ==========================
-# Instrucciones PE3
+# Instrucciones PE1 (laptop, headphones, tablet)
 # ==========================
-workload_PE3 = []
-workload_PE3.append((1, 5, 0)) # R dir 5
-workload_PE3.append((1, 15, 0)) # R dir 10
-workload_PE3.append((1, 40, 0)) # R dir 5
-workload_PE3.append((1, 60, 0)) # R dir 
+workload_PE1 = [
+    # Fase 1: verificar stock
+    [0,  0, 0],   # R stock_laptop       -> MISS, I->S,  slot 0 tag=00
+    [0,  4, 0],   # R stock_headphones   -> MISS, I->S,  slot 2 tag=00
+    [0,  6, 0],   # R stock_tablet       -> MISS, I->S,  slot 3 tag=00
+    [0,  2, 0],   # R stock_phone        -> MISS, I->S,  slot 1 tag=00
+
+    #[0, 10, 0],   # R cart_user1         -> MISS, I->S,  slot 1 tag=01
+]
+# Fase 2: tomar phone 
+buy_product(workload_PE1, "phone", 10, 5) 
+# Fase 3: tomar headphones
+buy_product(workload_PE1, "headphones", 10, 5)
+# Fase 4: tomar tablet
+buy_product(workload_PE1, "tablet", 10, 5)
+# Fase 5: tomar laptop
+buy_product(workload_PE1, "laptop", 10, 5)
+
+#=========================
+# Instrucciones PE2 (laptop, phone, tablet)
+# ==========================
+workload_PE2 = [
+    # Fase 1: browse inicial
+    [0,  0, 0],   # R stock_laptop       -> MISS, I->S,  slot 0 tag=00
+    [0,  2, 0],   # R stock_phone        -> MISS, I->S,  slot 1 tag=00
+    [0,  6, 0],   # R stock_tablet       -> MISS, I->S,  slot 3 tag=00
+    [0,  4, 0],   # R stock_headphones   -> MISS, I->S,  slot 2 tag=00
+
+    #[0, 12, 0],   # R cart_user2         -> MISS, I->S,  slot 2 tag=01
+]     
+# Fase 2: tomar phone 
+buy_product(workload_PE2, "phone", 12, 5)
+# Fase 3: tomar laptop
+buy_product(workload_PE2, "laptop", 12, 5)
+# Fase 4: tomar tablet
+buy_product(workload_PE2, "tablet", 12, 5)
+# Fase 5: tomar laptop
+buy_product(workload_PE2, "laptop", 12, 5)
+
+# ==========================
+# Instrucciones PE3 (laptop, phone, headphones)
+# ==========================
+workload_PE3 = [
+    # Fase 1: verificar stock
+    [0,  0, 0],   # R stock_laptop       -> MISS, I->S,  slot 0 tag=00
+    [0,  2, 0],   # R stock_phone        -> MISS, I->S,  slot 1 tag=00
+    [0,  4, 0],   # R stock_headphones   -> MISS, I->S,  slot 2 tag=00
+    [0,  6, 0],   # R stock_tablet       -> MISS, I->S,  slot 3 tag=00
+
+    #[0, 14, 0],   # R cart_user3         -> MISS, I->S,  slot 3 tag=01
+]
+# Fase 2: tomar phone
+buy_product(workload_PE3, "phone", 14, 5)
+# Fase 3: tomar laptop
+buy_product(workload_PE3, "laptop", 14, 5)
+# Fase 4: tomar tablet
+buy_product(workload_PE3, "tablet", 14, 5)
+# Fase 5: tomar laptop
+buy_product(workload_PE3, "laptop", 14, 5)
 
 
 # Agrupar los 4 programas para los 4 PEs
