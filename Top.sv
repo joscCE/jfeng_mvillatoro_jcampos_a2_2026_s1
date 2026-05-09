@@ -44,9 +44,11 @@ assign VGA_CLK = clk;
 
 	 logic [63:0] count_timer [3:0];
 	 logic [63:0] count_inv [3:0];
-	 logic [63:0] count_miss [3:0];
-	 logic [63:0] count_req [3:0];
-	 
+	 logic [63:0] count_misses [3:0];
+	logic [63:0] Count_req [3:0];
+   
+
+
  	
 //	Vga_Controller #(.N(8)) vga_control(
 //    .clk(clk), 
@@ -149,9 +151,8 @@ PE #(
                 .current_tag(),
 				.Counter_inv(count_inv[i]),
 				.Time_stall(count_timer[i]),
-               .Counter_misses(count_miss[i]),
-					.Counter_reques(count_req[i])
-					
+                .Counter_misses(count_misses[i]),
+                .Counter_reques(Count_req[i])   
             );
         end
     endgenerate

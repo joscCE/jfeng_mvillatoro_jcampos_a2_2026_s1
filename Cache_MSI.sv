@@ -102,7 +102,7 @@ module Cache_MSI(
 	Counter #(.COUNTER(64)) counter_M (
     .clk(clk),
     .rst(reset),
-    .control(help),
+    .control(!hit & (rd || we)),
     .count(Count_misses)
 	);
 
@@ -191,17 +191,6 @@ module Cache_MSI(
             ready_c  <= 1'b0;
             wb_valid <= 1'b0;
 
-//                         $display(
-//     "[CACHE %0d] type=%0d addres=%0d data=%0d we=%0d rd=%0d stall=%0d time=%0t",
-//	  cache_id,
-//     pending_type,
-//     pending_address,
-//     pending_data,
-//     we,
-//     rd,
-//     stall,
-//     $time
-// );
 
 
 

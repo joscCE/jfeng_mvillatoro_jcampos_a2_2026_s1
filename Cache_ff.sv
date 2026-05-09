@@ -104,10 +104,14 @@ module Cache_ff(
      logic update_event;
      logic [63:0] Count_misses;
 
+
+
     assign Time_stall = Count_Time_stall; 
 
     assign Counter_upt = Count_update; 
     assign Counter_misses =  Count_misses;
+	 
+
     
 
 
@@ -137,7 +141,7 @@ module Cache_ff(
 	Counter #(.COUNTER(64)) counter_M (
     .clk(clk),
     .rst(reset),
-    .control(help),
+    .control(!hit & (rd || we)),
     .count(Count_misses)
 	);
 
@@ -219,9 +223,7 @@ module Cache_ff(
                 pending_address    <= address;
                 pending_data       <= data_in;
 					 
-				
-
-
+			
             end
 
             // Manejo de respuesta de IC para request pendiente

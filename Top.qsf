@@ -76,43 +76,9 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_pe -section_id tb_pe
 set_global_assignment -name EDA_TEST_BENCH_NAME Top_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Top_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Top_tb -section_id Top_tb
-set_location_assignment PIN_AB12 -to reset
 set_global_assignment -name EDA_TEST_BENCH_NAME Top_ff_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Top_ff_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Top_ff_tb -section_id Top_ff_tb
-set_location_assignment PIN_AF14 -to clk50
-set_location_assignment PIN_D11 -to Vs
-set_location_assignment PIN_B11 -to Hs
-set_location_assignment PIN_C10 -to VGA_Sync_N
-set_location_assignment PIN_F10 -to VGA_Blank
-set_location_assignment PIN_A11 -to VGA_CLK
-set_location_assignment PIN_A13 -to R[0]
-set_location_assignment PIN_C13 -to R[1]
-set_location_assignment PIN_E13 -to R[2]
-set_location_assignment PIN_B12 -to R[3]
-set_location_assignment PIN_C12 -to R[4]
-set_location_assignment PIN_D12 -to R[5]
-set_location_assignment PIN_E12 -to R[6]
-set_location_assignment PIN_F13 -to R[7]
-set_location_assignment PIN_J9 -to G[0]
-set_location_assignment PIN_J10 -to G[1]
-set_location_assignment PIN_H12 -to G[2]
-set_location_assignment PIN_G10 -to G[3]
-set_location_assignment PIN_G11 -to G[4]
-set_location_assignment PIN_G12 -to G[5]
-set_location_assignment PIN_F11 -to G[6]
-set_location_assignment PIN_E11 -to G[7]
-set_location_assignment PIN_B13 -to B[0]
-set_location_assignment PIN_G13 -to B[1]
-set_location_assignment PIN_H13 -to B[2]
-set_location_assignment PIN_F14 -to B[3]
-set_location_assignment PIN_H14 -to B[4]
-set_location_assignment PIN_F15 -to B[5]
-set_location_assignment PIN_G15 -to B[6]
-set_location_assignment PIN_J14 -to B[7]
-set_location_assignment PIN_V16 -to inv_cache1[0]
-set_location_assignment PIN_W16 -to inv_cache1[1]
-set_location_assignment PIN_V17 -to inv_cache1[2]
 set_global_assignment -name MIF_FILE trace4.mif
 set_global_assignment -name SYSTEMVERILOG_FILE PE_FSM_Analyzer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Top_ff_tb.sv

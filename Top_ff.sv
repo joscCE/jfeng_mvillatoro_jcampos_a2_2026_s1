@@ -58,21 +58,21 @@ module Top_ff (
 	
 
     
-    Vga_Controller #(.N(8)) vga_control(
-    .clk(clk), 
-	.rst(reset),
-    .Hs(Hs), 
-	.Vs(Vs),
-    .VGA_Blank(VGA_Blank), 
-	.VGA_Sync_N(VGA_Sync_N),
-    .Q_X(), 
-	.Q_Y(),
-    .R(R), 
-	.G(G), 
-	.B(B),
-    .count_timer(count_timer),
-    .count_inv(count_updt) 
-);
+//    Vga_Controller #(.N(8)) vga_control(
+//    .clk(clk), 
+//	.rst(reset),
+//    .Hs(Hs), 
+//	.Vs(Vs),
+//    .VGA_Blank(VGA_Blank), 
+//	.VGA_Sync_N(VGA_Sync_N),
+//    .Q_X(), 
+//	.Q_Y(),
+//    .R(R), 
+//	.G(G), 
+//	.B(B),
+//    .count_timer(count_timer),
+//    .count_inv(count_updt) 
+//);
 
     
 
@@ -167,9 +167,9 @@ PE #(
                 .current_tag(),
 					 
 				.Counter_upt(count_updt[i]),
-               .Time_stall(count_timer[i]),
+              .Time_stall(count_timer[i]),
 				.Counter_misses(count_misses[i]),
-                .Counter_request(Count_req[i])
+              .Counter_request(Count_req[i])
             
             );
         end
